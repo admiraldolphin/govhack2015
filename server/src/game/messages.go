@@ -12,12 +12,14 @@ type Message struct {
 	Data interface{} `json:",omitempty"`
 }
 
+var KeepAlive = Message{Type: "KeepAlive"}
+
 // Messages from client.
 
 type ClientHello struct {
 	Nickname     string
-	HeroPick     data.Hero      // For self.
-	PorfolioPick data.Portfolio // For opponent.
+	HeroPick     data.ID // For self.
+	PorfolioPick data.ID // For opponent.
 }
 
 type ClientAnswer struct {
