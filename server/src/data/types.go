@@ -30,10 +30,3 @@ type Question struct {
 	ID
 	Text string
 }
-
-type Database struct {
-	Heroes     []Hero
-	Portfolios []Porfolio
-	Questions  []Question
-}
-
