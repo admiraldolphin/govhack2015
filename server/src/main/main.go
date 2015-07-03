@@ -1,16 +1,20 @@
 package main
 
 import (
-	"fmt"
 	"log"
-	"net/http"
+
+	"data"
+	"game"
 )
 
 func main() {
-	fmt.Println("This is the server, dawg!")
+	log.Println("Starting QuestionTime server...")
+	db, err := data.Load()
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Game server! Woot.")
-	})
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(game.RunServer(db))
+
+	log.Println("QuestionTime server stopped")
 }
