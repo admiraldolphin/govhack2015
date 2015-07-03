@@ -18,13 +18,12 @@ var KeepAlive = Message{Type: "KeepAlive"}
 
 // Messages from client.
 
-type ClientHello struct {
-	Nickname     string
+type Player struct {
 	HeroPick     data.ID // For self.
 	PorfolioPick data.ID // For opponent.
 }
 
-type ClientAnswer struct {
+type Answer struct {
 	Question data.ID
 	Answer   data.Answer
 }
