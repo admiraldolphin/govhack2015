@@ -1,2 +1,2 @@
 #!/bin/bash
-./bin/server
+GOPATH="$PWD" go run server

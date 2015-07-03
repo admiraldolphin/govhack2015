@@ -1,20 +1,23 @@
 package game
 
-import (
-	"data"
-)
-
 type Message struct {
-	Type    string
-	Message interface{}
+	Type string
+	Data interface{}
 }
 
-type ClientHello struct{}
+// Messages from client
+type ClientHello struct {
+	Nickname     string
+	HeroPick     data.ID
+	OpponentPorfolioPick data.ID
+}
+
+// Messages form server
+type ServerHello struct{
+	Opponent ClientHello
+	Questions []data.Question
+}
+
 type KeepAlive struct{}
-type ServerHello struct{}
 
-type Player struct {
-	Nickname string
-	*data.HeroH
-	*data.Portfolio
-}
+
