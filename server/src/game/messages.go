@@ -7,6 +7,8 @@ import (
 // Message encapsulates all the messages.
 // Messages of Type "KeepAlive" are expected to have nil (empty) Data.
 // Otherwise, Type is the type of the message (one of the structs below).
+// Note that when encoding/json unmarshals Message, Data will have the 
+// generic type map[string]interface{}.
 type Message struct {
 	Type string
 	Data interface{} `json:",omitempty"`
