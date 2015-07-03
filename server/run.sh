@@ -1,2 +1,2 @@
 #!/bin/bash
-GOPATH="$PWD" go run server
+GOPATH="$PWD" go run src/main/main.go
