@@ -13,35 +13,35 @@ type Database struct {
 
 func Load() (*Database, error) {
 	db := &Database{
-		Heroes: make(map[ID]Hero),
+		Heroes:     make(map[ID]Hero),
 		Portfolios: make(map[ID]Portfolio),
-		Questions: make(map[ID]Question),
+		Questions:  make(map[ID]Question),
 	}
-	
+
 	// TODO(josh): Load data from file
-	
+
 	// Mock up some data.
 	qids := make([]ID, 0, 300)
-	for i:=0; i<300; i++ {
+	for i := 0; i < 300; i++ {
 		db.Questions[ID(i)] = Question{
-			ID: ID(i),
+			ID:   ID(i),
 			Text: fmt.Sprintf("question%d", i),
 		}
 		qids = append(qids, ID(i))
 	}
-	
-	for i:=0; i<10; i++ {
+
+	for i := 0; i < 10; i++ {
 		db.Portfolios[ID(i)] = Portfolio{
-			ID: ID(i),
-			Name: fmt.Sprintf("portfolio%d", i),
-			Questions: qids[30*i:30*(i+1)],
+			ID:        ID(i),
+			Name:      fmt.Sprintf("portfolio%d", i),
+			Questions: qids[30*i : 30*(i+1)],
 		}
 	}
-	
-	for i:=0; i<150; i++ {
+
+	for i := 0; i < 150; i++ {
 		db.Heroes[ID(i)] = Hero{
-			ID: ID(i),
-			Name: fmt.Sprintf("hero%d_name", i),
+			ID:         ID(i),
+			Name:       fmt.Sprintf("hero%d_name", i),
 			Electorate: fmt.Sprintf("hero%d_electorate", i),
 			Answers: func() map[ID]Answer {
 				m := make(map[ID]Answer)

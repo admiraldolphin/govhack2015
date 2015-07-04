@@ -1,8 +1,6 @@
 package game
 
 import (
-	"fmt"
-
 	"data"
 )
 
@@ -17,13 +15,6 @@ type Message struct {
 }
 
 var KeepAlive = Message{Type: "KeepAlive"}
-
-func NewMessage(d interface{}) *Message {
-	return &Message{
-		Type: fmt.Sprintf("%T", d),
-		Data: d,
-	}
-}
 
 // Messages from client.
 

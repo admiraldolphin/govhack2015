@@ -57,8 +57,8 @@ func (g *Game) handleMessage(conn net.Conn, m *Message) error {
 		ticker := time.NewTicker(keepAliveInterval)
 		defer ticker.Stop()
 		p := Player{
-			HeroPick:      data.ID(d["HeroPick"].(int)),
-			PortfolioPick: data.ID(d["PortfolioPick"].(int)),
+			HeroPick:      data.ID(d["HeroPick"].(float64)),
+			PortfolioPick: data.ID(d["PortfolioPick"].(float64)),
 		}
 		match, err := g.match(p)
 		if err != nil {
@@ -68,11 +68,14 @@ func (g *Game) handleMessage(conn net.Conn, m *Message) error {
 			select {
 			case opponent := <-match:
 				// Proceed!
-				s := ServerHello{
-					Opponent:  opponent,
-					Questions: g.db.PickQuestions(opponent.PortfolioPick, numQuestions),
+				s := Message{
+					Type: "ServerHello",
+					Data: ServerHello{
+						Opponent:  opponent,
+						Questions: g.db.PickQuestions(opponent.PortfolioPick, numQuestions),
+					},
 				}
-				if err := writeMessage(conn, NewMessage(s)); err != nil {
+				if err := writeMessage(conn, &s); err != nil {
 					return err
 				}
 
