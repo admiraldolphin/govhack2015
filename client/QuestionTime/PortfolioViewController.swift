@@ -10,9 +10,7 @@ import UIKit
 
 class PortfolioViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
-    let portfolioList : [String] = ["Health","Economy","Administrative","Science","Education","Foreign","Tech","Social"]
-    
-    var honourableMember : String?
+    var honourableMember : Int?
 
     @IBOutlet weak var portfolioCollectionVew: UICollectionView!
     
@@ -30,12 +28,13 @@ class PortfolioViewController: UIViewController,UICollectionViewDataSource,UICol
     // MARK: - CollectionView
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return portfolioList.count
+        return QuestionDatabase.sharedDatabase.allPortfolios.count
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PortfolioCell", forIndexPath: indexPath) as! PortfolioCollectionViewCell
         
-        cell.portfolioNameLabel.text = portfolioList[indexPath.row]
+        let portfolio = QuestionDatabase.sharedDatabase.allPortfolios[indexPath.row]
+        cell.portfolioNameLabel.text = portfolio.name
         
         return cell
     }
@@ -60,7 +59,7 @@ class PortfolioViewController: UIViewController,UICollectionViewDataSource,UICol
                     if let indexPath = portfolioCollectionVew.indexPathForCell(cell)
                     {
                         destination.honourableMember = self.honourableMember
-                        destination.portfolio = self.portfolioList[indexPath.row]
+                        destination.portfolio = QuestionDatabase.sharedDatabase.allPortfolios[indexPath.row].id
                     }
                 }
             }

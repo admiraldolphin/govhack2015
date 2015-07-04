@@ -10,8 +10,8 @@ import UIKit
 
 class PreGameLobbyViewController: UIViewController,NetworkDelegate {
     
-    var honourableMember : String?
-    var portfolio: String?
+    var honourableMember : Int?
+    var portfolio: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()

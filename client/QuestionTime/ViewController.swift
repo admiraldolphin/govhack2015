@@ -22,10 +22,6 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         
         Network.sharedNetwork.delegate = self
         Network.sharedNetwork.connect("localhost")
-        
-        let portfolios = QuestionDatabase.sharedDatabase.allPortfolios
-        let tone = QuestionDatabase.sharedDatabase.allPeople[10001]
-        
     }
     
     func networkConnected() {
@@ -57,12 +53,17 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     // MARK: - CollectionView
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tempMPList.count
+        return QuestionDatabase.sharedDatabase.allPeople.count
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemberCell", forIndexPath: indexPath) as! MemberCollectionViewCell
         
-        cell.memberNameLabel.text = tempMPList[indexPath.row]
+        let key = QuestionDatabase.sharedDatabase.allPeople.keys.array.sorted(<)[indexPath.row]
+        let person = QuestionDatabase.sharedDatabase.allPeople[key]
+        if let thePerson = person
+        {
+            cell.memberNameLabel.text = thePerson.name
+        }
         
         return cell
     }
@@ -79,7 +80,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                 {
                     if let indexPath = memberListView.indexPathForCell(cell)
                     {
-                        destination.honourableMember = tempMPList[indexPath.row]
+                        let key = QuestionDatabase.sharedDatabase.allPeople.keys.array.sorted(<)[indexPath.row]
+                        destination.honourableMember = key
                     }
                 }
             }

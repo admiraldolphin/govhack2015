@@ -101,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="706" y="474"/>
+            <point key="canvasLocation" x="707" y="474"/>
         </scene>
         <!--Portfolio View Controller-->
         <scene sceneID="qOB-Kz-F16">
@@ -202,7 +202,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RT8-Qn-mwp">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RT8-Qn-mwp">
                                 <rect key="frame" x="16" y="550" width="46" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -253,23 +253,97 @@
                                     <action selector="voteSliderValueChange:" destination="S7X-8o-uCH" eventType="valueChanged" id="gQJ-Ld-HKh"/>
                                 </connections>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question goes here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xl-4A-qRA">
+                                <rect key="frame" x="225" y="28" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmf-0n-7Gh">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Dez-fF-F8r" kind="show" identifier="GameOverSegue" id="A4r-wE-yNr"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUj-WU-7qT">
+                                <rect key="frame" x="277" y="330" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="S7X-8o-uCH" kind="show" identifier="NewQuestionSegue" id="ULi-Jk-bwf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Fkd-H5-KoS" firstAttribute="leading" secondItem="7YM-sI-caW" secondAttribute="trailing" constant="8" id="96k-pb-MKx"/>
                             <constraint firstItem="7YM-sI-caW" firstAttribute="centerY" secondItem="Fkd-H5-KoS" secondAttribute="centerY" id="9pZ-aP-sO9"/>
+                            <constraint firstAttribute="centerX" secondItem="0xl-4A-qRA" secondAttribute="centerX" id="Mxg-LZ-Gam"/>
                             <constraint firstItem="Fkd-H5-KoS" firstAttribute="trailing" secondItem="w7n-Oa-LFu" secondAttribute="trailingMargin" id="c3E-2E-Cjf"/>
                             <constraint firstItem="7YM-sI-caW" firstAttribute="leading" secondItem="w7n-Oa-LFu" secondAttribute="leadingMargin" id="cDk-ZK-Pbj"/>
                             <constraint firstItem="Cmc-EU-HGr" firstAttribute="top" secondItem="Fkd-H5-KoS" secondAttribute="bottom" constant="20" id="ehE-Nd-yOB"/>
+                            <constraint firstItem="0xl-4A-qRA" firstAttribute="top" secondItem="juv-97-ReP" secondAttribute="bottom" constant="8" id="phF-Xf-qpa"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="questionLabel" destination="0xl-4A-qRA" id="yzi-gH-Og7"/>
                         <outlet property="voteSlider" destination="7YM-sI-caW" id="4yS-39-fne"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZh-ih-RBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2822" y="474"/>
+            <point key="canvasLocation" x="2836" y="474"/>
+        </scene>
+        <!--Game Over Lobby View Controller-->
+        <scene sceneID="vtg-13-SLR">
+            <objects>
+                <viewController id="Dez-fF-F8r" customClass="GameOverLobbyViewController" customModule="QuestionTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ty1-Va-VgO"/>
+                        <viewControllerLayoutGuide type="bottom" id="5NR-ff-e3k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LSf-hw-Xxa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over Lobby" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4b-Cd-f5H">
+                                <rect key="frame" x="247" y="28" width="140.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFL-Ur-pTM">
+                                <rect key="frame" x="202" y="550" width="196" height="30"/>
+                                <state key="normal" title="Once More Unto The Breach">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartGame:" destination="Dez-fF-F8r" eventType="touchUpInside" id="d9X-aY-LFL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h4b-Cd-f5H" firstAttribute="top" secondItem="ty1-Va-VgO" secondAttribute="bottom" constant="8" id="Q3d-4L-LVU"/>
+                            <constraint firstAttribute="centerX" secondItem="h4b-Cd-f5H" secondAttribute="centerX" constant="-17.5" id="YaI-7N-Y2P"/>
+                            <constraint firstItem="5NR-ff-e3k" firstAttribute="top" secondItem="XFL-Ur-pTM" secondAttribute="bottom" constant="20" id="lIc-ut-AnX"/>
+                            <constraint firstAttribute="centerX" secondItem="XFL-Ur-pTM" secondAttribute="centerX" id="t3I-V3-g7C"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gameOverLobbyLabel" destination="h4b-Cd-f5H" id="afn-TB-FHF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dVB-Po-GkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3552" y="474"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="J9Q-1e-nen"/>
+    </inferredMetricsTieBreakers>
 </document>
