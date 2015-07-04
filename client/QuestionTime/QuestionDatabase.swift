@@ -20,8 +20,10 @@ class Policy {
     
 }
 
-class Portfolio {
+struct Portfolio {
+    var name : String = ""
     var questionIDs : [Int] = []
+    var id : Int = 0
 }
 
 class Person {
@@ -51,6 +53,26 @@ class Person {
 class QuestionDatabase : NSObject {
     static var sharedNetwork = {
         return Network()
+    }()
+    
+    lazy var allPortfolios : [Portfolio] = {
+        
+        var portfolios : [Portfolio] = []
+        let path = "data/portfolios.json"
+        
+        if let portfoliosURL = NSBundle.mainBundle().resourceURL?.URLByAppendingPathComponent(path) {
+            
+            let portfolioData = JSON(data: NSData(contentsOfURL: portfoliosURL)!)
+            
+            for data in portfolioData["portfolios"].arrayValue {
+                portfolios.append(Portfolio(name: data["name"].stringValue,
+                    questionIDs: data["policies"].arrayObject as! [Int],
+                    id: data["id"].intValue))
+            }
+        }
+        
+        return portfolios
+        
     }()
     
     
