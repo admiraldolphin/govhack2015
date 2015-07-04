@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	keepAliveInterval = 1 * time.Second
+	keepAliveInterval = 5 * time.Second
 	gameTimeout       = 1 * time.Minute
 	idleReadTimeout   = 20 * time.Second
 	idleWriteTimeout  = 5 * time.Second
@@ -68,8 +68,6 @@ func (c *client) handleCommand(m *Message) error {
 		// Yes: Decide questions to send.
 		// No: Send KeepAlive once per keepAliveInterval up to gameTimeout until we have another Player pick.
 		// Then decide questions to send.
-		ticker := time.NewTicker(keepAliveInterval)
-		defer ticker.Stop()
 		pick := Player{
 			HeroPick:      int(d["HeroPick"].(float64)),
 			PortfolioPick: int(d["PortfolioPick"].(float64)),
@@ -91,11 +89,6 @@ func (c *client) handleCommand(m *Message) error {
 					},
 				}
 				return writeMessage(c.conn, &s)
-			case <-ticker.C:
-				// Send keepalives.
-				if err := writeMessage(c.conn, &KeepAlive); err != nil {
-					return err
-				}
 			case <-time.After(gameTimeout):
 				return errors.New("game not matched within timeout")
 			}
@@ -132,6 +125,14 @@ func (g *Game) handleConn(conn net.Conn, playerNum int) {
 		// Close the companion connection - game over.
 		if oc := g.player[1-playerNum].client; oc != nil {
 			oc.conn.Close()
+		}
+	}()
+	go func() {
+		for range time.Tick(keepAliveInterval) {	
+			if err := g.writeAllMessage(&KeepAlive); err != nil {
+				log.Println(err)
+				return
+			}
 		}
 	}()
 	for {
