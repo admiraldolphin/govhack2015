@@ -9,10 +9,12 @@ import (
 
 type Game struct {
 	player [2]struct {
-		mu    sync.RWMutex
-		score int
-		nick  string
-		picks *Player
+		mu     sync.RWMutex
+		score  int
+		nick   string
+		picks  *Player
+		clock  int
+		client *client
 	}
 	gameStart *sync.Cond
 	gameClock int

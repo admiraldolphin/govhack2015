@@ -100,11 +100,13 @@ func Load(basedir string) (*Database, error) {
 		if err != nil {
 			return nil, err
 		}
+		defer pf.Close()
 		var detIn detailIn
 		dec := json.NewDecoder(pf)
 		if err := dec.Decode(&detIn); err != nil {
 			return nil, err
 		}
+		pf.Close()
 
 		ans := make(map[int]Answer)
 		for _, pc := range detIn.PolicyComparisons {
@@ -132,6 +134,7 @@ func Load(basedir string) (*Database, error) {
 			Electorate: p.LatestMember.Electorate,
 			Answers:    ans,
 		}
+
 	}
 	return db, nil
 }
