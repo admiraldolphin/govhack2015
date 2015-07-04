@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331121141B47719300FB1F47 /* MemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331121131B47719300FB1F47 /* MemberCollectionViewCell.swift */; };
+		336957D81B4783580072AD1E /* PreGameLobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336957D71B4783580072AD1E /* PreGameLobbyViewController.swift */; };
+		33F73A611B4777A900EFE8E6 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F73A601B4777A900EFE8E6 /* PortfolioViewController.swift */; };
+		33F73A631B477D6E00EFE8E6 /* PortfolioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F73A621B477D6E00EFE8E6 /* PortfolioCollectionViewCell.swift */; };
 		68DF69821B469CC4007C36A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69811B469CC4007C36A4 /* AppDelegate.swift */; };
 		68DF69841B469CC4007C36A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69831B469CC4007C36A4 /* ViewController.swift */; };
 		68DF69871B469CC4007C36A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68DF69851B469CC4007C36A4 /* Main.storyboard */; };
@@ -23,9 +27,14 @@
 		68DF69C81B4769B4007C36A4 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69BD1B4769B4007C36A4 /* DDContextFilterLogFormatter.m */; };
 		68DF69C91B4769B4007C36A4 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69BF1B4769B4007C36A4 /* DDDispatchQueueLogFormatter.m */; };
 		68DF69CA1B4769B4007C36A4 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69C11B4769B4007C36A4 /* DDMultiFormatter.m */; };
+		68DF6A111B4777F2007C36A4 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69ED1B4777F2007C36A4 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		331121131B47719300FB1F47 /* MemberCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCollectionViewCell.swift; sourceTree = "<group>"; };
+		336957D71B4783580072AD1E /* PreGameLobbyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreGameLobbyViewController.swift; sourceTree = "<group>"; };
+		33F73A601B4777A900EFE8E6 /* PortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
+		33F73A621B477D6E00EFE8E6 /* PortfolioCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioCollectionViewCell.swift; sourceTree = "<group>"; };
 		68DF697C1B469CC4007C36A4 /* QuestionTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestionTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DF69801B469CC4007C36A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68DF69811B469CC4007C36A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +65,7 @@
 		68DF69BF1B4769B4007C36A4 /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
 		68DF69C01B4769B4007C36A4 /* DDMultiFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMultiFormatter.h; sourceTree = "<group>"; };
 		68DF69C11B4769B4007C36A4 /* DDMultiFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMultiFormatter.m; sourceTree = "<group>"; };
+		68DF69ED1B4777F2007C36A4 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				68DF69A71B476992007C36A4 /* GCDAsyncSocket */,
+				68DF69D61B4777F2007C36A4 /* SwiftyJSON */,
 				68DF697E1B469CC4007C36A4 /* QuestionTime */,
 				68DF697D1B469CC4007C36A4 /* Products */,
 			);
@@ -93,6 +104,10 @@
 				68DF69811B469CC4007C36A4 /* AppDelegate.swift */,
 				68DF69831B469CC4007C36A4 /* ViewController.swift */,
 				68DF69851B469CC4007C36A4 /* Main.storyboard */,
+				33F73A621B477D6E00EFE8E6 /* PortfolioCollectionViewCell.swift */,
+				33F73A601B4777A900EFE8E6 /* PortfolioViewController.swift */,
+				336957D71B4783580072AD1E /* PreGameLobbyViewController.swift */,
+				331121131B47719300FB1F47 /* MemberCollectionViewCell.swift */,
 				68DF69881B469CC4007C36A4 /* Images.xcassets */,
 				68DF698A1B469CC4007C36A4 /* LaunchScreen.xib */,
 				68DF697F1B469CC4007C36A4 /* Supporting Files */,
@@ -160,6 +175,22 @@
 				68DF69C11B4769B4007C36A4 /* DDMultiFormatter.m */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		68DF69D61B4777F2007C36A4 /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				68DF69E91B4777F2007C36A4 /* Source */,
+			);
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		68DF69E91B4777F2007C36A4 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				68DF69ED1B4777F2007C36A4 /* SwiftyJSON.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,16 +265,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				68DF69AC1B47699E007C36A4 /* GCDAsyncSocket.m in Sources */,
+				33F73A611B4777A900EFE8E6 /* PortfolioViewController.swift in Sources */,
 				68DF69C71B4769B4007C36A4 /* DDTTYLogger.m in Sources */,
+				33F73A631B477D6E00EFE8E6 /* PortfolioCollectionViewCell.swift in Sources */,
 				68DF69C51B4769B4007C36A4 /* DDFileLogger.m in Sources */,
 				68DF69C81B4769B4007C36A4 /* DDContextFilterLogFormatter.m in Sources */,
 				68DF69AD1B47699E007C36A4 /* GCDAsyncUdpSocket.m in Sources */,
+				336957D81B4783580072AD1E /* PreGameLobbyViewController.swift in Sources */,
 				68DF69C31B4769B4007C36A4 /* DDAbstractDatabaseLogger.m in Sources */,
 				68DF69841B469CC4007C36A4 /* ViewController.swift in Sources */,
 				68DF69CA1B4769B4007C36A4 /* DDMultiFormatter.m in Sources */,
+				331121141B47719300FB1F47 /* MemberCollectionViewCell.swift in Sources */,
 				68DF69821B469CC4007C36A4 /* AppDelegate.swift in Sources */,
 				68DF69C61B4769B4007C36A4 /* DDLog.m in Sources */,
 				68DF69C41B4769B4007C36A4 /* DDASLLogger.m in Sources */,
+				68DF6A111B4777F2007C36A4 /* SwiftyJSON.swift in Sources */,
 				68DF69A21B46A065007C36A4 /* Network.swift in Sources */,
 				68DF69C91B4769B4007C36A4 /* DDDispatchQueueLogFormatter.m in Sources */,
 			);

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 enum GameState : UInt {
     case NotConnected
     case Lobby
@@ -19,33 +20,81 @@ enum GameState : UInt {
     
 }
 
+enum Answer : Int {
+    case DisagreeStrong = 1
+    case Disagree       = 2
+    case Neutral        = 3
+    case Agree          = 4
+    case AgreeStrong    = 5
+    case Abstain        = -1
+}
+
+// Messages from server
+
+struct HelloMessage {
+    // contains nothing
+}
+
+struct GameStartMessage {
+    var OpponentHero : Int
+    var PortfolioName : String
+    var Questions : [Int]
+}
+
+struct ProgressMessage {
+    var YourScore : Int
+    var OpponentScore : Int
+}
+
+struct KeepAliveMessage {
+    // contains nothing
+}
+
+struct GameOverMessage {
+    var YouWon : Bool
+}
+
+protocol NetworkDelegate {
+    func networkConnected()
+    func networkDisconnected(error: NSError?)
+    func networkStateChanged(oldState: GameState, newState:GameState, context:[String:AnyObject])
+}
+
 class Network: NSObject, GCDAsyncSocketDelegate {
     
-    var socket : GCDAsyncSocket
+    static var sharedNetwork = {
+        return Network()
+    }()
+    
+    let port : UInt16 = 8888
+    
+    var socket = GCDAsyncSocket()
+    
+    var delegate : NetworkDelegate?
     
     var gameState = GameState.NotConnected
     
-    init?(host: String, port: UInt16) {
-        
-        socket = GCDAsyncSocket()
-        
+    override init() {
         super.init()
+    }
+    
+    func connect(host:String) {
+        socket = GCDAsyncSocket()
         
         socket.delegate = self
         socket.delegateQueue = dispatch_get_main_queue()
         
         var error : NSError?
-        socket.connectToHost(host, onPort: port, error: &error)
-        
-        if (error != nil) {
-            return nil
-        }
+        socket.connectToHost(host, onPort: self.port, error: &error)
     }
+    
     
     func sendMessage(message:String) {
         assert(socket.isConnected)
         
-        let data = (message+"\n\n").dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+        println(message)
+        
+        let data = (message+"\n").dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         
         socket.writeData(data, withTimeout: 2.0, tag: 0)
     }
@@ -59,7 +108,11 @@ class Network: NSObject, GCDAsyncSocketDelegate {
         
         gameState = .Lobby
         
-        sendMessage("Hi")
+        updateName()
+        
+        delegate?.networkConnected()
+        
+        
         
         listenForNewData()
     }
@@ -69,18 +122,63 @@ class Network: NSObject, GCDAsyncSocketDelegate {
         let string = NSString(data: data, encoding: NSUTF8StringEncoding)
         println("Read: \(string)")
         
+        // Parse the response into json
+        let loadedData = JSON(data: data)
+        
+        let type : JSON = loadedData["Type"]
+        
         listenForNewData()
     }
     
-    func selectPlayerData(politician: String, questionCategory: String) {
+    func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!) {
+        delegate?.networkDisconnected(err)
+    }
+    
+    func selectPlayerData(politician: Int, questionCategory: Int) {
+        
+        var data = [
+            "Type":"Player",
+            "Data":[
+                "HeroPick":politician,
+                "PortfolioPick":questionCategory
+            ]
+        ]
+        
+        var json = JSON(data)
+        
+        sendMessage(json.rawString(encoding: NSUTF8StringEncoding, options: NSJSONWritingOptions.allZeros)!)
+        
         // Send 'here's my MP and category'
     }
     
-    func updateAnswerStats(answeredCorrectly: Bool) {
+    func updateAnswerStats(questionID: Int, answer: Answer) {
+        
+        var data = [
+            "Type":"Answer",
+            "Data":[
+                "Question":questionID,
+                "Answer": answer.rawValue
+            ]
+        ]
+        
+        var json = JSON(data)
+        sendMessage(json.rawString(encoding: NSUTF8StringEncoding, options: NSJSONWritingOptions.allZeros)!)
+        
         // Send "I answered a question correctly/incorrectly"
     }
-
     
-   
+    private func updateName() {
+        
+        var data = [
+            "Type":"Nickname",
+            "Data":[
+                "Name":UIDevice.currentDevice().name
+            ]
+        ]
+        
+        var json = JSON(data)
+        sendMessage(json.rawString(encoding: NSUTF8StringEncoding, options: NSJSONWritingOptions.allZeros)!)
+        
+    }
     
 }
