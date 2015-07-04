@@ -60,8 +60,10 @@ func (g *Game) opponentPicks(playerNum int, p Player) (<-chan Player, error) {
 // writeAllMessage broadcasts a message to all (two) clients in a game.
 func (g *Game) writeAllMessage(m *Message) error {
 	for i := range g.player {
-		if err := writeMessage(g.player[i].client.conn, m); err != nil {
-			return err
+		if g.player[i].client != nil {
+			if err := writeMessage(g.player[i].client.conn, m); err != nil {
+				return err
+			}
 		}
 	}
 	return nil
