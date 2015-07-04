@@ -30,6 +30,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - CollectionView
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tempMPList.count
     }
@@ -41,6 +42,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         return cell
     }
     
+    // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "MemberSelectedSegue")
         {

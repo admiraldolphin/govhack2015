@@ -23,6 +23,8 @@ class PortfolioViewController: UIViewController,UICollectionViewDataSource,UICol
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - CollectionView
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return portfolioList.count
     }
@@ -35,14 +37,18 @@ class PortfolioViewController: UIViewController,UICollectionViewDataSource,UICol
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if (segue.identifier == "PortfolioSelectionSegue")
+        {
+            // need to tell the server about it
+            // or is it better to wait and do it in the lobby?
+        }
     }
-    */
 
 }

@@ -101,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="784" y="211"/>
+            <point key="canvasLocation" x="706" y="474"/>
         </scene>
         <!--Portfolio View Controller-->
         <scene sceneID="qOB-Kz-F16">
@@ -156,6 +156,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="portfolioNameLabel" destination="inF-I5-vO0" id="hZC-8F-biY"/>
+                                            <segue destination="Kt8-vb-bd6" kind="show" identifier="PortfolioSelectionSegue" id="JBh-qE-4Nf"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -178,7 +179,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOQ-dg-Dh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1302" y="1141"/>
+            <point key="canvasLocation" x="1396" y="474"/>
+        </scene>
+        <!--Pre Game Lobby View Controller-->
+        <scene sceneID="Cie-kS-WFY">
+            <objects>
+                <viewController id="Kt8-vb-bd6" customClass="PreGameLobbyViewController" customModule="QuestionTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vfU-fr-QDD"/>
+                        <viewControllerLayoutGuide type="bottom" id="vFJ-wl-zFy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Swy-ep-h6m">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting lobby thing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycs-bk-Xqi">
+                                <rect key="frame" x="226" y="28" width="148" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RT8-Qn-mwp">
+                                <rect key="frame" x="16" y="550" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="S7X-8o-uCH" kind="show" identifier="ServerReadySegue" id="J9Q-1e-nen"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Ycs-bk-Xqi" secondAttribute="centerX" id="GUR-cK-5Ln"/>
+                            <constraint firstItem="Ycs-bk-Xqi" firstAttribute="top" secondItem="vfU-fr-QDD" secondAttribute="bottom" constant="8" id="KVd-dl-MIp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qtl-Cg-bec" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2132" y="474"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="VRY-mh-EkH">
+            <objects>
+                <viewController id="S7X-8o-uCH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="juv-97-ReP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cmc-EU-HGr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w7n-Oa-LFu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZZh-ih-RBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2822" y="474"/>
         </scene>
     </scenes>
 </document>
