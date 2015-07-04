@@ -39,6 +39,7 @@ class PreGameLobbyViewController: UIViewController,NetworkDelegate {
                 game.heroID = gameStartMessage!.opponentHero
                 game.possibleQuestions = gameStartMessage!.questions
                 
+                AudioJigger.sharedJigger.playActionMusic()
             }
         }
     }

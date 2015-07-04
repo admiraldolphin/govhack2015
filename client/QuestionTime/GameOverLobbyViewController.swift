@@ -17,6 +17,8 @@ class GameOverLobbyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        AudioJigger.sharedJigger.playBackgroundMusic()
+        
         if let iWon = self.youWon
         {
             if iWon

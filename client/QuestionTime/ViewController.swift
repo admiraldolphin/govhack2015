@@ -97,7 +97,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         return cell
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        AudioJigger.sharedJigger.playEffect(Effects.Selection)
+        AudioJigger.sharedJigger.playEffect(.Selection)
     }
     
     // MARK: - Navigation

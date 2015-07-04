@@ -74,6 +74,8 @@ class GameViewController: UIViewController,NetworkDelegate {
             self.questionsRemainingLabel.text = "\(self.questionsRemaining) questions remaining"
         }
         
+        // firing up the 6 second ticking audio
+        AudioJigger.sharedJigger.playEffect(.Ticking)
     }
     
     func timeRanOut(sender:AnyObject)

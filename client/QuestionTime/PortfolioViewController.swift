@@ -39,6 +39,9 @@ class PortfolioViewController: UIViewController,UICollectionViewDataSource,UICol
         
         return cell
     }
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        AudioJigger.sharedJigger.playEffect(.Selection)
+    }
     
 
     // MARK: - Navigation

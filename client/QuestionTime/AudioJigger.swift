@@ -13,8 +13,15 @@ enum Effects : String
 {
     case Zinger = "effect_mad_zinger"
     case Countdown = "effect_countdown_to_gamestart"
-    case Selection = "effect_select_blip"
+    case Selection = "effect_click"
     case Ticking = "effect_ticking"
+    case Booing = "effect_booing"
+    case HereHere = "effect_here_here"
+    case murmur = "effect_murmuring"
+}
+
+protocol AudioJiggerDelegate {
+    func jiggerFinishedPlayingEffect(effect:Effects)
 }
 
 class AudioJigger: NSObject,AVAudioPlayerDelegate {
@@ -23,8 +30,10 @@ class AudioJigger: NSObject,AVAudioPlayerDelegate {
         return AudioJigger()
     }()
     
+    var delegate : AudioJiggerDelegate?
     var musicPlayer : AVAudioPlayer?
     var effectsPlayer : AVAudioPlayer?
+    var currentEffect : Effects?
     
     override init()
     {
@@ -40,12 +49,13 @@ class AudioJigger: NSObject,AVAudioPlayerDelegate {
         self.playMusic("music_action")
     }
     
-    func playEffect(effect:Effects)
+    func playEffect(theEffect:Effects)
     {
-        let effectName = effect.rawValue
+        let effectName = theEffect.rawValue
         let musicURL = NSBundle.mainBundle().URLForResource(effectName, withExtension: "wav")
         var error : NSError?
         let effect = AVAudioPlayer(contentsOfURL: musicURL, error: &error)
+        self.currentEffect = theEffect
         
         if let theError = error
         {
@@ -57,8 +67,19 @@ class AudioJigger: NSObject,AVAudioPlayerDelegate {
             {
                 currentEffect.stop()
             }
+            effect.delegate = self
             effect.play()
             self.effectsPlayer = effect
+        }
+    }
+    
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
+        if flag
+        {
+            if let theEffect = self.currentEffect
+            {
+                self.delegate?.jiggerFinishedPlayingEffect(theEffect)
+            }
         }
     }
     
