@@ -18,6 +18,8 @@ class PreGameLobbyViewController: UIViewController,NetworkDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         Network.sharedNetwork.delegate = self
+
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"BGTile")!)
         
         // Tell the server the options the player picked
         if let theRightHonourableMember = self.honourableMember
