@@ -23,8 +23,8 @@ class PreGameLobbyViewController: UIViewController,NetworkDelegate {
         {
             if let thePortfolio = self.portfolio
             {
-                // FIX THIS
-                Network.sharedNetwork.selectPlayerData(1, questionCategory: 1)
+                // Sending over the player options
+                Network.sharedNetwork.selectPlayerData(theRightHonourableMember, questionCategory: thePortfolio)
             }
         }
     }
