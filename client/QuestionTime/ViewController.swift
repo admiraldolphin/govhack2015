@@ -62,6 +62,17 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         if (segue.identifier == "MemberSelectedSegue")
         {
             // we are transitioning to the choose portfolio view
+            // send over the selected mp
+            if let destination = segue.destinationViewController as? PortfolioViewController
+            {
+                if let cell = sender as? MemberCollectionViewCell
+                {
+                    if let indexPath = memberListView.indexPathForCell(cell)
+                    {
+                        destination.honourableMember = tempMPList[indexPath.row]
+                    }
+                }
+            }
         }
     }
 

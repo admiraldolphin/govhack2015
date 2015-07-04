@@ -11,7 +11,11 @@ import UIKit
 class PortfolioViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
     let portfolioList : [String] = ["Health","Economy","Administrative","Science","Education","Foreign","Tech","Social"]
+    
+    var honourableMember : String?
 
+    @IBOutlet weak var portfolioCollectionVew: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,6 +52,18 @@ class PortfolioViewController: UIViewController,UICollectionViewDataSource,UICol
         {
             // need to tell the server about it
             // or is it better to wait and do it in the lobby?
+            // eh let's do it in the lobby
+            if let destination = segue.destinationViewController as? PreGameLobbyViewController
+            {
+                if let cell = sender as? PortfolioCollectionViewCell
+                {
+                    if let indexPath = portfolioCollectionVew.indexPathForCell(cell)
+                    {
+                        destination.honourableMember = self.honourableMember
+                        destination.portfolio = self.portfolioList[indexPath.row]
+                    }
+                }
+            }
         }
     }
 
