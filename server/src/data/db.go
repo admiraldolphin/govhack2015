@@ -10,15 +10,22 @@ type Database struct {
 	Portfolios map[int]Portfolio // Includes policy IDs.
 }
 
-func (db *Database) PickQuestions(portfolio, numQuestions int) []int {
-	pf, ok := db.Portfolios[portfolio]
-	if !ok {
-		return nil
+func (db *Database) PickQuestions(pf1, pf2, numQuestions int) []int {
+	qSet := make(map[int]bool)
+	for _, qid := range db.Portfolios[pf1].Questions {
+		qSet[qid] = true
 	}
-	qs := rand.Perm(len(pf.Questions))
+	for _, qid := range db.Portfolios[pf2].Questions {
+		qSet[qid] = true
+	}
+	qids := make([]int, 0, len(qSet))
+	for qid := range qSet {
+		qids = append(qids, qid)
+	}
+	qs := rand.Perm(len(qids))
 	fqs := make([]int, 0, numQuestions)
-	for i := 0; i < numQuestions; i++ {
-		fqs = append(fqs, pf.Questions[qs[i]])
+	for _, i := range qs[:numQuestions] {
+		fqs = append(fqs, qids[i])
 	}
 	return fqs
 }
@@ -30,6 +37,7 @@ func newDatabase() *Database {
 	}
 }
 
+// Fake returns a fake database.
 func Fake() *Database {
 	db := newDatabase()
 
