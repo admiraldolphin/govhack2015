@@ -36,14 +36,14 @@ struct HelloMessage {
 }
 
 struct GameStartMessage {
-    var OpponentHero : Int
-    var PortfolioName : String
-    var Questions : [Int]
+    var opponentHero : Int
+    var portfolioName : String
+    var questions : [Int]
 }
 
 struct ProgressMessage {
-    var YourScore : Int
-    var OpponentScore : Int
+    var yourScore : Int
+    var opponentScore : Int
 }
 
 struct KeepAliveMessage {
@@ -51,13 +51,16 @@ struct KeepAliveMessage {
 }
 
 struct GameOverMessage {
-    var YouWon : Bool
+    var youWon : Bool
 }
 
 protocol NetworkDelegate {
     func networkConnected()
     func networkDisconnected(error: NSError?)
-    func networkStateChanged(oldState: GameState, newState:GameState, context:[String:AnyObject])
+    
+    func networkDidStartGame(message: GameStartMessage)
+    func networkDidEndGame(message: GameOverMessage)
+    func networkDidUpdateGameProgress(message: ProgressMessage)
 }
 
 class Network: NSObject, GCDAsyncSocketDelegate {
@@ -92,7 +95,7 @@ class Network: NSObject, GCDAsyncSocketDelegate {
     func sendMessage(message:String) {
         assert(socket.isConnected)
         
-        println(message)
+        println("Sending: \(message)")
         
         let data = (message+"\n").dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         
@@ -112,8 +115,6 @@ class Network: NSObject, GCDAsyncSocketDelegate {
         
         delegate?.networkConnected()
         
-        
-        
         listenForNewData()
     }
     
@@ -124,8 +125,18 @@ class Network: NSObject, GCDAsyncSocketDelegate {
         
         // Parse the response into json
         let loadedData = JSON(data: data)
+
+        switch loadedData["Type"].stringValue {
+        case "GameStart":
+            receivedGameStart(loadedData["Data"])
+        case "Progress":
+            receivedProgress(loadedData["Data"])
+        case "GameOver":
+            receivedGameOver(loadedData["Data"])
+        default:
+            ()
+        }
         
-        let type : JSON = loadedData["Type"]
         
         listenForNewData()
     }
@@ -135,6 +146,8 @@ class Network: NSObject, GCDAsyncSocketDelegate {
     }
     
     func selectPlayerData(politician: Int, questionCategory: Int) {
+        
+        // Send 'here's my MP and category'
         
         var data = [
             "Type":"Player",
@@ -148,10 +161,12 @@ class Network: NSObject, GCDAsyncSocketDelegate {
         
         sendMessage(json.rawString(encoding: NSUTF8StringEncoding, options: NSJSONWritingOptions.allZeros)!)
         
-        // Send 'here's my MP and category'
+        
     }
     
-    func updateAnswerStats(questionID: Int, answer: Answer) {
+    func submitAnswer(questionID: Int, answer: Answer) {
+        
+        // Send "I answered a question correctly/incorrectly"
         
         var data = [
             "Type":"Answer",
@@ -164,7 +179,7 @@ class Network: NSObject, GCDAsyncSocketDelegate {
         var json = JSON(data)
         sendMessage(json.rawString(encoding: NSUTF8StringEncoding, options: NSJSONWritingOptions.allZeros)!)
         
-        // Send "I answered a question correctly/incorrectly"
+        
     }
     
     private func updateName() {
@@ -178,6 +193,33 @@ class Network: NSObject, GCDAsyncSocketDelegate {
         
         var json = JSON(data)
         sendMessage(json.rawString(encoding: NSUTF8StringEncoding, options: NSJSONWritingOptions.allZeros)!)
+        
+    }
+    
+    private func receivedGameStart(data:JSON) {
+        
+        let message = GameStartMessage(opponentHero: data["OpponentHero"].intValue,
+            portfolioName: data["PortfolioName"].stringValue,
+            questions: (data["Questions"].arrayObject as! [Int]))
+        
+        delegate?.networkDidStartGame(message)
+        
+    }
+    
+    private func receivedGameOver(data:JSON) {
+        
+        let message = GameOverMessage(youWon: data["YouWon"].boolValue)
+        
+        delegate?.networkDidEndGame(message)
+        
+    }
+    
+    private func receivedProgress(data:JSON) {
+        
+        let message = ProgressMessage(yourScore: data["YourScore"].intValue,
+            opponentScore: data["OpponentScore"].intValue)
+        
+        delegate?.networkDidUpdateGameProgress(message)
         
     }
     

@@ -36,8 +36,16 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         println("Network disconnected!")
     }
     
-    func networkStateChanged(oldState: GameState, newState: GameState, context: [String : AnyObject]) {
-        println("State changed from \(oldState) to \(newState)")
+    func networkDidStartGame(message: GameStartMessage) {
+        
+    }
+    
+    func networkDidEndGame(message: GameOverMessage) {
+        
+    }
+    
+    func networkDidUpdateGameProgress(message: ProgressMessage) {
+        
     }
 
     override func didReceiveMemoryWarning() {

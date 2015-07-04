@@ -202,7 +202,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RT8-Qn-mwp">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RT8-Qn-mwp">
                                 <rect key="frame" x="16" y="550" width="46" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -223,10 +223,10 @@
             </objects>
             <point key="canvasLocation" x="2132" y="474"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="VRY-mh-EkH">
             <objects>
-                <viewController id="S7X-8o-uCH" sceneMemberID="viewController">
+                <viewController id="S7X-8o-uCH" customClass="GameViewController" customModule="QuestionTime" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="juv-97-ReP"/>
                         <viewControllerLayoutGuide type="bottom" id="Cmc-EU-HGr"/>
@@ -234,8 +234,38 @@
                     <view key="view" contentMode="scaleToFill" id="w7n-Oa-LFu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkd-H5-KoS">
+                                <rect key="frame" x="532" y="550" width="52" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="izQ-Bm-wRo"/>
+                                </constraints>
+                                <state key="normal" title="Abstain">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="abstainVote:" destination="S7X-8o-uCH" eventType="touchUpInside" id="Fgz-pJ-qjs"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="4" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YM-sI-caW">
+                                <rect key="frame" x="14" y="550" width="512" height="31"/>
+                                <connections>
+                                    <action selector="voteSliderValueChange:" destination="S7X-8o-uCH" eventType="valueChanged" id="gQJ-Ld-HKh"/>
+                                </connections>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fkd-H5-KoS" firstAttribute="leading" secondItem="7YM-sI-caW" secondAttribute="trailing" constant="8" id="96k-pb-MKx"/>
+                            <constraint firstItem="7YM-sI-caW" firstAttribute="centerY" secondItem="Fkd-H5-KoS" secondAttribute="centerY" id="9pZ-aP-sO9"/>
+                            <constraint firstItem="Fkd-H5-KoS" firstAttribute="trailing" secondItem="w7n-Oa-LFu" secondAttribute="trailingMargin" id="c3E-2E-Cjf"/>
+                            <constraint firstItem="7YM-sI-caW" firstAttribute="leading" secondItem="w7n-Oa-LFu" secondAttribute="leadingMargin" id="cDk-ZK-Pbj"/>
+                            <constraint firstItem="Cmc-EU-HGr" firstAttribute="top" secondItem="Fkd-H5-KoS" secondAttribute="bottom" constant="20" id="ehE-Nd-yOB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="voteSlider" destination="7YM-sI-caW" id="4yS-39-fne"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZh-ih-RBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
