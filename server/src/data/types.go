@@ -17,7 +17,7 @@ const (
 type Hero struct {
 	ID
 	Name, Electorate string
-	Answers          map[ID]Answer
+	Answers          map[ID]Answer // Question ID -> Answer for question.
 }
 
 type Portfolio struct {
