@@ -1,8 +1,11 @@
 package data
 
 import (
+	crand "crypto/rand"
+	"encoding/binary"
 	"fmt"
 	"math/rand"
+	"time"
 )
 
 type Database struct {
@@ -10,15 +13,33 @@ type Database struct {
 	Portfolios map[int]Portfolio // Includes policy IDs.
 }
 
-func (db *Database) PickQuestions(portfolio, numQuestions int) []int {
-	pf, ok := db.Portfolios[portfolio]
-	if !ok {
-		return nil
+func init() {
+	// Seed the math/rand RNG from crypto/rand.
+	s := make([]byte, 8)
+	if _, err := crand.Read(s); err == nil {
+		rand.Seed(int64(binary.BigEndian.Uint64(s)))
+		return
 	}
-	qs := rand.Perm(len(pf.Questions))
+	// Fall back to system time, boo hoo.
+	rand.Seed(time.Now().UnixNano())
+}
+
+func (db *Database) PickQuestions(pf1, pf2, numQuestions int) []int {
+	qSet := make(map[int]bool)
+	for _, qid := range db.Portfolios[pf1].Questions {
+		qSet[qid] = true
+	}
+	for _, qid := range db.Portfolios[pf2].Questions {
+		qSet[qid] = true
+	}
+	qids := make([]int, 0, len(qSet))
+	for qid := range qSet {
+		qids = append(qids, qid)
+	}
+	qs := rand.Perm(len(qids))
 	fqs := make([]int, 0, numQuestions)
-	for i := 0; i < numQuestions; i++ {
-		fqs = append(fqs, pf.Questions[qs[i]])
+	for _, i := range qs[:numQuestions] {
+		fqs = append(fqs, qids[i])
 	}
 	return fqs
 }
@@ -30,6 +51,7 @@ func newDatabase() *Database {
 	}
 }
 
+// Fake returns a fake database.
 func Fake() *Database {
 	db := newDatabase()
 

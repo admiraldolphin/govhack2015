@@ -64,6 +64,8 @@ class AudioJigger: NSObject,AVAudioPlayerDelegate {
     
     func playMusic(musicName:String)
     {
+        #if TARGET_IPHONE_SIMULATOR
+
         let musicURL = NSBundle.mainBundle().URLForResource(musicName, withExtension: "mp3")
         var error : NSError?
         let newMusic = AVAudioPlayer(contentsOfURL: musicURL, error: &error)
@@ -86,5 +88,7 @@ class AudioJigger: NSObject,AVAudioPlayerDelegate {
             self.musicPlayer = newMusic
             self.musicPlayer?.play()
         }
+        #endif
+
     }
 }

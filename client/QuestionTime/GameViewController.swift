@@ -30,6 +30,8 @@ class GameViewController: UIViewController,NetworkDelegate {
     @IBOutlet weak var yourScoreLabel: UILabel!
     @IBOutlet weak var theirScoreLabel: UILabel!
     
+    var gameOverMessage : GameOverMessage?
+    
     var timer : NSTimer?
     
     override func viewDidLoad() {
@@ -43,6 +45,7 @@ class GameViewController: UIViewController,NetworkDelegate {
         
         timer = NSTimer.scheduledTimerWithTimeInterval(6, target: self, selector: "timeRanOut:", userInfo: nil, repeats: true)
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"BGTile")!)
     }
     
     func showQuestion() {
@@ -103,16 +106,21 @@ class GameViewController: UIViewController,NetworkDelegate {
     func networkConnected() {
         // don't care
     }
+    
     func networkDisconnected(error: NSError?) {
         // through up an error and pop back to lobby
     }
+    
     func networkDidStartGame(message: GameStartMessage) {
         // don't care
     }
+    
     func networkDidEndGame(message: GameOverMessage) {
         // throw us back to lobby
-        self.performSegueWithIdentifier("GameOverSegue", sender: message.youWon)
+        gameOverMessage = message
+        self.performSegueWithIdentifier("GameOverSegue", sender: self)
     }
+    
     func networkDidUpdateGameProgress(message: ProgressMessage) {
         // ok here is what we care about
         // later on we should show some sort of indication as to how right/wrong they were
@@ -131,10 +139,9 @@ class GameViewController: UIViewController,NetworkDelegate {
         
         if segue.identifier == "GameOverSegue"
         {
-            let youWon : Bool = sender as! Bool
             if let theDestination = segue.destinationViewController as? GameOverLobbyViewController
             {
-                theDestination.youWon = youWon
+                theDestination.youWon = gameOverMessage?.youWon ?? false
             }
         }
     }

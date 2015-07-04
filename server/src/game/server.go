@@ -85,7 +85,8 @@ func (c *client) handleCommand(m *Message) error {
 					Data: GameStart{
 						OpponentHero:  opp.HeroPick,
 						PortfolioName: c.game.db.Portfolios[opp.PortfolioPick].Name,
-						Questions:     c.game.db.PickQuestions(opp.PortfolioPick, NumQuestions),
+						Questions: c.game.db.PickQuestions(
+							pick.PortfolioPick, opp.PortfolioPick, NumQuestions),
 					},
 				}
 				return writeMessage(c.conn, &s)
