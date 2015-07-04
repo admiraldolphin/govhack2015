@@ -235,26 +235,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkd-H5-KoS">
-                                <rect key="frame" x="532" y="550" width="52" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkd-H5-KoS">
+                                <rect key="frame" x="485" y="511" width="99" height="81"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="52" id="izQ-Bm-wRo"/>
+                                    <constraint firstAttribute="height" constant="81" id="QGJ-yq-Smj"/>
+                                    <constraint firstAttribute="width" constant="99" id="k4M-sU-pb4"/>
                                 </constraints>
-                                <state key="normal" title="Abstain">
+                                <state key="normal" title="Abstain" image="Abstain">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="abstainVote:" destination="S7X-8o-uCH" eventType="touchUpInside" id="Fgz-pJ-qjs"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="4" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YM-sI-caW">
-                                <rect key="frame" x="14" y="550" width="512" height="31"/>
-                                <connections>
-                                    <action selector="voteSliderValueChange:" destination="S7X-8o-uCH" eventType="valueChanged" id="gQJ-Ld-HKh"/>
-                                </connections>
-                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question goes here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xl-4A-qRA">
-                                <rect key="frame" x="225" y="28" width="150" height="21"/>
+                                <rect key="frame" x="225" y="28" width="149.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -277,16 +272,22 @@
                                     <segue destination="S7X-8o-uCH" kind="show" identifier="NewQuestionSegue" id="ULi-Jk-bwf"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="4" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YM-sI-caW">
+                                <rect key="frame" x="14" y="550" width="465" height="31"/>
+                                <connections>
+                                    <action selector="voteSliderValueChange:" destination="S7X-8o-uCH" eventType="valueChanged" id="gQJ-Ld-HKh"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Fkd-H5-KoS" firstAttribute="leading" secondItem="7YM-sI-caW" secondAttribute="trailing" constant="8" id="96k-pb-MKx"/>
-                            <constraint firstItem="7YM-sI-caW" firstAttribute="centerY" secondItem="Fkd-H5-KoS" secondAttribute="centerY" id="9pZ-aP-sO9"/>
-                            <constraint firstAttribute="centerX" secondItem="0xl-4A-qRA" secondAttribute="centerX" id="Mxg-LZ-Gam"/>
-                            <constraint firstItem="Fkd-H5-KoS" firstAttribute="trailing" secondItem="w7n-Oa-LFu" secondAttribute="trailingMargin" id="c3E-2E-Cjf"/>
-                            <constraint firstItem="7YM-sI-caW" firstAttribute="leading" secondItem="w7n-Oa-LFu" secondAttribute="leadingMargin" id="cDk-ZK-Pbj"/>
-                            <constraint firstItem="Cmc-EU-HGr" firstAttribute="top" secondItem="Fkd-H5-KoS" secondAttribute="bottom" constant="20" id="ehE-Nd-yOB"/>
-                            <constraint firstItem="0xl-4A-qRA" firstAttribute="top" secondItem="juv-97-ReP" secondAttribute="bottom" constant="8" id="phF-Xf-qpa"/>
+                            <constraint firstItem="Fkd-H5-KoS" firstAttribute="leading" secondItem="7YM-sI-caW" secondAttribute="trailing" constant="8" id="NAO-3p-PCb"/>
+                            <constraint firstItem="Cmc-EU-HGr" firstAttribute="top" secondItem="Fkd-H5-KoS" secondAttribute="bottom" constant="8" id="VUe-kp-icM"/>
+                            <constraint firstAttribute="centerX" secondItem="0xl-4A-qRA" secondAttribute="centerX" constant="0.25" id="YuA-lj-7So"/>
+                            <constraint firstItem="0xl-4A-qRA" firstAttribute="top" secondItem="juv-97-ReP" secondAttribute="bottom" constant="8" id="ekC-LK-Jgv"/>
+                            <constraint firstItem="Fkd-H5-KoS" firstAttribute="trailing" secondItem="w7n-Oa-LFu" secondAttribute="trailingMargin" id="jj2-o4-SCb"/>
+                            <constraint firstItem="Cmc-EU-HGr" firstAttribute="top" secondItem="7YM-sI-caW" secondAttribute="bottom" constant="20" id="lAJ-i6-K3u"/>
+                            <constraint firstItem="7YM-sI-caW" firstAttribute="leading" secondItem="w7n-Oa-LFu" secondAttribute="leadingMargin" id="xis-2I-Az8"/>
                         </constraints>
                     </view>
                     <connections>
@@ -343,6 +344,9 @@
             <point key="canvasLocation" x="3552" y="474"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Abstain" width="990" height="810"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="J9Q-1e-nen"/>
     </inferredMetricsTieBreakers>
