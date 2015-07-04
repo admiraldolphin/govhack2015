@@ -1,13 +1,27 @@
 package data
 
 import (
+	crand "crypto/rand"
+	"encoding/binary"
 	"fmt"
 	"math/rand"
+	"time"
 )
 
 type Database struct {
 	Heroes     map[int]Hero      // Includes answers.
 	Portfolios map[int]Portfolio // Includes policy IDs.
+}
+
+func init() {
+	// Seed the math/rand RNG from crypto/rand.
+	s := make([]byte, 8)
+	if _, err := crand.Read(s); err == nil {
+		rand.Seed(int64(binary.BigEndian.Uint64(s)))
+		return
+	}
+	// Fall back to system time, boo hoo.
+	rand.Seed(time.Now().UnixNano())
 }
 
 func (db *Database) PickQuestions(pf1, pf2, numQuestions int) []int {
