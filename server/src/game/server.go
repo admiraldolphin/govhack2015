@@ -45,8 +45,15 @@ func writeMessage(conn net.Conn, m *Message) error {
 	return err
 }
 
-func (g *Game) handleMessage(conn net.Conn, m *Message) error {
+type client struct {
+	playerNum int
+	conn      net.Conn
+	game      *Game
+}
+
+func (c *client) handleMessage(conn net.Conn, m *Message) error {
 	d := m.Data.(map[string]interface{})
+	ps, ops := &c.game.player[c.playerNum], &c.game.player[1-c.playerNum]
 
 	switch m.Type {
 	case "Nickname":
@@ -59,24 +66,24 @@ func (g *Game) handleMessage(conn net.Conn, m *Message) error {
 		// Then decide questions to send.
 		ticker := time.NewTicker(keepAliveInterval)
 		defer ticker.Stop()
-		p := Player{
+		pick := Player{
 			HeroPick:      int(d["HeroPick"].(float64)),
 			PortfolioPick: int(d["PortfolioPick"].(float64)),
 		}
-		op, err := g.opponentPicks(conn.RemoteAddr(), p)
+		opick, err := c.game.opponentPicks(c.playerNum, pick)
 		if err != nil {
 			return err
 		}
 		for {
 			select {
-			case opp := <-op:
+			case opp := <-opick:
 				// Proceed!
 				s := Message{
 					Type: "GameStart",
 					Data: GameStart{
 						OpponentHero:  opp.HeroPick,
-						PortfolioName: g.db.Portfolios[opp.PortfolioPick].Name,
-						Questions:     g.db.PickQuestions(opp.PortfolioPick, numQuestions),
+						PortfolioName: c.game.db.Portfolios[opp.PortfolioPick].Name,
+						Questions:     c.game.db.PickQuestions(opp.PortfolioPick, numQuestions),
 					},
 				}
 				if err := writeMessage(conn, &s); err != nil {
@@ -94,35 +101,29 @@ func (g *Game) handleMessage(conn net.Conn, m *Message) error {
 		}
 
 	case "Answer":
-		// Which player am I again?
-		p, op := &g.player[0], &g.player[1]
-		if conn.RemoteAddr() == op.addr {
-			p, op = op, p
-		}
-
-		// Cool. look up the answer my hero gave to the question.
+		// Look up the answer my hero gave to the question.
 		qid := int(d["Question"].(float64))
 		got := data.Answer(d["Answer"].(float64))
-		want := g.db.Heroes[p.picks.HeroPick].Answers[qid]
+		want := c.game.db.Heroes[ps.picks.HeroPick].Answers[qid]
 		if got == want {
 			// Correct!
-			p.mu.Lock()
-			p.score++
-			p.mu.Unlock()
+			ps.mu.Lock()
+			ps.score++
+			ps.mu.Unlock()
 		}
 
 		// Send an updated progress message.
-		p.mu.RLock()
-		op.mu.RLock()
+		ps.mu.RLock()
+		ops.mu.RLock()
 		prog := Message{
 			Type: "Progress",
 			Data: Progress{
-				YourScore:     p.score,
-				OpponentScore: op.score,
+				YourScore:     ps.score,
+				OpponentScore: ops.score,
 			},
 		}
-		p.mu.RUnlock()
-		op.mu.RUnlock()
+		ps.mu.RUnlock()
+		ops.mu.RUnlock()
 		if err := writeMessage(conn, &prog); err != nil {
 			return err
 		}
@@ -131,7 +132,13 @@ func (g *Game) handleMessage(conn net.Conn, m *Message) error {
 }
 
 // handleConn handles incoming connections.
-func (g *Game) handleConn(conn net.Conn) {
+func (g *Game) handleConn(conn net.Conn, playerNum int) {
+	cl := &client{
+		conn:      conn,
+		game:      g,
+		playerNum: playerNum,
+	}
+
 	defer conn.Close()
 	for {
 		m, err := readMessage(conn)
@@ -141,7 +148,7 @@ func (g *Game) handleConn(conn net.Conn) {
 		}
 		log.Printf("%v: %v\n", conn.RemoteAddr(), m)
 
-		if err := g.handleMessage(conn, m); err != nil {
+		if err := cl.handleMessage(conn, m); err != nil {
 			log.Println(err)
 			return
 		}
@@ -159,7 +166,7 @@ func RunServer(db *data.Database, port int) error {
 	}
 	defer ln.Close()
 
-	// TODO(josh): Someday, handle more than one game.
+	nextPlayerNum := 0
 	g := newGame(db)
 	for {
 		conn, err := ln.Accept()
@@ -168,7 +175,12 @@ func RunServer(db *data.Database, port int) error {
 		}
 		log.Printf("Accepted connection from %v\n", conn.RemoteAddr())
 
-		go g.handleConn(conn)
+		go g.handleConn(conn, nextPlayerNum)
+		nextPlayerNum++
+		if nextPlayerNum >= 2 {
+			g = newGame(db)
+			nextPlayerNum = 0
+		}
 	}
 	return nil
 }
