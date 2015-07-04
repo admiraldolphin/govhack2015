@@ -9,12 +9,14 @@ import (
 )
 
 var (
-	dataPath = flag.String("data", "../data", "Path to the data directory.")
-	port     = flag.Int("port", 8888, "TCP port for serving.")
+	dataPath     = flag.String("data", "../data", "Path to the data directory.")
+	port         = flag.Int("port", 8888, "TCP port for serving.")
+	numQuestions = flag.Int("questions", 5, "Number of questions in a game.")
 )
 
 func main() {
 	flag.Parse()
+	game.NumQuestions = *numQuestions
 	log.Println("Starting QuestionTime server...")
 	db, err := data.Load(*dataPath)
 	if err != nil {
@@ -23,6 +25,5 @@ func main() {
 		db = data.Fake()
 	}
 	log.Fatal(game.RunServer(db, *port))
-
 	log.Println("QuestionTime server stopped")
 }

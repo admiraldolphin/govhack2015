@@ -7,12 +7,18 @@ import (
 	"data"
 )
 
+var (
+	NumQuestions = 5
+)
+
 type Game struct {
 	player [2]struct {
-		mu    sync.RWMutex
-		score int
-		nick  string
-		picks *Player
+		mu     sync.RWMutex
+		score  int
+		nick   string
+		picks  *Player
+		clock  int
+		client *client
 	}
 	gameStart *sync.Cond
 	gameClock int
@@ -49,4 +55,69 @@ func (g *Game) opponentPicks(playerNum int, p Player) (<-chan Player, error) {
 		g.mu.Unlock()
 	}()
 	return ch, nil
+}
+
+// writeAllMessage broadcasts a message to all (<=two) clients in a game.
+func (g *Game) writeAllMessage(m *Message) error {
+	for i := range g.player {
+		if g.player[i].client != nil {
+			if err := writeMessage(g.player[i].client.conn, m); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+// updateProgress updates the progress to all (two) clients in a game.
+func (g *Game) updateProgress() error {
+	g.player[0].mu.RLock()
+	g.player[1].mu.RLock()
+	// clock = min{player clocks}
+	clock := g.player[0].clock
+	if t := g.player[1].clock; t < clock {
+		clock = t
+	}
+	win0 := g.player[0].score > g.player[1].score
+	win1 := g.player[1].score > g.player[0].score
+	prog0 := Progress{
+		YourScore:     g.player[0].score,
+		OpponentScore: g.player[1].score,
+	}
+	prog1 := Progress{
+		YourScore:     g.player[1].score,
+		OpponentScore: g.player[0].score,
+	}
+	g.player[0].mu.RUnlock()
+	g.player[1].mu.RUnlock()
+
+	if err := writeMessage(g.player[0].client.conn, &Message{
+		Type: "Progress",
+		Data: prog0,
+	}); err != nil {
+		return err
+	}
+	if err := writeMessage(g.player[1].client.conn, &Message{
+		Type: "Progress",
+		Data: prog1,
+	}); err != nil {
+		return err
+	}
+
+	if clock == NumQuestions {
+		// Game over
+		if err := writeMessage(g.player[0].client.conn, &Message{
+			Type: "GameOver",
+			Data: GameOver{YouWon: win0},
+		}); err != nil {
+			return err
+		}
+		if err := writeMessage(g.player[1].client.conn, &Message{
+			Type: "GameOver",
+			Data: GameOver{YouWon: win1},
+		}); err != nil {
+			return err
+		}
+	}
+	return nil
 }

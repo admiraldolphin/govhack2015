@@ -28,7 +28,7 @@ struct Portfolio {
     var id : Int = 0
 }
 
-struct Person {
+class Person {
     
     var id : Int = 0
     var name : String = ""
@@ -85,7 +85,6 @@ struct Person {
     
     
     
-    
 }
 
 class QuestionDatabase : NSObject {
@@ -137,8 +136,26 @@ class QuestionDatabase : NSObject {
         
     }()
     
+    lazy var importantPeople : [Int:Person] = {
+        let peepsID = [10727,10513,10580,10798,10306,10080,10047,10001]
+        
+        var allPeeps = self.allPeople
+        var importants : [Int:Person] = [:]
+        
+        for person in allPeeps
+        {
+            let individual = person.1
+            if contains(peepsID, individual.id)
+            {
+                importants[individual.id] = individual
+            }
+        }
+        
+        return importants
+    }()
     
-    func correctAnswerForPerson(personID: Int, policyID:Int) -> Answer? {
+    
+    func correctAnswerForPerson(personID: Int, policyID:Int) -> Answer {
         if let policy = allPeople[personID]?.policies[policyID] {
                 
                 if policy.abstained {
@@ -163,7 +180,7 @@ class QuestionDatabase : NSObject {
            
         }
         
-        return nil
+        return Answer.Abstain
     }
     
     

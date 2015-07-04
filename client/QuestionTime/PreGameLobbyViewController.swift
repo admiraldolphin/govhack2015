@@ -10,56 +10,61 @@ import UIKit
 
 class PreGameLobbyViewController: UIViewController,NetworkDelegate {
     
-    var honourableMember : String?
-    var portfolio: String?
+    var honourableMember : Int?
+    var portfolio: Int?
+    
+    var gameStartMessage : GameStartMessage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         Network.sharedNetwork.delegate = self
 
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"BGTile")!)
         
-        // Tell the server the options the palyer picked
+        // Tell the server the options the player picked
         if let theRightHonourableMember = self.honourableMember
         {
             if let thePortfolio = self.portfolio
             {
-                // FIX THIS
-                Network.sharedNetwork.selectPlayerData(1, questionCategory: 1)
+                // Sending over the player options
+                Network.sharedNetwork.selectPlayerData(theRightHonourableMember, questionCategory: thePortfolio)
+            }
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "ServerReadySegue") {
+            if let game = segue.destinationViewController as? GameViewController {
+                
+                game.heroID = gameStartMessage!.opponentHero
+                game.possibleQuestions = gameStartMessage!.questions
+                
             }
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK: - Network
     func networkConnected() {
         // eh, we are to be connected by now, work it out later
     }
+    
     func networkDisconnected(error: NSError?) {
         // eh, worry about it later
     }
+    
     func networkDidStartGame(message: GameStartMessage) {
+        gameStartMessage = message
         self.performSegueWithIdentifier("ServerReadySegue", sender: self)
     }
+    
     func networkDidEndGame(message: GameOverMessage) {
         // eh, worry about it later
     }
+    
     func networkDidUpdateGameProgress(message: ProgressMessage) {
         // eh, worry about it later
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
