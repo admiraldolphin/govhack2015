@@ -24,6 +24,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         
         // starting up the background audio
         AudioJigger.sharedJigger.playBackgroundMusic()
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"BGTile")!)
     }
     
     func networkConnected() {
