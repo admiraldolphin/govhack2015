@@ -24,10 +24,14 @@ class GameOverLobbyViewController: UIViewController {
             if iWon
             {
                 self.gameOverLobbyLabel.text = "Congrats!"
+                // temporary
+                AudioJigger.sharedJigger.playEffect(.HereHere)
             }
             else
             {
                 self.gameOverLobbyLabel.text = "Suck it!"
+                // temporary
+                AudioJigger.sharedJigger.playEffect(.Booing)
             }
         }
 

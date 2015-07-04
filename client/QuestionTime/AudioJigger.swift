@@ -17,7 +17,9 @@ enum Effects : String
     case Ticking = "effect_ticking"
     case Booing = "effect_booing"
     case HereHere = "effect_here_here"
-    case murmur = "effect_murmuring"
+    case Murmur = "effect_murmuring"
+//    case Victory = "effect_"
+//    case Defeat = "effect_"
 }
 
 protocol AudioJiggerDelegate {
