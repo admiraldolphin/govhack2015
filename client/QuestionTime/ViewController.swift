@@ -19,7 +19,11 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         // Do any additional setup after loading the view, typically from a nib.
         
         Network.sharedNetwork.delegate = self
+        
         Network.sharedNetwork.connect()
+        
+        // starting up the background audio
+        AudioJigger.sharedJigger.playBackgroundMusic()
     }
     
     func networkConnected() {
@@ -63,6 +67,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         }
         
         return cell
+    }
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        AudioJigger.sharedJigger.playEffect(Effects.Selection)
     }
     
     // MARK: - Navigation

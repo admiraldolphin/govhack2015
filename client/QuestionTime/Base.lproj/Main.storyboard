@@ -34,14 +34,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your MP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYS-uh-7uN">
-                                <rect key="frame" x="236" y="28" width="129" height="21"/>
+                                <rect key="frame" x="236.5" y="28" width="128.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yog-LE-z17">
-                                <rect key="frame" x="16" y="57" width="568" height="523"/>
+                                <rect key="frame" x="16" y="335" width="568" height="244.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="244" id="nHy-Zu-gYN"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gFh-3i-e2G">
                                     <size key="itemSize" width="112" height="112"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -86,7 +89,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yog-LE-z17" firstAttribute="top" secondItem="iYS-uh-7uN" secondAttribute="bottom" constant="8" id="4gX-Y8-qeW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yog-LE-z17" secondAttribute="bottom" constant="20" id="lMb-c4-cnU"/>
                             <constraint firstItem="yog-LE-z17" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="qAR-tS-V8Z"/>
                             <constraint firstItem="iYS-uh-7uN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="t39-pt-VEj"/>
@@ -116,14 +118,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your opponents portfolio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="az1-eC-lRD">
-                                <rect key="frame" x="173" y="28" width="254" height="21"/>
+                                <rect key="frame" x="173.5" y="28" width="253.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PVk-TX-AvP">
-                                <rect key="frame" x="16" y="57" width="568" height="523"/>
+                                <rect key="frame" x="16" y="468" width="568" height="122"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="122" id="lcT-dw-sfy"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="w6s-OH-76Z">
                                     <size key="itemSize" width="112" height="112"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -168,12 +173,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TzK-bb-TXA" firstAttribute="top" secondItem="PVk-TX-AvP" secondAttribute="bottom" constant="20" id="0b6-bh-ed7"/>
                             <constraint firstItem="az1-eC-lRD" firstAttribute="top" secondItem="deD-F5-tU7" secondAttribute="bottom" constant="8" id="8nH-TZ-ZFd"/>
-                            <constraint firstItem="PVk-TX-AvP" firstAttribute="top" secondItem="az1-eC-lRD" secondAttribute="bottom" constant="8" id="Bw0-oo-jf9"/>
+                            <constraint firstItem="TzK-bb-TXA" firstAttribute="top" secondItem="PVk-TX-AvP" secondAttribute="bottom" constant="10" id="LtN-q4-ir2"/>
                             <constraint firstAttribute="centerX" secondItem="az1-eC-lRD" secondAttribute="centerX" id="Pr7-JY-lXy"/>
-                            <constraint firstItem="PVk-TX-AvP" firstAttribute="leading" secondItem="kVQ-8g-7St" secondAttribute="leadingMargin" id="VEL-CQ-vgF"/>
-                            <constraint firstItem="PVk-TX-AvP" firstAttribute="trailing" secondItem="kVQ-8g-7St" secondAttribute="trailingMargin" id="pJl-6f-iqb"/>
+                            <constraint firstItem="PVk-TX-AvP" firstAttribute="trailing" secondItem="kVQ-8g-7St" secondAttribute="trailingMargin" id="dMu-Uo-bUe"/>
+                            <constraint firstItem="PVk-TX-AvP" firstAttribute="leading" secondItem="kVQ-8g-7St" secondAttribute="leadingMargin" id="nHh-jG-hX2"/>
                         </constraints>
                     </view>
                     <connections>
