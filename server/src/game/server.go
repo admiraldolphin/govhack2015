@@ -65,7 +65,7 @@ func (c *client) handleCommand(m *Message) error {
 	case "Player":
 		// Game has a Player from someone else?
 		// Yes: Decide questions to send.
-		// No: Send KeepAlive once per keepAliveInterval up to gameTimeout until we have another ClientHello.
+		// No: Send KeepAlive once per keepAliveInterval up to gameTimeout until we have another Player pick.
 		// Then decide questions to send.
 		ticker := time.NewTicker(keepAliveInterval)
 		defer ticker.Stop()
@@ -166,8 +166,7 @@ func RunServer(db *data.Database, port int) error {
 	}
 	defer ln.Close()
 
-	nextPlayerNum := 0
-	g := newGame(db)
+	n, g := 0, newGame(db)
 	for {
 		conn, err := ln.Accept()
 		if err != nil {
@@ -175,11 +174,10 @@ func RunServer(db *data.Database, port int) error {
 		}
 		log.Printf("Accepted connection from %v\n", conn.RemoteAddr())
 
-		go g.handleConn(conn, nextPlayerNum)
-		nextPlayerNum++
-		if nextPlayerNum >= 2 {
-			g = newGame(db)
-			nextPlayerNum = 0
+		go g.handleConn(conn, n)
+		n++
+		if n >= 2 {
+			n, g = 0, newGame(db)
 		}
 	}
 	return nil

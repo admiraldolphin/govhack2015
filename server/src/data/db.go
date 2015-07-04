@@ -11,14 +11,29 @@ type Database struct {
 	Questions  map[int]Question
 }
 
-func Load() (*Database, error) {
-	db := &Database{
+func (db *Database) PickQuestions(portfolio, numQuestions int) []int {
+	pf, ok := db.Portfolios[portfolio]
+	if !ok {
+		return nil
+	}
+	qs := rand.Perm(len(pf.Questions))
+	fqs := make([]int, 0, numQuestions)
+	for i := 0; i < numQuestions; i++ {
+		fqs = append(fqs, pf.Questions[qs[i]])
+	}
+	return fqs
+}
+
+func newDatabase() *Database {
+	return &Database{
 		Heroes:     make(map[int]Hero),
 		Portfolios: make(map[int]Portfolio),
 		Questions:  make(map[int]Question),
 	}
+}
 
-	// TODO(josh): Load data from file
+func Fake() *Database {
+	db := newDatabase()
 
 	// Mock up some data.
 	qids := make([]int, 0, 300)
@@ -52,18 +67,5 @@ func Load() (*Database, error) {
 			}(),
 		}
 	}
-	return db, nil
-}
-
-func (db *Database) PickQuestions(portfolio, numQuestions int) []int {
-	pf, ok := db.Portfolios[portfolio]
-	if !ok {
-		return nil
-	}
-	qs := rand.Perm(len(pf.Questions))
-	fqs := make([]int, 0, numQuestions)
-	for i := 0; i < numQuestions; i++ {
-		fqs = append(fqs, pf.Questions[qs[i]])
-	}
-	return fqs
+	return db
 }
