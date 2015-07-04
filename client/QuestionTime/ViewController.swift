@@ -31,7 +31,6 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     func networkConnected() {
         println("Network connected!")
         
-        Network.sharedNetwork.selectPlayerData(1, questionCategory: 1)
     }
     
     func networkDisconnected(error: NSError?) {
