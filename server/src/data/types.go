@@ -1,32 +1,31 @@
 package data
 
-type ID int
+// type ID int
 
 type Answer int
 
 const (
-	DisagreeStrong Answer = iota
-	Disagree
-	DisagreeWeak
-	Neutral
-	AgreeWeak
-	Agree
-	AgreeStrong
+	Abstain        = Answer(-1)
+	DisagreeStrong = Answer(1)
+	Disagree       = Answer(2)
+	Neutral        = Answer(3)
+	Agree          = Answer(4)
+	AgreeStrong    = Answer(5)
 )
 
 type Hero struct {
-	ID
+	ID               int
 	Name, Electorate string
-	Answers          map[ID]Answer // Question ID -> Answer for question.
+	Answers          map[int]Answer // Question ID -> Answer for question.
 }
 
 type Portfolio struct {
-	ID
+	ID        int
 	Name      string
-	Questions []ID
+	Questions []int
 }
 
 type Question struct {
-	ID
+	ID   int
 	Text string
 }

@@ -6,47 +6,47 @@ import (
 )
 
 type Database struct {
-	Heroes     map[ID]Hero      // Includes answers.
-	Portfolios map[ID]Portfolio // Includes question IDs.
-	Questions  map[ID]Question
+	Heroes     map[int]Hero      // Includes answers.
+	Portfolios map[int]Portfolio // Includes question IDs.
+	Questions  map[int]Question
 }
 
 func Load() (*Database, error) {
 	db := &Database{
-		Heroes:     make(map[ID]Hero),
-		Portfolios: make(map[ID]Portfolio),
-		Questions:  make(map[ID]Question),
+		Heroes:     make(map[int]Hero),
+		Portfolios: make(map[int]Portfolio),
+		Questions:  make(map[int]Question),
 	}
 
 	// TODO(josh): Load data from file
 
 	// Mock up some data.
-	qids := make([]ID, 0, 300)
+	qids := make([]int, 0, 300)
 	for i := 0; i < 300; i++ {
-		db.Questions[ID(i)] = Question{
-			ID:   ID(i),
+		db.Questions[i] = Question{
+			ID:   i,
 			Text: fmt.Sprintf("question%d", i),
 		}
-		qids = append(qids, ID(i))
+		qids = append(qids, i)
 	}
 
 	for i := 0; i < 10; i++ {
-		db.Portfolios[ID(i)] = Portfolio{
-			ID:        ID(i),
+		db.Portfolios[i] = Portfolio{
+			ID:        i,
 			Name:      fmt.Sprintf("portfolio%d", i),
 			Questions: qids[30*i : 30*(i+1)],
 		}
 	}
 
 	for i := 0; i < 150; i++ {
-		db.Heroes[ID(i)] = Hero{
-			ID:         ID(i),
+		db.Heroes[i] = Hero{
+			ID:         i,
 			Name:       fmt.Sprintf("hero%d_name", i),
 			Electorate: fmt.Sprintf("hero%d_electorate", i),
-			Answers: func() map[ID]Answer {
-				m := make(map[ID]Answer)
+			Answers: func() map[int]Answer {
+				m := make(map[int]Answer)
 				for _, qid := range qids {
-					m[qid] = Answer(rand.Intn(7))
+					m[qid] = Answer(rand.Intn(6))
 				}
 				return m
 			}(),
@@ -55,15 +55,15 @@ func Load() (*Database, error) {
 	return db, nil
 }
 
-func (db *Database) PickQuestions(portfolio ID, numQuestions int) []Question {
+func (db *Database) PickQuestions(portfolio, numQuestions int) []int {
 	pf, ok := db.Portfolios[portfolio]
 	if !ok {
 		return nil
 	}
 	qs := rand.Perm(len(pf.Questions))
-	fqs := make([]Question, 0, numQuestions)
+	fqs := make([]int, 0, numQuestions)
 	for i := 0; i < numQuestions; i++ {
-		fqs = append(fqs, db.Questions[pf.Questions[qs[i]]])
+		fqs = append(fqs, pf.Questions[qs[i]])
 	}
 	return fqs
 }

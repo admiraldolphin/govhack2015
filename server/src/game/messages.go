@@ -14,36 +14,40 @@ type Message struct {
 	Data interface{} `json:",omitempty"`
 }
 
-var KeepAlive = Message{Type: "KeepAlive"}
+// Commands from client.
 
-// Messages from client.
+type Nickname struct {
+	Name string
+}
 
 type Player struct {
-	HeroPick      data.ID // For self.
-	PortfolioPick data.ID // For opponent.
+	HeroPick      int // For self.
+	PortfolioPick int // For opponent.
 }
 
 type Answer struct {
-	Question data.ID
+	Question int
 	Answer   data.Answer
 }
 
 // Messages from server.
 
-type ServerHello struct {
-	Opponent  Player // Stuff the other guy picked.
-	Questions []data.Question
+var KeepAlive = Message{Type: "KeepAlive"}
+
+var Hello = Message{Type: "Hello"}
+
+type GameStart struct {
+	OpponentHero  int
+	PortfolioName string
+	Questions     []int
 }
 
-type ServerAnswerMarking struct {
-	Question        data.ID
-	Correct         bool
-	OpponentCorrect bool
-	GameOver        bool
-	YourScore       int
-	OpponentScore   int
+type Progress struct {
+	YourScore     int
+	OpponentScore int
 }
 
-type ServerGameOver struct {
+type GameOver struct {
 	// TODO(josh): The correct answers for each question.
+	YouWon bool
 }

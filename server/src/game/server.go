@@ -49,6 +49,9 @@ func (g *Game) handleMessage(conn net.Conn, m *Message) error {
 	d := m.Data.(map[string]interface{})
 
 	switch m.Type {
+	case "Nickname":
+		// TODO(josh): Handle nicname command.
+
 	case "Player":
 		// Game has a Player from someone else?
 		// Yes: Decide questions to send.
@@ -57,22 +60,23 @@ func (g *Game) handleMessage(conn net.Conn, m *Message) error {
 		ticker := time.NewTicker(keepAliveInterval)
 		defer ticker.Stop()
 		p := Player{
-			HeroPick:      data.ID(d["HeroPick"].(float64)),
-			PortfolioPick: data.ID(d["PortfolioPick"].(float64)),
+			HeroPick:      int(d["HeroPick"].(float64)),
+			PortfolioPick: int(d["PortfolioPick"].(float64)),
 		}
-		match, err := g.match(p)
+		op, err := g.opponentPicks(conn.RemoteAddr(), p)
 		if err != nil {
 			return err
 		}
 		for {
 			select {
-			case opponent := <-match:
+			case opp := <-op:
 				// Proceed!
 				s := Message{
-					Type: "ServerHello",
-					Data: ServerHello{
-						Opponent:  opponent,
-						Questions: g.db.PickQuestions(opponent.PortfolioPick, numQuestions),
+					Type: "GameStart",
+					Data: GameStart{
+						OpponentHero:  opp.HeroPick,
+						PortfolioName: g.db.Portfolios[opp.PortfolioPick].Name,
+						Questions:     g.db.PickQuestions(opp.PortfolioPick, numQuestions),
 					},
 				}
 				if err := writeMessage(conn, &s); err != nil {
@@ -90,13 +94,44 @@ func (g *Game) handleMessage(conn net.Conn, m *Message) error {
 		}
 
 	case "Answer":
-		// TODO(josh): Handle ClientAnswer.
+		// Which player am I again?
+		p, op := &g.player[0], &g.player[1]
+		if conn.RemoteAddr() == op.addr {
+			p, op = op, p
+		}
+
+		// Cool. look up the answer my hero gave to the question.
+		qid := int(d["Question"].(float64))
+		got := data.Answer(d["Answer"].(float64))
+		want := g.db.Heroes[p.picks.HeroPick].Answers[qid]
+		if got == want {
+			// Correct!
+			p.mu.Lock()
+			p.score++
+			p.mu.Unlock()
+		}
+
+		// Send an updated progress message.
+		p.mu.RLock()
+		op.mu.RLock()
+		prog := Message{
+			Type: "Progress",
+			Data: Progress{
+				YourScore:     p.score,
+				OpponentScore: op.score,
+			},
+		}
+		p.mu.RUnlock()
+		op.mu.RUnlock()
+		if err := writeMessage(conn, &prog); err != nil {
+			return err
+		}
 	}
 	return nil
 }
 
-// handle handles incoming connections.
-func (g *Game) handle(conn net.Conn) {
+// handleConn handles incoming connections.
+func (g *Game) handleConn(conn net.Conn) {
 	defer conn.Close()
 	for {
 		m, err := readMessage(conn)
@@ -133,7 +168,7 @@ func RunServer(db *data.Database, port int) error {
 		}
 		log.Printf("Accepted connection from %v\n", conn.RemoteAddr())
 
-		go g.handle(conn)
+		go g.handleConn(conn)
 	}
 	return nil
 }

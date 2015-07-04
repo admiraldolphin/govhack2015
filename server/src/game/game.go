@@ -2,54 +2,62 @@ package game
 
 import (
 	"errors"
+	"net"
 	"sync"
 
 	"data"
 )
 
+type PlayerState struct {
+	addr  net.Addr
+	mu    sync.RWMutex
+	score int
+	picks *Player
+}
+
 type Game struct {
-	player1, player2 *Player
-	p1Mu, p2Mu       sync.Mutex
-	p2Cond           *sync.Cond
+	player    [2]PlayerState
+	gameStart *sync.Cond
 
 	db *data.Database
 }
 
 func newGame(db *data.Database) *Game {
-	g := &Game{
-		db: db,
-	}
-	g.p2Cond = sync.NewCond(&g.p2Mu)
+	g := &Game{db: db}
+	g.gameStart = sync.NewCond(&g.player[1].mu)
 	return g
 }
 
-// match adds the player to the lobby and promises to provide the other
-// player on the channel.
-func (g *Game) match(p Player) (<-chan Player, error) {
-	g.p1Mu.Lock()
-	defer g.p1Mu.Unlock()
-	if g.player1 != nil {
-		g.p2Mu.Lock()
-		defer g.p2Mu.Unlock()
-		if g.player2 != nil {
+// opponentPicks registers a player's picks, and then waits for the
+// opponent to pick hero/portfolio, promising to provide it on the
+// returned channel.
+func (g *Game) opponentPicks(addr net.Addr, p Player) (<-chan Player, error) {
+	g.player[0].mu.Lock()
+	defer g.player[0].mu.Unlock()
+	if g.player[0].picks != nil {
+		g.player[1].mu.Lock()
+		defer g.player[1].mu.Unlock()
+		if g.player[1].picks != nil {
 			return nil, errors.New("both players already set")
 		}
-		g.player2 = &p
-		g.p2Cond.Broadcast()
+		g.player[1].picks = &p
+		g.player[1].addr = addr
+		g.gameStart.Broadcast()
 		ch := make(chan Player, 1)
-		ch <- *g.player1
+		ch <- *g.player[0].picks
 		return ch, nil
 	}
-	g.player1 = &p
+	g.player[0].picks = &p
+	g.player[0].addr = addr
 	ch := make(chan Player)
 	go func() {
-		// Wait until player 2 exists
-		g.p2Mu.Lock()
-		for g.player2 == nil {
-			g.p2Cond.Wait()
+		// Wait until player 2 exists.
+		g.player[1].mu.Lock()
+		for g.player[1].picks == nil {
+			g.gameStart.Wait()
 		}
-		ch <- *g.player2
-		g.p2Mu.Unlock()
+		ch <- *g.player[1].picks
+		g.player[1].mu.Unlock()
 	}()
 	return ch, nil
 }
