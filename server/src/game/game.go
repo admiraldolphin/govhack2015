@@ -73,6 +73,13 @@ func (g *Game) writeAllMessage(m *Message) error {
 func (g *Game) updateProgress() error {
 	g.player[0].mu.RLock()
 	g.player[1].mu.RLock()
+	// clock = min{player clocks}
+	clock := g.player[0].clock
+	if t := g.player[1].clock; t < clock {
+		clock = t
+	}
+	win0 := g.player[0].score > g.player[1].score
+	win1 := g.player[1].score > g.player[0].score
 	prog0 := Progress{
 		YourScore:     g.player[0].score,
 		OpponentScore: g.player[1].score,
@@ -83,14 +90,34 @@ func (g *Game) updateProgress() error {
 	}
 	g.player[0].mu.RUnlock()
 	g.player[1].mu.RUnlock()
+
 	if err := writeMessage(g.player[0].client.conn, &Message{
 		Type: "Progress",
 		Data: prog0,
 	}); err != nil {
 		return err
 	}
-	return writeMessage(g.player[1].client.conn, &Message{
+	if err := writeMessage(g.player[1].client.conn, &Message{
 		Type: "Progress",
 		Data: prog1,
-	})
+	}); err != nil {
+		return err
+	}
+
+	if clock == NumQuestions {
+		// Game over
+		if err := writeMessage(g.player[0].client.conn, &Message{
+			Type: "GameOver",
+			Data: GameOver{YouWon: win0},
+		}); err != nil {
+			return err
+		}
+		if err := writeMessage(g.player[1].client.conn, &Message{
+			Type: "GameOver",
+			Data: GameOver{YouWon: win1},
+		}); err != nil {
+			return err
+		}
+	}
+	return nil
 }

@@ -48,6 +48,5 @@ type Progress struct {
 }
 
 type GameOver struct {
-	// TODO(josh): The correct answers for each question.
 	YouWon bool
 }
