@@ -16,9 +16,8 @@ class PreGameLobbyViewController: UIViewController,NetworkDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         Network.sharedNetwork.delegate = self
-
         
-        // Tell the server the options the palyer picked
+        // Tell the server the options the player picked
         if let theRightHonourableMember = self.honourableMember
         {
             if let thePortfolio = self.portfolio
