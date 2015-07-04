@@ -13,12 +13,10 @@ import (
 )
 
 const (
-	keepAliveInterval = 1 * time.Second
+	keepAliveInterval = 5 * time.Second
 	gameTimeout       = 1 * time.Minute
 	idleReadTimeout   = 20 * time.Second
 	idleWriteTimeout  = 5 * time.Second
-
-	numQuestions = 5
 )
 
 func readMessage(conn net.Conn) (*Message, error) {
@@ -52,8 +50,11 @@ type client struct {
 }
 
 func (c *client) handleCommand(m *Message) error {
-	d := m.Data.(map[string]interface{})
-	ps, ops := &c.game.player[c.playerNum], &c.game.player[1-c.playerNum]
+	d, ok := m.Data.(map[string]interface{})
+	if !ok {
+		return nil
+	}
+	ps := &c.game.player[c.playerNum]
 
 	switch m.Type {
 	case "Nickname":
@@ -67,8 +68,6 @@ func (c *client) handleCommand(m *Message) error {
 		// Yes: Decide questions to send.
 		// No: Send KeepAlive once per keepAliveInterval up to gameTimeout until we have another Player pick.
 		// Then decide questions to send.
-		ticker := time.NewTicker(keepAliveInterval)
-		defer ticker.Stop()
 		pick := Player{
 			HeroPick:      int(d["HeroPick"].(float64)),
 			PortfolioPick: int(d["PortfolioPick"].(float64)),
@@ -86,15 +85,10 @@ func (c *client) handleCommand(m *Message) error {
 					Data: GameStart{
 						OpponentHero:  opp.HeroPick,
 						PortfolioName: c.game.db.Portfolios[opp.PortfolioPick].Name,
-						Questions:     c.game.db.PickQuestions(opp.PortfolioPick, numQuestions),
+						Questions:     c.game.db.PickQuestions(opp.PortfolioPick, NumQuestions),
 					},
 				}
 				return writeMessage(c.conn, &s)
-			case <-ticker.C:
-				// Send keepalives.
-				if err := writeMessage(c.conn, &KeepAlive); err != nil {
-					return err
-				}
 			case <-time.After(gameTimeout):
 				return errors.New("game not matched within timeout")
 			}
@@ -105,28 +99,15 @@ func (c *client) handleCommand(m *Message) error {
 		qid := int(d["Question"].(float64))
 		got := data.Answer(d["Answer"].(float64))
 		want := c.game.db.Heroes[ps.picks.HeroPick].Answers[qid]
+
+		ps.mu.Lock()
+		ps.clock++
 		if got == want {
 			// Correct!
-			ps.mu.Lock()
 			ps.score++
-			ps.mu.Unlock()
 		}
-
-		// Send an updated progress message.
-		ps.mu.RLock()
-		ops.mu.RLock()
-		prog := Message{
-			Type: "Progress",
-			Data: Progress{
-				YourScore:     ps.score,
-				OpponentScore: ops.score,
-			},
-		}
-		ps.mu.RUnlock()
-		ops.mu.RUnlock()
-		if err := writeMessage(c.conn, &prog); err != nil {
-			return err
-		}
+		ps.mu.Unlock()
+		return c.game.updateProgress()
 	}
 	return nil
 }
@@ -138,8 +119,22 @@ func (g *Game) handleConn(conn net.Conn, playerNum int) {
 		game:      g,
 		playerNum: playerNum,
 	}
-
+	g.player[playerNum].client = cl
 	defer conn.Close()
+	defer func() {
+		// Close the companion connection - game over.
+		if oc := g.player[1-playerNum].client; oc != nil {
+			oc.conn.Close()
+		}
+	}()
+	go func() {
+		for range time.Tick(keepAliveInterval) {	
+			if err := g.writeAllMessage(&KeepAlive); err != nil {
+				log.Println(err)
+				return
+			}
+		}
+	}()
 	for {
 		m, err := readMessage(conn)
 		if err != nil {

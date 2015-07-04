@@ -12,6 +12,8 @@ class PreGameLobbyViewController: UIViewController,NetworkDelegate {
     
     var honourableMember : Int?
     var portfolio: Int?
+    
+    var gameStartMessage : GameStartMessage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,17 @@ class PreGameLobbyViewController: UIViewController,NetworkDelegate {
             {
                 // Sending over the player options
                 Network.sharedNetwork.selectPlayerData(theRightHonourableMember, questionCategory: thePortfolio)
+            }
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "ServerReadySegue") {
+            if let game = segue.destinationViewController as? GameViewController {
+                
+                game.heroID = gameStartMessage?.opponentHero ?? 0
+                game.possibleQuestions = gameStartMessage?.questions ?? []
+                
             }
         }
     }
@@ -40,7 +53,9 @@ class PreGameLobbyViewController: UIViewController,NetworkDelegate {
     func networkDisconnected(error: NSError?) {
         // eh, worry about it later
     }
+    
     func networkDidStartGame(message: GameStartMessage) {
+        gameStartMessage = message
         self.performSegueWithIdentifier("ServerReadySegue", sender: self)
     }
     func networkDidEndGame(message: GameOverMessage) {

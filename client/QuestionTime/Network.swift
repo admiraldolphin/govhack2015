@@ -17,6 +17,23 @@ enum Answer : Int {
     case Agree          = 4 // 60 - 80
     case AgreeStrong    = 5 // 80 - 100
     case Abstain        = -1
+    
+    static func fromFloat(float:Float) -> Answer {
+        switch float {
+        case 0.0...0.2:
+            return Answer.DisagreeStrong
+        case 0.2...0.4:
+            return Answer.Disagree
+        case 0.4...0.6:
+            return Answer.Neutral
+        case 0.6...0.8:
+            return Answer.Agree
+        case 0.8...1.0:
+            return Answer.AgreeStrong
+        default:
+            return Answer.Abstain
+        }
+    }
 }
 
 // Messages from server
@@ -65,8 +82,33 @@ class Network: NSObject, GCDAsyncSocketDelegate {
     
     var delegate : NetworkDelegate?
     
+    var timer : NSTimer?
+    
     override init() {
+        
         super.init()
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "sendKeepalive:", userInfo: nil, repeats: true)
+    }
+    
+    deinit {
+        timer?.invalidate()
+    }
+    
+    func sendKeepalive(timer: NSTimer) {
+        if socket.isConnected {
+            let data = [
+                "Type":"Keepalive",
+                "Data":["foo":"bar"]
+            ]
+            sendMessage(JSON(data).rawString(encoding: NSUTF8StringEncoding, options: NSJSONWritingOptions.allZeros)!)
+        }
+    }
+    
+    func connect() {
+        let host = NSUserDefaults.standardUserDefaults().stringForKey("server") ?? "localhost"
+        
+        connect(host)
     }
     
     func connect(host:String) {
@@ -106,23 +148,24 @@ class Network: NSObject, GCDAsyncSocketDelegate {
     
     func socket(sock: GCDAsyncSocket!, didReadData data: NSData!, withTag tag: Int) {
         
-        let string = NSString(data: data, encoding: NSUTF8StringEncoding)
-        println("Read: \(string)")
-        
-        // Parse the response into json
-        let loadedData = JSON(data: data)
-
-        switch loadedData["Type"].stringValue {
-        case "GameStart":
-            receivedGameStart(loadedData["Data"])
-        case "Progress":
-            receivedProgress(loadedData["Data"])
-        case "GameOver":
-            receivedGameOver(loadedData["Data"])
-        default:
-            ()
+        if let string = NSString(data: data, encoding: NSUTF8StringEncoding) {
+            
+            println("Read: \(string)")
+            
+            // Parse the response into json
+            let loadedData = JSON(data: data)
+            
+            switch loadedData["Type"].stringValue {
+            case "GameStart":
+                receivedGameStart(loadedData["Data"])
+            case "Progress":
+                receivedProgress(loadedData["Data"])
+            case "GameOver":
+                receivedGameOver(loadedData["Data"])
+            default:
+                ()
+            }
         }
-        
         
         listenForNewData()
     }

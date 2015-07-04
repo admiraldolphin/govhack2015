@@ -19,8 +19,10 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         // Do any additional setup after loading the view, typically from a nib.
         
         Network.sharedNetwork.delegate = self
-        Network.sharedNetwork.connect("localhost")
         
+        Network.sharedNetwork.connect()
+        
+        // starting up the background audio
         AudioJigger.sharedJigger.playBackgroundMusic()
     }
     
