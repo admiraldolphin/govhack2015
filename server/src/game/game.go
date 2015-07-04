@@ -106,15 +106,25 @@ func (g *Game) updateProgress() error {
 
 	if clock == NumQuestions {
 		// Game over
+		pfs := []int{
+			g.player[0].picks.PortfolioPick,
+			g.player[1].picks.PortfolioPick,
+		}
 		if err := writeMessage(g.player[0].client.conn, &Message{
 			Type: "GameOver",
-			Data: GameOver{YouWon: win0},
+			Data: GameOver{
+				YouWon:     win0,
+				Portfolios: pfs,
+			},
 		}); err != nil {
 			return err
 		}
 		if err := writeMessage(g.player[1].client.conn, &Message{
 			Type: "GameOver",
-			Data: GameOver{YouWon: win1},
+			Data: GameOver{
+				YouWon:     win1,
+				Portfolios: pfs,
+			},
 		}); err != nil {
 			return err
 		}

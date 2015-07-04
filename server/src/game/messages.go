@@ -48,5 +48,6 @@ type Progress struct {
 }
 
 type GameOver struct {
-	YouWon bool
+	YouWon     bool
+	Portfolios []int
 }
