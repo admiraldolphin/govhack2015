@@ -139,26 +139,28 @@ class QuestionDatabase : NSObject {
     
     
     func correctAnswerForPerson(personID: Int, policyID:Int) -> Answer? {
-        if let person = allPeople[personID] {
-            if let policy = person.policies[policyID] {
+        if let policy = allPeople[personID]?.policies[policyID] {
                 
                 if policy.abstained {
                     return Answer.Abstain
                 }
                 
                 switch policy.agreement {
-                case 0..20:
+                case 0...20:
                     return Answer.DisagreeStrong
-                case 21..40:
+                case 21...40:
                     return Answer.Disagree
-                case 41..60:
+                case 41...60:
                     return Answer.Neutral
-                case 61..80:
+                case 61...80:
                     return Answer.Agree
-                case 81..100:
+                case 81...100:
                     return Answer.AgreeStrong
+                default:
+                    return Answer.Abstain
+
                 }
-            }
+           
         }
         
         return nil
