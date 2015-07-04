@@ -1,1 +1,2940 @@
-[{"id":10001,"latest_member":{"id":1,"name":{"first":"Tony","last":"Abbott"},"electorate":"Warringah","house":"representatives","party":"Liberal Party"}},{"id":10007,"latest_member":{"id":6,"name":{"first":"Anthony","last":"Albanese"},"electorate":"Grayndler","house":"representatives","party":"Australian Labor Party"}},{"id":10014,"latest_member":{"id":13,"name":{"first":"Kevin","last":"Andrews"},"electorate":"Menzies","house":"representatives","party":"Liberal Party"}},{"id":10026,"latest_member":{"id":26,"name":{"first":"Bob","last":"Baldwin"},"electorate":"Paterson","house":"representatives","party":"Liberal Party"}},{"id":10041,"latest_member":{"id":38,"name":{"first":"Bruce","last":"Billson"},"electorate":"Dunkley","house":"representatives","party":"Liberal Party"}},{"id":10043,"latest_member":{"id":40,"name":{"first":"Sharon","last":"Bird"},"electorate":"Cunningham","house":"representatives","party":"Australian Labor Party"}},{"id":10047,"latest_member":{"id":43,"name":{"first":"Julie","last":"Bishop"},"electorate":"Curtin","house":"representatives","party":"Liberal Party"}},{"id":10069,"latest_member":{"id":57,"name":{"first":"Russell","last":"Broadbent"},"electorate":"McMillan","house":"representatives","party":"Liberal Party"}},{"id":10081,"latest_member":{"id":69,"name":{"first":"Tony","last":"Burke"},"electorate":"Watson","house":"representatives","party":"Australian Labor Party"}},{"id":10086,"latest_member":{"id":73,"name":{"first":"Mark","last":"Butler"},"electorate":"Port Adelaide","house":"representatives","party":"Australian Labor Party"}},{"id":10088,"latest_member":{"id":74,"name":{"first":"Anthony","last":"Byrne"},"electorate":"Holt","house":"representatives","party":"Australian Labor Party"}},{"id":10111,"latest_member":{"id":94,"name":{"first":"Nick","last":"Champion"},"electorate":"Wakefield","house":"representatives","party":"Australian Labor Party"}},{"id":10122,"latest_member":{"id":105,"name":{"first":"Steven","last":"Ciobo"},"electorate":"Moncrieff","house":"representatives","party":"Liberal Party"}},{"id":10123,"latest_member":{"id":106,"name":{"first":"Jason","last":"Clare"},"electorate":"Blaxland","house":"representatives","party":"Australian Labor Party"}},{"id":10127,"latest_member":{"id":111,"name":{"first":"John","last":"Cobb"},"electorate":"Calare","house":"representatives","party":"National Party"}},{"id":10136,"latest_member":{"id":115,"name":{"first":"Julie","last":"Collins"},"electorate":"Franklin","house":"representatives","party":"Australian Labor Party"}},{"id":10152,"latest_member":{"id":123,"name":{"first":"Mark","last":"Coulton"},"electorate":"Parkes","house":"representatives","party":"National Party"}},{"id":10165,"latest_member":{"id":134,"name":{"first":"Michael","last":"Danby"},"electorate":"Melbourne Ports","house":"representatives","party":"Australian Labor Party"}},{"id":10181,"latest_member":{"id":149,"name":{"first":"Mark","last":"Dreyfus"},"electorate":"Isaacs","house":"representatives","party":"Australian Labor Party"}},{"id":10188,"latest_member":{"id":154,"name":{"first":"Peter","last":"Dutton"},"electorate":"Dickson","house":"representatives","party":"Liberal Party"}},{"id":10195,"latest_member":{"id":160,"name":{"first":"Justine","last":"Elliot"},"electorate":"Richmond","house":"representatives","party":"Australian Labor Party"}},{"id":10198,"latest_member":{"id":163,"name":{"first":"Kate","last":"Ellis"},"electorate":"Adelaide","house":"representatives","party":"Australian Labor Party"}},{"id":10230,"latest_member":{"id":187,"name":{"first":"Joel","last":"Fitzgibbon"},"electorate":"Hunter","house":"representatives","party":"Australian Labor Party"}},{"id":10264,"latest_member":{"id":222,"name":{"first":"Gary","last":"Gray"},"electorate":"Brand","house":"representatives","party":"Australian Labor Party"}},{"id":10267,"latest_member":{"id":224,"name":{"first":"Alan","last":"Griffin"},"electorate":"Bruce","house":"representatives","party":"Australian Labor Party"}},{"id":10275,"latest_member":{"id":230,"name":{"first":"Jill","last":"Hall"},"electorate":"Shortland","house":"representatives","party":"Australian Labor Party"}},{"id":10285,"latest_member":{"id":237,"name":{"first":"Luke","last":"Hartsuyker"},"electorate":"Cowper","house":"representatives","party":"National Party"}},{"id":10290,"latest_member":{"id":242,"name":{"first":"Alex","last":"Hawke"},"electorate":"Mitchell","house":"representatives","party":"Liberal Party"}},{"id":10306,"latest_member":{"id":256,"name":{"first":"Joe","last":"Hockey"},"electorate":"North Sydney","house":"representatives","party":"Liberal Party"}},{"id":10319,"latest_member":{"id":270,"name":{"first":"Greg","last":"Hunt"},"electorate":"Flinders","house":"representatives","party":"Liberal Party"}},{"id":10326,"latest_member":{"id":275,"name":{"first":"Steve","last":"Irons"},"electorate":"Swan","house":"representatives","party":"Liberal Party"}},{"id":10337,"latest_member":{"id":289,"name":{"first":"Dennis","last":"Jensen"},"electorate":"Tangney","house":"representatives","party":"Liberal Party"}},{"id":10352,"latest_member":{"id":302,"name":{"first":"Bob","last":"Katter"},"electorate":"Kennedy","house":"representatives","party":"Independent"}},{"id":10356,"latest_member":{"id":305,"name":{"first":"Michael","last":"Keenan"},"electorate":"Stirling","house":"representatives","party":"Liberal Party"}},{"id":10368,"latest_member":{"id":318,"name":{"first":"Catherine","last":"King"},"electorate":"Ballarat","house":"representatives","party":"Australian Labor Party"}},{"id":10377,"latest_member":{"id":324,"name":{"first":"Andrew","last":"Laming"},"electorate":"Bowman","house":"representatives","party":"Liberal Party"}},{"id":10387,"latest_member":{"id":332,"name":{"first":"Sussan","last":"Ley"},"electorate":"Farrer","house":"representatives","party":"Liberal Party"}},{"id":10403,"latest_member":{"id":342,"name":{"first":"Ian","last":"Macfarlane"},"electorate":"Groom","house":"representatives","party":"Liberal Party"}},{"id":10409,"latest_member":{"id":346,"name":{"first":"Jenny","last":"Macklin"},"electorate":"Jagajaga","house":"representatives","party":"Australian Labor Party"}},{"id":10416,"latest_member":{"id":351,"name":{"first":"Nola","last":"Marino"},"electorate":"Forrest","house":"representatives","party":"Liberal Party"}},{"id":10418,"latest_member":{"id":353,"name":{"first":"Richard","last":"Marles"},"electorate":"Corio","house":"representatives","party":"Australian Labor Party"}},{"id":10468,"latest_member":{"id":388,"name":{"first":"Scott","last":"Morrison"},"electorate":"Cook","house":"representatives","party":"Liberal Party"}},{"id":10485,"latest_member":{"id":400,"name":{"first":"Shayne","last":"Neumann"},"electorate":"Blair","house":"representatives","party":"Australian Labor Party"}},{"id":10496,"latest_member":{"id":408,"name":{"first":"Brendan","last":"O'Connor"},"electorate":"Gorton","house":"representatives","party":"Australian Labor Party"}},{"id":10503,"latest_member":{"id":414,"name":{"first":"Julie","last":"Owens"},"electorate":"Parramatta","house":"representatives","party":"Australian Labor Party"}},{"id":10506,"latest_member":{"id":415,"name":{"first":"Melissa","last":"Parke"},"electorate":"Fremantle","house":"representatives","party":"Australian Labor Party"}},{"id":10512,"latest_member":{"id":418,"name":{"first":"Graham","last":"Perrett"},"electorate":"Moreton","house":"representatives","party":"Australian Labor Party"}},{"id":10513,"latest_member":{"id":419,"name":{"first":"Tanya","last":"Plibersek"},"electorate":"Sydney","house":"representatives","party":"Australian Labor Party"}},{"id":10524,"latest_member":{"id":427,"name":{"first":"Christopher","last":"Pyne"},"electorate":"Sturt","house":"representatives","party":"Liberal Party"}},{"id":10529,"latest_member":{"id":430,"name":{"first":"Rowan","last":"Ramsey"},"electorate":"Grey","house":"representatives","party":"Liberal Party"}},{"id":10530,"latest_member":{"id":431,"name":{"first":"Don","last":"Randall"},"electorate":"Canning","house":"representatives","party":"Liberal Party"}},{"id":10542,"latest_member":{"id":440,"name":{"first":"Bernie","last":"Ripoll"},"electorate":"Oxley","house":"representatives","party":"Australian Labor Party"}},{"id":10543,"latest_member":{"id":441,"name":{"first":"Amanda","last":"Rishworth"},"electorate":"Kingston","house":"representatives","party":"Australian Labor Party"}},{"id":10544,"latest_member":{"id":442,"name":{"first":"Andrew","last":"Robb"},"electorate":"Goldstein","house":"representatives","party":"Liberal Party"}},{"id":10545,"latest_member":{"id":443,"name":{"first":"Stuart","last":"Robert"},"electorate":"Fadden","house":"representatives","party":"Liberal Party"}},{"id":10553,"latest_member":{"id":451,"name":{"first":"Philip","last":"Ruddock"},"electorate":"Berowra","house":"representatives","party":"Liberal Party"}},{"id":10580,"latest_member":{"id":476,"name":{"first":"Bill","last":"Shorten"},"electorate":"Maribyrnong","house":"representatives","party":"Australian Labor Party"}},{"id":10588,"latest_member":{"id":481,"name":{"first":"Luke","last":"Simpkins"},"electorate":"Cowan","house":"representatives","party":"Liberal Party"}},{"id":10592,"latest_member":{"id":486,"name":{"first":"Tony","last":"Smith"},"electorate":"Casey","house":"representatives","party":"Liberal Party"}},{"id":10599,"latest_member":{"id":494,"name":{"first":"Warren","last":"Snowdon"},"electorate":"Lingiari","house":"representatives","party":"Australian Labor Party"}},{"id":10601,"latest_member":{"id":498,"name":{"first":"Andrew","last":"Southcott"},"electorate":"Boothby","house":"representatives","party":"Liberal Party"}},{"id":10612,"latest_member":{"id":505,"name":{"first":"Sharman","last":"Stone"},"electorate":"Murray","house":"representatives","party":"Liberal Party"}},{"id":10617,"latest_member":{"id":510,"name":{"first":"Wayne","last":"Swan"},"electorate":"Lilley","house":"representatives","party":"Australian Labor Party"}},{"id":10632,"latest_member":{"id":521,"name":{"first":"Kelvin","last":"Thomson"},"electorate":"Wills","house":"representatives","party":"Australian Labor Party"}},{"id":10641,"latest_member":{"id":526,"name":{"first":"Warren","last":"Truss"},"electorate":"Wide Bay","house":"representatives","party":"National Party"}},{"id":10643,"latest_member":{"id":528,"name":{"first":"Malcolm","last":"Turnbull"},"electorate":"Wentworth","house":"representatives","party":"Liberal Party"}},{"id":10649,"latest_member":{"id":533,"name":{"first":"Maria","last":"Vamvakinou"},"electorate":"Calwell","house":"representatives","party":"Australian Labor Party"}},{"id":10695,"latest_member":{"id":563,"name":{"first":"Tony","last":"Zappia"},"electorate":"Makin","house":"representatives","party":"Australian Labor Party"}},{"id":10703,"latest_member":{"id":567,"name":{"first":"Darren","last":"Chester"},"electorate":"Gippsland","house":"representatives","party":"National Party"}},{"id":10721,"latest_member":{"id":586,"name":{"first":"Jamie","last":"Briggs"},"electorate":"Mayo","house":"representatives","party":"Liberal Party"}},{"id":10723,"latest_member":{"id":587,"name":{"first":"Paul","last":"Fletcher"},"electorate":"Bradfield","house":"representatives","party":"Liberal Party"}},{"id":10724,"latest_member":{"id":588,"name":{"first":"Kelly","last":"O'Dwyer"},"electorate":"Higgins","house":"representatives","party":"Liberal Party"}},{"id":10725,"latest_member":{"id":589,"name":{"first":"John","last":"Alexander"},"electorate":"Bennelong","house":"representatives","party":"Liberal Party"}},{"id":10726,"latest_member":{"id":590,"name":{"first":"George","last":"Christensen"},"electorate":"Dawson","house":"representatives","party":"Liberal Party"}},{"id":10727,"latest_member":{"id":591,"name":{"first":"Andrew","last":"Wilkie"},"electorate":"Denison","house":"representatives","party":"Independent"}},{"id":10728,"latest_member":{"id":592,"name":{"first":"Ken","last":"O'Dowd"},"electorate":"Flynn","house":"representatives","party":"Liberal Party"}},{"id":10729,"latest_member":{"id":593,"name":{"first":"Bert","last":"Van Manen"},"electorate":"Forde","house":"representatives","party":"Liberal Party"}},{"id":10730,"latest_member":{"id":594,"name":{"first":"Ken","last":"Wyatt"},"electorate":"Hasluck","house":"representatives","party":"Liberal Party"}},{"id":10203,"latest_member":{"id":596,"name":{"first":"Warren","last":"Entsch"},"electorate":"Leichhardt","house":"representatives","party":"Liberal Party"}},{"id":10732,"latest_member":{"id":597,"name":{"first":"Wyatt","last":"Roy"},"electorate":"Longman","house":"representatives","party":"Liberal Party"}},{"id":10417,"latest_member":{"id":598,"name":{"first":"Louise","last":"Markus"},"electorate":"Macquarie","house":"representatives","party":"Liberal Party"}},{"id":10733,"latest_member":{"id":599,"name":{"first":"Rob","last":"Mitchell"},"electorate":"McEwen","house":"representatives","party":"Australian Labor Party"}},{"id":10734,"latest_member":{"id":600,"name":{"first":"Adam","last":"Bandt"},"electorate":"Melbourne","house":"representatives","party":"Australian Greens"}},{"id":10736,"latest_member":{"id":602,"name":{"first":"Natasha","last":"Griggs"},"electorate":"Solomon","house":"representatives","party":"Country Liberal Party"}},{"id":10738,"latest_member":{"id":604,"name":{"first":"Gai","last":"Brodtmann"},"electorate":"Canberra","house":"representatives","party":"Australian Labor Party"}},{"id":10739,"latest_member":{"id":605,"name":{"first":"Russell","last":"Matheson"},"electorate":"Macarthur","house":"representatives","party":"Liberal Party"}},{"id":10740,"latest_member":{"id":606,"name":{"first":"Stephen","last":"Jones"},"electorate":"Throsby","house":"representatives","party":"Australian Labor Party"}},{"id":10741,"latest_member":{"id":607,"name":{"first":"Josh","last":"Frydenberg"},"electorate":"Kooyong","house":"representatives","party":"Liberal Party"}},{"id":10742,"latest_member":{"id":608,"name":{"first":"Dan","last":"Tehan"},"electorate":"Wannon","house":"representatives","party":"Liberal Party"}},{"id":10743,"latest_member":{"id":609,"name":{"first":"Michael","last":"McCormack"},"electorate":"Riverina","house":"representatives","party":"National Party"}},{"id":10294,"latest_member":{"id":610,"name":{"first":"Chris","last":"Hayes"},"electorate":"Fowler","house":"representatives","party":"Australian Labor Party"}},{"id":10744,"latest_member":{"id":611,"name":{"first":"Ewen","last":"Jones"},"electorate":"Herbert","house":"representatives","party":"Liberal Party"}},{"id":10745,"latest_member":{"id":612,"name":{"first":"Karen","last":"Andrews"},"electorate":"McPherson","house":"representatives","party":"Liberal Party"}},{"id":10746,"latest_member":{"id":613,"name":{"first":"Andrew","last":"Leigh"},"electorate":"Fraser","house":"representatives","party":"Australian Labor Party"}},{"id":10748,"latest_member":{"id":615,"name":{"first":"Alan","last":"Tudge"},"electorate":"Aston","house":"representatives","party":"Liberal Party"}},{"id":10749,"latest_member":{"id":616,"name":{"first":"Ed","last":"Husic"},"electorate":"Chifley","house":"representatives","party":"Australian Labor Party"}},{"id":10750,"latest_member":{"id":617,"name":{"first":"Craig","last":"Kelly"},"electorate":"Hughes","house":"representatives","party":"Liberal Party"}},{"id":10751,"latest_member":{"id":618,"name":{"first":"Michelle","last":"Rowland"},"electorate":"Greenway","house":"representatives","party":"Australian Labor Party"}},{"id":10217,"latest_member":{"id":619,"name":{"first":"Laurie","last":"Ferguson"},"electorate":"Werriwa","house":"representatives","party":"Australian Labor Party"}},{"id":10060,"latest_member":{"id":623,"name":{"first":"Chris","last":"Bowen"},"electorate":"McMahon","house":"representatives","party":"Australian Labor Party"}},{"id":10752,"latest_member":{"id":624,"name":{"first":"Scott","last":"Buchholz"},"electorate":"Wright","house":"representatives","party":"Liberal Party"}},{"id":10753,"latest_member":{"id":625,"name":{"first":"Jane","last":"Prentice"},"electorate":"Ryan","house":"representatives","party":"Liberal Party"}},{"id":10651,"latest_member":{"id":626,"name":{"first":"Ross","last":"Vasta"},"electorate":"Bonner","house":"representatives","party":"Liberal Party"}},{"id":10239,"latest_member":{"id":627,"name":{"first":"Teresa","last":"Gambaro"},"electorate":"Brisbane","house":"representatives","party":"Liberal Party"}},{"id":10565,"latest_member":{"id":632,"name":{"first":"Bruce","last":"Scott"},"electorate":"Maranoa","house":"representatives","party":"CWM"}},{"id":10783,"latest_member":{"id":634,"name":{"first":"David","last":"Coleman"},"electorate":"Banks","house":"representatives","party":"Liberal Party"}},{"id":10784,"latest_member":{"id":635,"name":{"first":"Tony","last":"Pasin"},"electorate":"Barker","house":"representatives","party":"Liberal Party"}},{"id":10785,"latest_member":{"id":636,"name":{"first":"Nickolas","last":"Varvaris"},"electorate":"Barton","house":"representatives","party":"Liberal Party"}},{"id":10786,"latest_member":{"id":637,"name":{"first":"Andrew","last":"Nikolic"},"electorate":"Bass","house":"representatives","party":"Liberal Party"}},{"id":10709,"latest_member":{"id":638,"name":{"first":"David","last":"Feeney"},"electorate":"Batman","house":"representatives","party":"Australian Labor Party"}},{"id":10787,"latest_member":{"id":639,"name":{"first":"Lisa","last":"Chesters"},"electorate":"Bendigo","house":"representatives","party":"Australian Labor Party"}},{"id":10788,"latest_member":{"id":640,"name":{"first":"Brett","last":"Whiteley"},"electorate":"Braddon","house":"representatives","party":"Liberal Party"}},{"id":10789,"latest_member":{"id":641,"name":{"first":"Michelle","last":"Landry"},"electorate":"Capricornia","house":"representatives","party":"Liberal Party"}},{"id":10813,"latest_member":{"id":642,"name":{"first":"Pat","last":"Conroy"},"electorate":"Charlton","house":"representatives","party":"Australian Labor Party"}},{"id":10790,"latest_member":{"id":643,"name":{"first":"Sarah","last":"Henderson"},"electorate":"Corangamite","house":"representatives","party":"Liberal Party"}},{"id":10791,"latest_member":{"id":644,"name":{"first":"Michael","last":"Sukkar"},"electorate":"Deakin","house":"representatives","party":"Liberal Party"}},{"id":10792,"latest_member":{"id":645,"name":{"first":"Karen","last":"McNamara"},"electorate":"Dobell","house":"representatives","party":"Liberal Party"}},{"id":10818,"latest_member":{"id":646,"name":{"first":"Melissa","last":"Price"},"electorate":"Durack","house":"representatives","party":"Liberal Party"}},{"id":10793,"latest_member":{"id":647,"name":{"first":"Peter","last":"Hendy"},"electorate":"Eden-Monaro","house":"representatives","party":"Liberal Party"}},{"id":10070,"latest_member":{"id":648,"name":{"first":"Mal","last":"Brough"},"electorate":"Fisher","house":"representatives","party":"Liberal Party"}},{"id":10794,"latest_member":{"id":649,"name":{"first":"Tim","last":"Watts"},"electorate":"Gellibrand","house":"representatives","party":"Australian Labor Party"}},{"id":10795,"latest_member":{"id":650,"name":{"first":"Ann","last":"Sudmalis"},"electorate":"Gilmore","house":"representatives","party":"Liberal Party"}},{"id":10796,"latest_member":{"id":651,"name":{"first":"Matt","last":"Williams"},"electorate":"Hindmarsh","house":"representatives","party":"Liberal Party"}},{"id":10797,"latest_member":{"id":652,"name":{"first":"Keith","last":"Pitt"},"electorate":"Hinkler","house":"representatives","party":"Liberal Party"}},{"id":10814,"latest_member":{"id":653,"name":{"first":"Clare","last":"O'Neil"},"electorate":"Hotham","house":"representatives","party":"Australian Labor Party"}},{"id":10817,"latest_member":{"id":654,"name":{"first":"Angus","last":"Taylor"},"electorate":"Hume","house":"representatives","party":"Liberal Party"}},{"id":10798,"latest_member":{"id":655,"name":{"first":"Cathy","last":"McGowan"},"electorate":"Indi","house":"representatives","party":"Independent"}},{"id":10762,"latest_member":{"id":656,"name":{"first":"Matt","last":"Thistlethwaite"},"electorate":"Kingsford Smith","house":"representatives","party":"Australian Labor Party"}},{"id":10679,"latest_member":{"id":657,"name":{"first":"Jason","last":"Wood"},"electorate":"La Trobe","house":"representatives","party":"Liberal Party"}},{"id":10799,"latest_member":{"id":658,"name":{"first":"Joanne","last":"Ryan"},"electorate":"Lalor","house":"representatives","party":"Australian Labor Party"}},{"id":10800,"latest_member":{"id":659,"name":{"first":"Fiona","last":"Scott"},"electorate":"Lindsay","house":"representatives","party":"Liberal Party"}},{"id":10801,"latest_member":{"id":660,"name":{"first":"David","last":"Gillespie"},"electorate":"Lyne","house":"representatives","party":"National Party"}},{"id":10802,"latest_member":{"id":661,"name":{"first":"Eric","last":"Hutchinson"},"electorate":"Lyons","house":"representatives","party":"Liberal Party"}},{"id":10803,"latest_member":{"id":662,"name":{"first":"Andrew","last":"Broad"},"electorate":"Mallee","house":"representatives","party":"National Party"}},{"id":10804,"latest_member":{"id":663,"name":{"first":"Ian","last":"Goodenough"},"electorate":"Moore","house":"representatives","party":"Liberal Party"}},{"id":10350,"latest_member":{"id":664,"name":{"first":"Barnaby","last":"Joyce"},"electorate":"New England","house":"representatives","party":"National Party"}},{"id":10805,"latest_member":{"id":665,"name":{"first":"Sharon","last":"Claydon"},"electorate":"Newcastle","house":"representatives","party":"Australian Labor Party"}},{"id":10816,"latest_member":{"id":666,"name":{"first":"Rick","last":"Wilson"},"electorate":"O'Connor","house":"representatives","party":"Liberal Party"}},{"id":10806,"latest_member":{"id":667,"name":{"first":"Kevin","last":"Hogan"},"electorate":"Page","house":"representatives","party":"National Party"}},{"id":10815,"latest_member":{"id":668,"name":{"first":"Christian","last":"Porter"},"electorate":"Pearce","house":"representatives","party":"Liberal Party"}},{"id":10807,"latest_member":{"id":669,"name":{"first":"Alannah","last":"Mactiernan"},"electorate":"Perth","house":"representatives","party":"Australian Labor Party"}},{"id":10808,"latest_member":{"id":670,"name":{"first":"Luke","last":"Howarth"},"electorate":"Petrie","house":"representatives","party":"Liberal Party"}},{"id":10809,"latest_member":{"id":671,"name":{"first":"Jim","last":"Chalmers"},"electorate":"Rankin","house":"representatives","party":"Australian Labor Party"}},{"id":10810,"latest_member":{"id":672,"name":{"first":"Craig","last":"Laundy"},"electorate":"Reid","house":"representatives","party":"Liberal Party"}},{"id":10811,"latest_member":{"id":673,"name":{"first":"Lucy","last":"Wicks"},"electorate":"Robertson","house":"representatives","party":"Liberal Party"}},{"id":10812,"latest_member":{"id":674,"name":{"first":"Andrew","last":"Giles"},"electorate":"Scullin","house":"representatives","party":"Australian Labor Party"}},{"id":10080,"latest_member":{"id":675,"name":{"first":"Anna","last":"Burke"},"electorate":"Chisholm","house":"representatives","party":"Australian Labor Party"}},{"id":10046,"latest_member":{"id":676,"name":{"first":"Bronwyn","last":"Bishop"},"electorate":"Mackellar","house":"representatives","party":"SPK"}},{"id":10823,"latest_member":{"id":677,"name":{"first":"Clive","last":"Palmer"},"electorate":"Fairfax","house":"representatives","party":"Palmer United Party"}},{"id":10825,"latest_member":{"id":678,"name":{"first":"Terri","last":"Butler"},"electorate":"Griffith","house":"representatives","party":"Australian Labor Party"}},{"id":10003,"latest_member":{"id":100001,"name":{"first":"Eric","last":"Abetz"},"electorate":"Tasmania","house":"senate","party":"Liberal Party"}},{"id":10038,"latest_member":{"id":100013,"name":{"first":"Cory","last":"Bernardi"},"electorate":"SA","house":"senate","party":"Liberal Party"}},{"id":10044,"latest_member":{"id":100014,"name":{"first":"Simon","last":"Birmingham"},"electorate":"SA","house":"senate","party":"Liberal Party"}},{"id":10067,"latest_member":{"id":100025,"name":{"first":"George","last":"Brandis"},"electorate":"Queensland","house":"senate","party":"Liberal Party"}},{"id":10071,"latest_member":{"id":100026,"name":{"first":"Carol","last":"Brown"},"electorate":"Tasmania","house":"senate","party":"Australian Labor Party"}},{"id":10085,"latest_member":{"id":100031,"name":{"first":"David","last":"Bushby"},"electorate":"Tasmania","house":"senate","party":"Liberal Party"}},{"id":10103,"latest_member":{"id":100036,"name":{"first":"Kim","last":"Carr"},"electorate":"Victoria","house":"senate","party":"Australian Labor Party"}},{"id":10131,"latest_member":{"id":100047,"name":{"first":"Richard","last":"Colbeck"},"electorate":"Tasmania","house":"senate","party":"Liberal Party"}},{"id":10142,"latest_member":{"id":100053,"name":{"first":"Stephen","last":"Conroy"},"electorate":"Victoria","house":"senate","party":"Australian Labor Party"}},{"id":10148,"latest_member":{"id":100057,"name":{"first":"Mathias","last":"Cormann"},"electorate":"WA","house":"senate","party":"Liberal Party"}},{"id":10222,"latest_member":{"id":100082,"name":{"first":"Concetta","last":"Fierravanti-Wells"},"electorate":"NSW","house":"senate","party":"Liberal Party"}},{"id":10224,"latest_member":{"id":100083,"name":{"first":"Mitch","last":"Fifield"},"electorate":"Victoria","house":"senate","party":"Liberal Party"}},{"id":10296,"latest_member":{"id":100101,"name":{"first":"Bill","last":"Heffernan"},"electorate":"NSW","house":"senate","party":"Liberal Party"}},{"id":10344,"latest_member":{"id":100112,"name":{"first":"David","last":"Johnston"},"electorate":"WA","house":"senate","party":"Liberal Party"}},{"id":10397,"latest_member":{"id":100128,"name":{"first":"Joe","last":"Ludwig"},"electorate":"Queensland","house":"senate","party":"Australian Labor Party"}},{"id":10401,"latest_member":{"id":100130,"name":{"first":"Ian","last":"Macdonald"},"electorate":"Queensland","house":"senate","party":"Liberal Party"}},{"id":10433,"latest_member":{"id":100145,"name":{"first":"Anne","last":"McEwen"},"electorate":"SA","house":"senate","party":"Australian Labor Party"}},{"id":10447,"latest_member":{"id":100152,"name":{"first":"Jan","last":"McLucas"},"electorate":"Queensland","house":"senate","party":"Australian Labor Party"}},{"id":10458,"latest_member":{"id":100156,"name":{"first":"Christine","last":"Milne"},"electorate":"Tasmania","house":"senate","party":"Australian Greens"}},{"id":10463,"latest_member":{"id":100159,"name":{"first":"Claire","last":"Moore"},"electorate":"Queensland","house":"senate","party":"Australian Labor Party"}},{"id":10478,"latest_member":{"id":100164,"name":{"first":"Fiona","last":"Nash"},"electorate":"NSW","house":"senate","party":"National Party"}},{"id":10509,"latest_member":{"id":100177,"name":{"first":"Marise","last":"Payne"},"electorate":"NSW","house":"senate","party":"Liberal Party"}},{"id":10515,"latest_member":{"id":100178,"name":{"first":"Helen","last":"Polley"},"electorate":"Tasmania","house":"senate","party":"Australian Labor Party"}},{"id":10550,"latest_member":{"id":100192,"name":{"first":"Michael","last":"Ronaldson"},"electorate":"Victoria","house":"senate","party":"Liberal Party"}},{"id":10569,"latest_member":{"id":100199,"name":{"first":"Nigel","last":"Scullion"},"electorate":"NT","house":"senate","party":"Country Liberal Party"}},{"id":10584,"latest_member":{"id":100208,"name":{"first":"Rachel","last":"Siewert"},"electorate":"WA","house":"senate","party":"Australian Greens"}},{"id":10610,"latest_member":{"id":100213,"name":{"first":"Glenn","last":"Sterle"},"electorate":"WA","house":"senate","party":"Australian Labor Party"}},{"id":10678,"latest_member":{"id":100241,"name":{"first":"Penny","last":"Wong"},"electorate":"SA","house":"senate","party":"Australian Labor Party"}},{"id":10705,"latest_member":{"id":100250,"name":{"first":"Catryna","last":"Bilyk"},"electorate":"Tasmania","house":"senate","party":"Australian Labor Party"}},{"id":10706,"latest_member":{"id":100251,"name":{"first":"Doug","last":"Cameron"},"electorate":"NSW","house":"senate","party":"Australian Labor Party"}},{"id":10707,"latest_member":{"id":100252,"name":{"first":"Michaelia","last":"Cash"},"electorate":"WA","house":"senate","party":"Liberal Party"}},{"id":10711,"latest_member":{"id":100256,"name":{"first":"Sarah","last":"Hanson-Young"},"electorate":"SA","house":"senate","party":"Australian Greens"}},{"id":10713,"latest_member":{"id":100258,"name":{"first":"Scott","last":"Ludlam"},"electorate":"WA","house":"senate","party":"Australian Greens"}},{"id":10715,"latest_member":{"id":100260,"name":{"first":"Scott","last":"Ryan"},"electorate":"Victoria","house":"senate","party":"Liberal Party"}},{"id":10716,"latest_member":{"id":100261,"name":{"first":"John","last":"Williams"},"electorate":"NSW","house":"senate","party":"National Party"}},{"id":10717,"latest_member":{"id":100262,"name":{"first":"Nick","last":"Xenophon"},"electorate":"SA","house":"senate","party":"Independent"}},{"id":10135,"latest_member":{"id":100265,"name":{"first":"Jacinta","last":"Collins"},"electorate":"Victoria","house":"senate","party":"Australian Labor Party"}},{"id":10722,"latest_member":{"id":100279,"name":{"first":"Christopher","last":"Back"},"electorate":"WA","house":"senate","party":"Liberal Party"}},{"id":10755,"latest_member":{"id":100285,"name":{"first":"Richard","last":"Di Natale"},"electorate":"Victoria","house":"senate","party":"Australian Greens"}},{"id":10756,"latest_member":{"id":100286,"name":{"first":"Sean","last":"Edwards"},"electorate":"SA","house":"senate","party":"Liberal Party"}},{"id":10215,"latest_member":{"id":100287,"name":{"first":"David","last":"Fawcett"},"electorate":"SA","house":"senate","party":"Liberal Party"}},{"id":10757,"latest_member":{"id":100288,"name":{"first":"Alex","last":"Gallacher"},"electorate":"SA","house":"senate","party":"Australian Labor Party"}},{"id":10758,"latest_member":{"id":100291,"name":{"first":"Bridget","last":"McKenzie"},"electorate":"Victoria","house":"senate","party":"National Party"}},{"id":10760,"latest_member":{"id":100293,"name":{"first":"Lee","last":"Rhiannon"},"electorate":"NSW","house":"senate","party":"Australian Greens"}},{"id":10761,"latest_member":{"id":100295,"name":{"first":"Lisa","last":"Singh"},"electorate":"Tasmania","house":"senate","party":"Australian Labor Party"}},{"id":10763,"latest_member":{"id":100297,"name":{"first":"Anne","last":"Urquhart"},"electorate":"Tasmania","house":"senate","party":"Australian Labor Party"}},{"id":10764,"latest_member":{"id":100298,"name":{"first":"Larissa","last":"Waters"},"electorate":"Queensland","house":"senate","party":"Australian Greens"}},{"id":10765,"latest_member":{"id":100300,"name":{"first":"Penny","last":"Wright"},"electorate":"SA","house":"senate","party":"Australian Greens"}},{"id":10766,"latest_member":{"id":100301,"name":{"first":"Arthur","last":"Sinodinos"},"electorate":"NSW","house":"senate","party":"Liberal Party"}},{"id":10768,"latest_member":{"id":100303,"name":{"first":"Dean","last":"Smith"},"electorate":"WA","house":"senate","party":"Liberal Party"}},{"id":10780,"latest_member":{"id":100305,"name":{"first":"Peter","last":"Whish-Wilson"},"electorate":"Tasmania","house":"senate","party":"Australian Greens"}},{"id":10781,"latest_member":{"id":100306,"name":{"first":"Anne","last":"Ruston"},"electorate":"SA","house":"senate","party":"Liberal Party"}},{"id":10782,"latest_member":{"id":100307,"name":{"first":"Sue","last":"Lines"},"electorate":"WA","house":"senate","party":"Australian Labor Party"}},{"id":10819,"latest_member":{"id":100308,"name":{"first":"Sam","last":"Dastyari"},"electorate":"NSW","house":"senate","party":"Australian Labor Party"}},{"id":10820,"latest_member":{"id":100309,"name":{"first":"Nova","last":"Peris"},"electorate":"NT","house":"senate","party":"Australian Labor Party"}},{"id":10822,"latest_member":{"id":100311,"name":{"first":"Zed","last":"Seselja"},"electorate":"ACT","house":"senate","party":"Liberal Party"}},{"id":10747,"latest_member":{"id":100312,"name":{"first":"Deborah","last":"O'Neill"},"electorate":"NSW","house":"senate","party":"Australian Labor Party"}},{"id":10824,"latest_member":{"id":100313,"name":{"first":"Barry","last":"O'Sullivan"},"electorate":"Queensland","house":"senate","party":"National Party"}},{"id":10826,"latest_member":{"id":100826,"name":{"first":"Joe","last":"Bullock"},"electorate":"WA","house":"senate","party":"Australian Labor Party"}},{"id":10827,"latest_member":{"id":100827,"name":{"first":"Matthew","last":"Canavan"},"electorate":"Queensland","house":"senate","party":"Liberal National Party"}},{"id":10828,"latest_member":{"id":100828,"name":{"first":"Bob","last":"Day"},"electorate":"SA","house":"senate","party":"Family First Party"}},{"id":10829,"latest_member":{"id":100829,"name":{"first":"Chris","last":"Ketter"},"electorate":"Queensland","house":"senate","party":"Australian Labor Party"}},{"id":10832,"latest_member":{"id":100832,"name":{"first":"David","last":"Leyonhjelm"},"electorate":"NSW","house":"senate","party":"Liberal Democratic Party"}},{"id":10833,"latest_member":{"id":100833,"name":{"first":"James","last":"McGrath"},"electorate":"Queensland","house":"senate","party":"Liberal National Party"}},{"id":10834,"latest_member":{"id":100834,"name":{"first":"Ricky","last":"Muir"},"electorate":"Victoria","house":"senate","party":"Australian Motoring Enthusiast Party"}},{"id":10835,"latest_member":{"id":100835,"name":{"first":"Linda","last":"Reynolds"},"electorate":"WA","house":"senate","party":"Liberal Party"}},{"id":10836,"latest_member":{"id":100836,"name":{"first":"Janet","last":"Rice"},"electorate":"Victoria","house":"senate","party":"Australian Greens"}},{"id":10837,"latest_member":{"id":100837,"name":{"first":"Dio","last":"Wang"},"electorate":"WA","house":"senate","party":"Palmer United Party"}},{"id":10507,"latest_member":{"id":100838,"name":{"first":"Stephen","last":"Parry"},"electorate":"Tasmania","house":"senate","party":"PRES"}},{"id":10419,"latest_member":{"id":100839,"name":{"first":"Gavin","last":"Marshall"},"electorate":"Victoria","house":"senate","party":"DPRES"}},{"id":10759,"latest_member":{"id":100841,"name":{"first":"John","last":"Madigan"},"electorate":"Victoria","house":"senate","party":"Independent"}},{"id":10830,"latest_member":{"id":100842,"name":{"first":"Jacqui","last":"Lambie"},"electorate":"Tasmania","house":"senate","party":"Independent"}},{"id":10831,"latest_member":{"id":100843,"name":{"first":"Glenn","last":"Lazarus"},"electorate":"Queensland","house":"senate","party":"Independent"}},{"id":10838,"latest_member":{"id":100844,"name":{"first":"Katy","last":"Gallagher"},"electorate":"ACT","house":"senate","party":"Australian Labor Party"}},{"id":10839,"latest_member":{"id":100845,"name":{"first":"Jenny","last":"McAllister"},"electorate":"NSW","house":"senate","party":"Australian Labor Party"}},{"id":10840,"latest_member":{"id":100846,"name":{"first":"Jo","last":"Lindgren"},"electorate":"Queensland","house":"senate","party":"Liberal Party"}}]
+[
+    {
+        "id": 10001,
+        "latest_member": {
+            "electorate": "Warringah",
+            "house": "representatives",
+            "id": 1,
+            "name": {
+                "first": "Tony",
+                "last": "Abbott"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10007,
+        "latest_member": {
+            "electorate": "Grayndler",
+            "house": "representatives",
+            "id": 6,
+            "name": {
+                "first": "Anthony",
+                "last": "Albanese"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10014,
+        "latest_member": {
+            "electorate": "Menzies",
+            "house": "representatives",
+            "id": 13,
+            "name": {
+                "first": "Kevin",
+                "last": "Andrews"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10026,
+        "latest_member": {
+            "electorate": "Paterson",
+            "house": "representatives",
+            "id": 26,
+            "name": {
+                "first": "Bob",
+                "last": "Baldwin"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10041,
+        "latest_member": {
+            "electorate": "Dunkley",
+            "house": "representatives",
+            "id": 38,
+            "name": {
+                "first": "Bruce",
+                "last": "Billson"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10043,
+        "latest_member": {
+            "electorate": "Cunningham",
+            "house": "representatives",
+            "id": 40,
+            "name": {
+                "first": "Sharon",
+                "last": "Bird"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10047,
+        "latest_member": {
+            "electorate": "Curtin",
+            "house": "representatives",
+            "id": 43,
+            "name": {
+                "first": "Julie",
+                "last": "Bishop"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10069,
+        "latest_member": {
+            "electorate": "McMillan",
+            "house": "representatives",
+            "id": 57,
+            "name": {
+                "first": "Russell",
+                "last": "Broadbent"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10081,
+        "latest_member": {
+            "electorate": "Watson",
+            "house": "representatives",
+            "id": 69,
+            "name": {
+                "first": "Tony",
+                "last": "Burke"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10086,
+        "latest_member": {
+            "electorate": "Port Adelaide",
+            "house": "representatives",
+            "id": 73,
+            "name": {
+                "first": "Mark",
+                "last": "Butler"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10088,
+        "latest_member": {
+            "electorate": "Holt",
+            "house": "representatives",
+            "id": 74,
+            "name": {
+                "first": "Anthony",
+                "last": "Byrne"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10111,
+        "latest_member": {
+            "electorate": "Wakefield",
+            "house": "representatives",
+            "id": 94,
+            "name": {
+                "first": "Nick",
+                "last": "Champion"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10122,
+        "latest_member": {
+            "electorate": "Moncrieff",
+            "house": "representatives",
+            "id": 105,
+            "name": {
+                "first": "Steven",
+                "last": "Ciobo"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10123,
+        "latest_member": {
+            "electorate": "Blaxland",
+            "house": "representatives",
+            "id": 106,
+            "name": {
+                "first": "Jason",
+                "last": "Clare"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10127,
+        "latest_member": {
+            "electorate": "Calare",
+            "house": "representatives",
+            "id": 111,
+            "name": {
+                "first": "John",
+                "last": "Cobb"
+            },
+            "party": "National Party"
+        }
+    },
+    {
+        "id": 10136,
+        "latest_member": {
+            "electorate": "Franklin",
+            "house": "representatives",
+            "id": 115,
+            "name": {
+                "first": "Julie",
+                "last": "Collins"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10152,
+        "latest_member": {
+            "electorate": "Parkes",
+            "house": "representatives",
+            "id": 123,
+            "name": {
+                "first": "Mark",
+                "last": "Coulton"
+            },
+            "party": "National Party"
+        }
+    },
+    {
+        "id": 10165,
+        "latest_member": {
+            "electorate": "Melbourne Ports",
+            "house": "representatives",
+            "id": 134,
+            "name": {
+                "first": "Michael",
+                "last": "Danby"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10181,
+        "latest_member": {
+            "electorate": "Isaacs",
+            "house": "representatives",
+            "id": 149,
+            "name": {
+                "first": "Mark",
+                "last": "Dreyfus"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10188,
+        "latest_member": {
+            "electorate": "Dickson",
+            "house": "representatives",
+            "id": 154,
+            "name": {
+                "first": "Peter",
+                "last": "Dutton"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10195,
+        "latest_member": {
+            "electorate": "Richmond",
+            "house": "representatives",
+            "id": 160,
+            "name": {
+                "first": "Justine",
+                "last": "Elliot"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10198,
+        "latest_member": {
+            "electorate": "Adelaide",
+            "house": "representatives",
+            "id": 163,
+            "name": {
+                "first": "Kate",
+                "last": "Ellis"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10230,
+        "latest_member": {
+            "electorate": "Hunter",
+            "house": "representatives",
+            "id": 187,
+            "name": {
+                "first": "Joel",
+                "last": "Fitzgibbon"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10264,
+        "latest_member": {
+            "electorate": "Brand",
+            "house": "representatives",
+            "id": 222,
+            "name": {
+                "first": "Gary",
+                "last": "Gray"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10267,
+        "latest_member": {
+            "electorate": "Bruce",
+            "house": "representatives",
+            "id": 224,
+            "name": {
+                "first": "Alan",
+                "last": "Griffin"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10275,
+        "latest_member": {
+            "electorate": "Shortland",
+            "house": "representatives",
+            "id": 230,
+            "name": {
+                "first": "Jill",
+                "last": "Hall"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10285,
+        "latest_member": {
+            "electorate": "Cowper",
+            "house": "representatives",
+            "id": 237,
+            "name": {
+                "first": "Luke",
+                "last": "Hartsuyker"
+            },
+            "party": "National Party"
+        }
+    },
+    {
+        "id": 10290,
+        "latest_member": {
+            "electorate": "Mitchell",
+            "house": "representatives",
+            "id": 242,
+            "name": {
+                "first": "Alex",
+                "last": "Hawke"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10306,
+        "latest_member": {
+            "electorate": "North Sydney",
+            "house": "representatives",
+            "id": 256,
+            "name": {
+                "first": "Joe",
+                "last": "Hockey"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10319,
+        "latest_member": {
+            "electorate": "Flinders",
+            "house": "representatives",
+            "id": 270,
+            "name": {
+                "first": "Greg",
+                "last": "Hunt"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10326,
+        "latest_member": {
+            "electorate": "Swan",
+            "house": "representatives",
+            "id": 275,
+            "name": {
+                "first": "Steve",
+                "last": "Irons"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10337,
+        "latest_member": {
+            "electorate": "Tangney",
+            "house": "representatives",
+            "id": 289,
+            "name": {
+                "first": "Dennis",
+                "last": "Jensen"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10352,
+        "latest_member": {
+            "electorate": "Kennedy",
+            "house": "representatives",
+            "id": 302,
+            "name": {
+                "first": "Bob",
+                "last": "Katter"
+            },
+            "party": "Independent"
+        }
+    },
+    {
+        "id": 10356,
+        "latest_member": {
+            "electorate": "Stirling",
+            "house": "representatives",
+            "id": 305,
+            "name": {
+                "first": "Michael",
+                "last": "Keenan"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10368,
+        "latest_member": {
+            "electorate": "Ballarat",
+            "house": "representatives",
+            "id": 318,
+            "name": {
+                "first": "Catherine",
+                "last": "King"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10377,
+        "latest_member": {
+            "electorate": "Bowman",
+            "house": "representatives",
+            "id": 324,
+            "name": {
+                "first": "Andrew",
+                "last": "Laming"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10387,
+        "latest_member": {
+            "electorate": "Farrer",
+            "house": "representatives",
+            "id": 332,
+            "name": {
+                "first": "Sussan",
+                "last": "Ley"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10403,
+        "latest_member": {
+            "electorate": "Groom",
+            "house": "representatives",
+            "id": 342,
+            "name": {
+                "first": "Ian",
+                "last": "Macfarlane"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10409,
+        "latest_member": {
+            "electorate": "Jagajaga",
+            "house": "representatives",
+            "id": 346,
+            "name": {
+                "first": "Jenny",
+                "last": "Macklin"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10416,
+        "latest_member": {
+            "electorate": "Forrest",
+            "house": "representatives",
+            "id": 351,
+            "name": {
+                "first": "Nola",
+                "last": "Marino"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10418,
+        "latest_member": {
+            "electorate": "Corio",
+            "house": "representatives",
+            "id": 353,
+            "name": {
+                "first": "Richard",
+                "last": "Marles"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10468,
+        "latest_member": {
+            "electorate": "Cook",
+            "house": "representatives",
+            "id": 388,
+            "name": {
+                "first": "Scott",
+                "last": "Morrison"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10485,
+        "latest_member": {
+            "electorate": "Blair",
+            "house": "representatives",
+            "id": 400,
+            "name": {
+                "first": "Shayne",
+                "last": "Neumann"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10496,
+        "latest_member": {
+            "electorate": "Gorton",
+            "house": "representatives",
+            "id": 408,
+            "name": {
+                "first": "Brendan",
+                "last": "O'Connor"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10503,
+        "latest_member": {
+            "electorate": "Parramatta",
+            "house": "representatives",
+            "id": 414,
+            "name": {
+                "first": "Julie",
+                "last": "Owens"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10506,
+        "latest_member": {
+            "electorate": "Fremantle",
+            "house": "representatives",
+            "id": 415,
+            "name": {
+                "first": "Melissa",
+                "last": "Parke"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10512,
+        "latest_member": {
+            "electorate": "Moreton",
+            "house": "representatives",
+            "id": 418,
+            "name": {
+                "first": "Graham",
+                "last": "Perrett"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10513,
+        "latest_member": {
+            "electorate": "Sydney",
+            "house": "representatives",
+            "id": 419,
+            "name": {
+                "first": "Tanya",
+                "last": "Plibersek"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10524,
+        "latest_member": {
+            "electorate": "Sturt",
+            "house": "representatives",
+            "id": 427,
+            "name": {
+                "first": "Christopher",
+                "last": "Pyne"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10529,
+        "latest_member": {
+            "electorate": "Grey",
+            "house": "representatives",
+            "id": 430,
+            "name": {
+                "first": "Rowan",
+                "last": "Ramsey"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10530,
+        "latest_member": {
+            "electorate": "Canning",
+            "house": "representatives",
+            "id": 431,
+            "name": {
+                "first": "Don",
+                "last": "Randall"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10542,
+        "latest_member": {
+            "electorate": "Oxley",
+            "house": "representatives",
+            "id": 440,
+            "name": {
+                "first": "Bernie",
+                "last": "Ripoll"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10543,
+        "latest_member": {
+            "electorate": "Kingston",
+            "house": "representatives",
+            "id": 441,
+            "name": {
+                "first": "Amanda",
+                "last": "Rishworth"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10544,
+        "latest_member": {
+            "electorate": "Goldstein",
+            "house": "representatives",
+            "id": 442,
+            "name": {
+                "first": "Andrew",
+                "last": "Robb"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10545,
+        "latest_member": {
+            "electorate": "Fadden",
+            "house": "representatives",
+            "id": 443,
+            "name": {
+                "first": "Stuart",
+                "last": "Robert"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10553,
+        "latest_member": {
+            "electorate": "Berowra",
+            "house": "representatives",
+            "id": 451,
+            "name": {
+                "first": "Philip",
+                "last": "Ruddock"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10580,
+        "latest_member": {
+            "electorate": "Maribyrnong",
+            "house": "representatives",
+            "id": 476,
+            "name": {
+                "first": "Bill",
+                "last": "Shorten"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10588,
+        "latest_member": {
+            "electorate": "Cowan",
+            "house": "representatives",
+            "id": 481,
+            "name": {
+                "first": "Luke",
+                "last": "Simpkins"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10592,
+        "latest_member": {
+            "electorate": "Casey",
+            "house": "representatives",
+            "id": 486,
+            "name": {
+                "first": "Tony",
+                "last": "Smith"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10599,
+        "latest_member": {
+            "electorate": "Lingiari",
+            "house": "representatives",
+            "id": 494,
+            "name": {
+                "first": "Warren",
+                "last": "Snowdon"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10601,
+        "latest_member": {
+            "electorate": "Boothby",
+            "house": "representatives",
+            "id": 498,
+            "name": {
+                "first": "Andrew",
+                "last": "Southcott"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10612,
+        "latest_member": {
+            "electorate": "Murray",
+            "house": "representatives",
+            "id": 505,
+            "name": {
+                "first": "Sharman",
+                "last": "Stone"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10617,
+        "latest_member": {
+            "electorate": "Lilley",
+            "house": "representatives",
+            "id": 510,
+            "name": {
+                "first": "Wayne",
+                "last": "Swan"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10632,
+        "latest_member": {
+            "electorate": "Wills",
+            "house": "representatives",
+            "id": 521,
+            "name": {
+                "first": "Kelvin",
+                "last": "Thomson"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10641,
+        "latest_member": {
+            "electorate": "Wide Bay",
+            "house": "representatives",
+            "id": 526,
+            "name": {
+                "first": "Warren",
+                "last": "Truss"
+            },
+            "party": "National Party"
+        }
+    },
+    {
+        "id": 10643,
+        "latest_member": {
+            "electorate": "Wentworth",
+            "house": "representatives",
+            "id": 528,
+            "name": {
+                "first": "Malcolm",
+                "last": "Turnbull"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10649,
+        "latest_member": {
+            "electorate": "Calwell",
+            "house": "representatives",
+            "id": 533,
+            "name": {
+                "first": "Maria",
+                "last": "Vamvakinou"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10695,
+        "latest_member": {
+            "electorate": "Makin",
+            "house": "representatives",
+            "id": 563,
+            "name": {
+                "first": "Tony",
+                "last": "Zappia"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10703,
+        "latest_member": {
+            "electorate": "Gippsland",
+            "house": "representatives",
+            "id": 567,
+            "name": {
+                "first": "Darren",
+                "last": "Chester"
+            },
+            "party": "National Party"
+        }
+    },
+    {
+        "id": 10721,
+        "latest_member": {
+            "electorate": "Mayo",
+            "house": "representatives",
+            "id": 586,
+            "name": {
+                "first": "Jamie",
+                "last": "Briggs"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10723,
+        "latest_member": {
+            "electorate": "Bradfield",
+            "house": "representatives",
+            "id": 587,
+            "name": {
+                "first": "Paul",
+                "last": "Fletcher"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10724,
+        "latest_member": {
+            "electorate": "Higgins",
+            "house": "representatives",
+            "id": 588,
+            "name": {
+                "first": "Kelly",
+                "last": "O'Dwyer"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10725,
+        "latest_member": {
+            "electorate": "Bennelong",
+            "house": "representatives",
+            "id": 589,
+            "name": {
+                "first": "John",
+                "last": "Alexander"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10726,
+        "latest_member": {
+            "electorate": "Dawson",
+            "house": "representatives",
+            "id": 590,
+            "name": {
+                "first": "George",
+                "last": "Christensen"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10727,
+        "latest_member": {
+            "electorate": "Denison",
+            "house": "representatives",
+            "id": 591,
+            "name": {
+                "first": "Andrew",
+                "last": "Wilkie"
+            },
+            "party": "Independent"
+        }
+    },
+    {
+        "id": 10728,
+        "latest_member": {
+            "electorate": "Flynn",
+            "house": "representatives",
+            "id": 592,
+            "name": {
+                "first": "Ken",
+                "last": "O'Dowd"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10729,
+        "latest_member": {
+            "electorate": "Forde",
+            "house": "representatives",
+            "id": 593,
+            "name": {
+                "first": "Bert",
+                "last": "Van Manen"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10730,
+        "latest_member": {
+            "electorate": "Hasluck",
+            "house": "representatives",
+            "id": 594,
+            "name": {
+                "first": "Ken",
+                "last": "Wyatt"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10203,
+        "latest_member": {
+            "electorate": "Leichhardt",
+            "house": "representatives",
+            "id": 596,
+            "name": {
+                "first": "Warren",
+                "last": "Entsch"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10732,
+        "latest_member": {
+            "electorate": "Longman",
+            "house": "representatives",
+            "id": 597,
+            "name": {
+                "first": "Wyatt",
+                "last": "Roy"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10417,
+        "latest_member": {
+            "electorate": "Macquarie",
+            "house": "representatives",
+            "id": 598,
+            "name": {
+                "first": "Louise",
+                "last": "Markus"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10733,
+        "latest_member": {
+            "electorate": "McEwen",
+            "house": "representatives",
+            "id": 599,
+            "name": {
+                "first": "Rob",
+                "last": "Mitchell"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10734,
+        "latest_member": {
+            "electorate": "Melbourne",
+            "house": "representatives",
+            "id": 600,
+            "name": {
+                "first": "Adam",
+                "last": "Bandt"
+            },
+            "party": "Australian Greens"
+        }
+    },
+    {
+        "id": 10736,
+        "latest_member": {
+            "electorate": "Solomon",
+            "house": "representatives",
+            "id": 602,
+            "name": {
+                "first": "Natasha",
+                "last": "Griggs"
+            },
+            "party": "Country Liberal Party"
+        }
+    },
+    {
+        "id": 10738,
+        "latest_member": {
+            "electorate": "Canberra",
+            "house": "representatives",
+            "id": 604,
+            "name": {
+                "first": "Gai",
+                "last": "Brodtmann"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10739,
+        "latest_member": {
+            "electorate": "Macarthur",
+            "house": "representatives",
+            "id": 605,
+            "name": {
+                "first": "Russell",
+                "last": "Matheson"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10740,
+        "latest_member": {
+            "electorate": "Throsby",
+            "house": "representatives",
+            "id": 606,
+            "name": {
+                "first": "Stephen",
+                "last": "Jones"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10741,
+        "latest_member": {
+            "electorate": "Kooyong",
+            "house": "representatives",
+            "id": 607,
+            "name": {
+                "first": "Josh",
+                "last": "Frydenberg"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10742,
+        "latest_member": {
+            "electorate": "Wannon",
+            "house": "representatives",
+            "id": 608,
+            "name": {
+                "first": "Dan",
+                "last": "Tehan"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10743,
+        "latest_member": {
+            "electorate": "Riverina",
+            "house": "representatives",
+            "id": 609,
+            "name": {
+                "first": "Michael",
+                "last": "McCormack"
+            },
+            "party": "National Party"
+        }
+    },
+    {
+        "id": 10294,
+        "latest_member": {
+            "electorate": "Fowler",
+            "house": "representatives",
+            "id": 610,
+            "name": {
+                "first": "Chris",
+                "last": "Hayes"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10744,
+        "latest_member": {
+            "electorate": "Herbert",
+            "house": "representatives",
+            "id": 611,
+            "name": {
+                "first": "Ewen",
+                "last": "Jones"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10745,
+        "latest_member": {
+            "electorate": "McPherson",
+            "house": "representatives",
+            "id": 612,
+            "name": {
+                "first": "Karen",
+                "last": "Andrews"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10746,
+        "latest_member": {
+            "electorate": "Fraser",
+            "house": "representatives",
+            "id": 613,
+            "name": {
+                "first": "Andrew",
+                "last": "Leigh"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10748,
+        "latest_member": {
+            "electorate": "Aston",
+            "house": "representatives",
+            "id": 615,
+            "name": {
+                "first": "Alan",
+                "last": "Tudge"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10749,
+        "latest_member": {
+            "electorate": "Chifley",
+            "house": "representatives",
+            "id": 616,
+            "name": {
+                "first": "Ed",
+                "last": "Husic"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10750,
+        "latest_member": {
+            "electorate": "Hughes",
+            "house": "representatives",
+            "id": 617,
+            "name": {
+                "first": "Craig",
+                "last": "Kelly"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10751,
+        "latest_member": {
+            "electorate": "Greenway",
+            "house": "representatives",
+            "id": 618,
+            "name": {
+                "first": "Michelle",
+                "last": "Rowland"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10217,
+        "latest_member": {
+            "electorate": "Werriwa",
+            "house": "representatives",
+            "id": 619,
+            "name": {
+                "first": "Laurie",
+                "last": "Ferguson"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10060,
+        "latest_member": {
+            "electorate": "McMahon",
+            "house": "representatives",
+            "id": 623,
+            "name": {
+                "first": "Chris",
+                "last": "Bowen"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10752,
+        "latest_member": {
+            "electorate": "Wright",
+            "house": "representatives",
+            "id": 624,
+            "name": {
+                "first": "Scott",
+                "last": "Buchholz"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10753,
+        "latest_member": {
+            "electorate": "Ryan",
+            "house": "representatives",
+            "id": 625,
+            "name": {
+                "first": "Jane",
+                "last": "Prentice"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10651,
+        "latest_member": {
+            "electorate": "Bonner",
+            "house": "representatives",
+            "id": 626,
+            "name": {
+                "first": "Ross",
+                "last": "Vasta"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10239,
+        "latest_member": {
+            "electorate": "Brisbane",
+            "house": "representatives",
+            "id": 627,
+            "name": {
+                "first": "Teresa",
+                "last": "Gambaro"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10565,
+        "latest_member": {
+            "electorate": "Maranoa",
+            "house": "representatives",
+            "id": 632,
+            "name": {
+                "first": "Bruce",
+                "last": "Scott"
+            },
+            "party": "CWM"
+        }
+    },
+    {
+        "id": 10783,
+        "latest_member": {
+            "electorate": "Banks",
+            "house": "representatives",
+            "id": 634,
+            "name": {
+                "first": "David",
+                "last": "Coleman"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10784,
+        "latest_member": {
+            "electorate": "Barker",
+            "house": "representatives",
+            "id": 635,
+            "name": {
+                "first": "Tony",
+                "last": "Pasin"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10785,
+        "latest_member": {
+            "electorate": "Barton",
+            "house": "representatives",
+            "id": 636,
+            "name": {
+                "first": "Nickolas",
+                "last": "Varvaris"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10786,
+        "latest_member": {
+            "electorate": "Bass",
+            "house": "representatives",
+            "id": 637,
+            "name": {
+                "first": "Andrew",
+                "last": "Nikolic"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10709,
+        "latest_member": {
+            "electorate": "Batman",
+            "house": "representatives",
+            "id": 638,
+            "name": {
+                "first": "David",
+                "last": "Feeney"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10787,
+        "latest_member": {
+            "electorate": "Bendigo",
+            "house": "representatives",
+            "id": 639,
+            "name": {
+                "first": "Lisa",
+                "last": "Chesters"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10788,
+        "latest_member": {
+            "electorate": "Braddon",
+            "house": "representatives",
+            "id": 640,
+            "name": {
+                "first": "Brett",
+                "last": "Whiteley"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10789,
+        "latest_member": {
+            "electorate": "Capricornia",
+            "house": "representatives",
+            "id": 641,
+            "name": {
+                "first": "Michelle",
+                "last": "Landry"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10813,
+        "latest_member": {
+            "electorate": "Charlton",
+            "house": "representatives",
+            "id": 642,
+            "name": {
+                "first": "Pat",
+                "last": "Conroy"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10790,
+        "latest_member": {
+            "electorate": "Corangamite",
+            "house": "representatives",
+            "id": 643,
+            "name": {
+                "first": "Sarah",
+                "last": "Henderson"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10791,
+        "latest_member": {
+            "electorate": "Deakin",
+            "house": "representatives",
+            "id": 644,
+            "name": {
+                "first": "Michael",
+                "last": "Sukkar"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10792,
+        "latest_member": {
+            "electorate": "Dobell",
+            "house": "representatives",
+            "id": 645,
+            "name": {
+                "first": "Karen",
+                "last": "McNamara"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10818,
+        "latest_member": {
+            "electorate": "Durack",
+            "house": "representatives",
+            "id": 646,
+            "name": {
+                "first": "Melissa",
+                "last": "Price"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10793,
+        "latest_member": {
+            "electorate": "Eden-Monaro",
+            "house": "representatives",
+            "id": 647,
+            "name": {
+                "first": "Peter",
+                "last": "Hendy"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10070,
+        "latest_member": {
+            "electorate": "Fisher",
+            "house": "representatives",
+            "id": 648,
+            "name": {
+                "first": "Mal",
+                "last": "Brough"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10794,
+        "latest_member": {
+            "electorate": "Gellibrand",
+            "house": "representatives",
+            "id": 649,
+            "name": {
+                "first": "Tim",
+                "last": "Watts"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10795,
+        "latest_member": {
+            "electorate": "Gilmore",
+            "house": "representatives",
+            "id": 650,
+            "name": {
+                "first": "Ann",
+                "last": "Sudmalis"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10796,
+        "latest_member": {
+            "electorate": "Hindmarsh",
+            "house": "representatives",
+            "id": 651,
+            "name": {
+                "first": "Matt",
+                "last": "Williams"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10797,
+        "latest_member": {
+            "electorate": "Hinkler",
+            "house": "representatives",
+            "id": 652,
+            "name": {
+                "first": "Keith",
+                "last": "Pitt"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10814,
+        "latest_member": {
+            "electorate": "Hotham",
+            "house": "representatives",
+            "id": 653,
+            "name": {
+                "first": "Clare",
+                "last": "O'Neil"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10817,
+        "latest_member": {
+            "electorate": "Hume",
+            "house": "representatives",
+            "id": 654,
+            "name": {
+                "first": "Angus",
+                "last": "Taylor"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10798,
+        "latest_member": {
+            "electorate": "Indi",
+            "house": "representatives",
+            "id": 655,
+            "name": {
+                "first": "Cathy",
+                "last": "McGowan"
+            },
+            "party": "Independent"
+        }
+    },
+    {
+        "id": 10762,
+        "latest_member": {
+            "electorate": "Kingsford Smith",
+            "house": "representatives",
+            "id": 656,
+            "name": {
+                "first": "Matt",
+                "last": "Thistlethwaite"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10679,
+        "latest_member": {
+            "electorate": "La Trobe",
+            "house": "representatives",
+            "id": 657,
+            "name": {
+                "first": "Jason",
+                "last": "Wood"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10799,
+        "latest_member": {
+            "electorate": "Lalor",
+            "house": "representatives",
+            "id": 658,
+            "name": {
+                "first": "Joanne",
+                "last": "Ryan"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10800,
+        "latest_member": {
+            "electorate": "Lindsay",
+            "house": "representatives",
+            "id": 659,
+            "name": {
+                "first": "Fiona",
+                "last": "Scott"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10801,
+        "latest_member": {
+            "electorate": "Lyne",
+            "house": "representatives",
+            "id": 660,
+            "name": {
+                "first": "David",
+                "last": "Gillespie"
+            },
+            "party": "National Party"
+        }
+    },
+    {
+        "id": 10802,
+        "latest_member": {
+            "electorate": "Lyons",
+            "house": "representatives",
+            "id": 661,
+            "name": {
+                "first": "Eric",
+                "last": "Hutchinson"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10803,
+        "latest_member": {
+            "electorate": "Mallee",
+            "house": "representatives",
+            "id": 662,
+            "name": {
+                "first": "Andrew",
+                "last": "Broad"
+            },
+            "party": "National Party"
+        }
+    },
+    {
+        "id": 10804,
+        "latest_member": {
+            "electorate": "Moore",
+            "house": "representatives",
+            "id": 663,
+            "name": {
+                "first": "Ian",
+                "last": "Goodenough"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10350,
+        "latest_member": {
+            "electorate": "New England",
+            "house": "representatives",
+            "id": 664,
+            "name": {
+                "first": "Barnaby",
+                "last": "Joyce"
+            },
+            "party": "National Party"
+        }
+    },
+    {
+        "id": 10805,
+        "latest_member": {
+            "electorate": "Newcastle",
+            "house": "representatives",
+            "id": 665,
+            "name": {
+                "first": "Sharon",
+                "last": "Claydon"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10816,
+        "latest_member": {
+            "electorate": "O'Connor",
+            "house": "representatives",
+            "id": 666,
+            "name": {
+                "first": "Rick",
+                "last": "Wilson"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10806,
+        "latest_member": {
+            "electorate": "Page",
+            "house": "representatives",
+            "id": 667,
+            "name": {
+                "first": "Kevin",
+                "last": "Hogan"
+            },
+            "party": "National Party"
+        }
+    },
+    {
+        "id": 10815,
+        "latest_member": {
+            "electorate": "Pearce",
+            "house": "representatives",
+            "id": 668,
+            "name": {
+                "first": "Christian",
+                "last": "Porter"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10807,
+        "latest_member": {
+            "electorate": "Perth",
+            "house": "representatives",
+            "id": 669,
+            "name": {
+                "first": "Alannah",
+                "last": "Mactiernan"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10808,
+        "latest_member": {
+            "electorate": "Petrie",
+            "house": "representatives",
+            "id": 670,
+            "name": {
+                "first": "Luke",
+                "last": "Howarth"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10809,
+        "latest_member": {
+            "electorate": "Rankin",
+            "house": "representatives",
+            "id": 671,
+            "name": {
+                "first": "Jim",
+                "last": "Chalmers"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10810,
+        "latest_member": {
+            "electorate": "Reid",
+            "house": "representatives",
+            "id": 672,
+            "name": {
+                "first": "Craig",
+                "last": "Laundy"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10811,
+        "latest_member": {
+            "electorate": "Robertson",
+            "house": "representatives",
+            "id": 673,
+            "name": {
+                "first": "Lucy",
+                "last": "Wicks"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10812,
+        "latest_member": {
+            "electorate": "Scullin",
+            "house": "representatives",
+            "id": 674,
+            "name": {
+                "first": "Andrew",
+                "last": "Giles"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10080,
+        "latest_member": {
+            "electorate": "Chisholm",
+            "house": "representatives",
+            "id": 675,
+            "name": {
+                "first": "Anna",
+                "last": "Burke"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10046,
+        "latest_member": {
+            "electorate": "Mackellar",
+            "house": "representatives",
+            "id": 676,
+            "name": {
+                "first": "Bronwyn",
+                "last": "Bishop"
+            },
+            "party": "SPK"
+        }
+    },
+    {
+        "id": 10823,
+        "latest_member": {
+            "electorate": "Fairfax",
+            "house": "representatives",
+            "id": 677,
+            "name": {
+                "first": "Clive",
+                "last": "Palmer"
+            },
+            "party": "Palmer United Party"
+        }
+    },
+    {
+        "id": 10825,
+        "latest_member": {
+            "electorate": "Griffith",
+            "house": "representatives",
+            "id": 678,
+            "name": {
+                "first": "Terri",
+                "last": "Butler"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10003,
+        "latest_member": {
+            "electorate": "Tasmania",
+            "house": "senate",
+            "id": 100001,
+            "name": {
+                "first": "Eric",
+                "last": "Abetz"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10038,
+        "latest_member": {
+            "electorate": "SA",
+            "house": "senate",
+            "id": 100013,
+            "name": {
+                "first": "Cory",
+                "last": "Bernardi"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10044,
+        "latest_member": {
+            "electorate": "SA",
+            "house": "senate",
+            "id": 100014,
+            "name": {
+                "first": "Simon",
+                "last": "Birmingham"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10067,
+        "latest_member": {
+            "electorate": "Queensland",
+            "house": "senate",
+            "id": 100025,
+            "name": {
+                "first": "George",
+                "last": "Brandis"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10071,
+        "latest_member": {
+            "electorate": "Tasmania",
+            "house": "senate",
+            "id": 100026,
+            "name": {
+                "first": "Carol",
+                "last": "Brown"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10085,
+        "latest_member": {
+            "electorate": "Tasmania",
+            "house": "senate",
+            "id": 100031,
+            "name": {
+                "first": "David",
+                "last": "Bushby"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10103,
+        "latest_member": {
+            "electorate": "Victoria",
+            "house": "senate",
+            "id": 100036,
+            "name": {
+                "first": "Kim",
+                "last": "Carr"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10131,
+        "latest_member": {
+            "electorate": "Tasmania",
+            "house": "senate",
+            "id": 100047,
+            "name": {
+                "first": "Richard",
+                "last": "Colbeck"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10142,
+        "latest_member": {
+            "electorate": "Victoria",
+            "house": "senate",
+            "id": 100053,
+            "name": {
+                "first": "Stephen",
+                "last": "Conroy"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10148,
+        "latest_member": {
+            "electorate": "WA",
+            "house": "senate",
+            "id": 100057,
+            "name": {
+                "first": "Mathias",
+                "last": "Cormann"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10222,
+        "latest_member": {
+            "electorate": "NSW",
+            "house": "senate",
+            "id": 100082,
+            "name": {
+                "first": "Concetta",
+                "last": "Fierravanti-Wells"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10224,
+        "latest_member": {
+            "electorate": "Victoria",
+            "house": "senate",
+            "id": 100083,
+            "name": {
+                "first": "Mitch",
+                "last": "Fifield"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10296,
+        "latest_member": {
+            "electorate": "NSW",
+            "house": "senate",
+            "id": 100101,
+            "name": {
+                "first": "Bill",
+                "last": "Heffernan"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10344,
+        "latest_member": {
+            "electorate": "WA",
+            "house": "senate",
+            "id": 100112,
+            "name": {
+                "first": "David",
+                "last": "Johnston"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10397,
+        "latest_member": {
+            "electorate": "Queensland",
+            "house": "senate",
+            "id": 100128,
+            "name": {
+                "first": "Joe",
+                "last": "Ludwig"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10401,
+        "latest_member": {
+            "electorate": "Queensland",
+            "house": "senate",
+            "id": 100130,
+            "name": {
+                "first": "Ian",
+                "last": "Macdonald"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10433,
+        "latest_member": {
+            "electorate": "SA",
+            "house": "senate",
+            "id": 100145,
+            "name": {
+                "first": "Anne",
+                "last": "McEwen"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10447,
+        "latest_member": {
+            "electorate": "Queensland",
+            "house": "senate",
+            "id": 100152,
+            "name": {
+                "first": "Jan",
+                "last": "McLucas"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10458,
+        "latest_member": {
+            "electorate": "Tasmania",
+            "house": "senate",
+            "id": 100156,
+            "name": {
+                "first": "Christine",
+                "last": "Milne"
+            },
+            "party": "Australian Greens"
+        }
+    },
+    {
+        "id": 10463,
+        "latest_member": {
+            "electorate": "Queensland",
+            "house": "senate",
+            "id": 100159,
+            "name": {
+                "first": "Claire",
+                "last": "Moore"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10478,
+        "latest_member": {
+            "electorate": "NSW",
+            "house": "senate",
+            "id": 100164,
+            "name": {
+                "first": "Fiona",
+                "last": "Nash"
+            },
+            "party": "National Party"
+        }
+    },
+    {
+        "id": 10509,
+        "latest_member": {
+            "electorate": "NSW",
+            "house": "senate",
+            "id": 100177,
+            "name": {
+                "first": "Marise",
+                "last": "Payne"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10515,
+        "latest_member": {
+            "electorate": "Tasmania",
+            "house": "senate",
+            "id": 100178,
+            "name": {
+                "first": "Helen",
+                "last": "Polley"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10550,
+        "latest_member": {
+            "electorate": "Victoria",
+            "house": "senate",
+            "id": 100192,
+            "name": {
+                "first": "Michael",
+                "last": "Ronaldson"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10569,
+        "latest_member": {
+            "electorate": "NT",
+            "house": "senate",
+            "id": 100199,
+            "name": {
+                "first": "Nigel",
+                "last": "Scullion"
+            },
+            "party": "Country Liberal Party"
+        }
+    },
+    {
+        "id": 10584,
+        "latest_member": {
+            "electorate": "WA",
+            "house": "senate",
+            "id": 100208,
+            "name": {
+                "first": "Rachel",
+                "last": "Siewert"
+            },
+            "party": "Australian Greens"
+        }
+    },
+    {
+        "id": 10610,
+        "latest_member": {
+            "electorate": "WA",
+            "house": "senate",
+            "id": 100213,
+            "name": {
+                "first": "Glenn",
+                "last": "Sterle"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10678,
+        "latest_member": {
+            "electorate": "SA",
+            "house": "senate",
+            "id": 100241,
+            "name": {
+                "first": "Penny",
+                "last": "Wong"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10705,
+        "latest_member": {
+            "electorate": "Tasmania",
+            "house": "senate",
+            "id": 100250,
+            "name": {
+                "first": "Catryna",
+                "last": "Bilyk"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10706,
+        "latest_member": {
+            "electorate": "NSW",
+            "house": "senate",
+            "id": 100251,
+            "name": {
+                "first": "Doug",
+                "last": "Cameron"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10707,
+        "latest_member": {
+            "electorate": "WA",
+            "house": "senate",
+            "id": 100252,
+            "name": {
+                "first": "Michaelia",
+                "last": "Cash"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10711,
+        "latest_member": {
+            "electorate": "SA",
+            "house": "senate",
+            "id": 100256,
+            "name": {
+                "first": "Sarah",
+                "last": "Hanson-Young"
+            },
+            "party": "Australian Greens"
+        }
+    },
+    {
+        "id": 10713,
+        "latest_member": {
+            "electorate": "WA",
+            "house": "senate",
+            "id": 100258,
+            "name": {
+                "first": "Scott",
+                "last": "Ludlam"
+            },
+            "party": "Australian Greens"
+        }
+    },
+    {
+        "id": 10715,
+        "latest_member": {
+            "electorate": "Victoria",
+            "house": "senate",
+            "id": 100260,
+            "name": {
+                "first": "Scott",
+                "last": "Ryan"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10716,
+        "latest_member": {
+            "electorate": "NSW",
+            "house": "senate",
+            "id": 100261,
+            "name": {
+                "first": "John",
+                "last": "Williams"
+            },
+            "party": "National Party"
+        }
+    },
+    {
+        "id": 10717,
+        "latest_member": {
+            "electorate": "SA",
+            "house": "senate",
+            "id": 100262,
+            "name": {
+                "first": "Nick",
+                "last": "Xenophon"
+            },
+            "party": "Independent"
+        }
+    },
+    {
+        "id": 10135,
+        "latest_member": {
+            "electorate": "Victoria",
+            "house": "senate",
+            "id": 100265,
+            "name": {
+                "first": "Jacinta",
+                "last": "Collins"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10722,
+        "latest_member": {
+            "electorate": "WA",
+            "house": "senate",
+            "id": 100279,
+            "name": {
+                "first": "Christopher",
+                "last": "Back"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10755,
+        "latest_member": {
+            "electorate": "Victoria",
+            "house": "senate",
+            "id": 100285,
+            "name": {
+                "first": "Richard",
+                "last": "Di Natale"
+            },
+            "party": "Australian Greens"
+        }
+    },
+    {
+        "id": 10756,
+        "latest_member": {
+            "electorate": "SA",
+            "house": "senate",
+            "id": 100286,
+            "name": {
+                "first": "Sean",
+                "last": "Edwards"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10215,
+        "latest_member": {
+            "electorate": "SA",
+            "house": "senate",
+            "id": 100287,
+            "name": {
+                "first": "David",
+                "last": "Fawcett"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10757,
+        "latest_member": {
+            "electorate": "SA",
+            "house": "senate",
+            "id": 100288,
+            "name": {
+                "first": "Alex",
+                "last": "Gallacher"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10758,
+        "latest_member": {
+            "electorate": "Victoria",
+            "house": "senate",
+            "id": 100291,
+            "name": {
+                "first": "Bridget",
+                "last": "McKenzie"
+            },
+            "party": "National Party"
+        }
+    },
+    {
+        "id": 10760,
+        "latest_member": {
+            "electorate": "NSW",
+            "house": "senate",
+            "id": 100293,
+            "name": {
+                "first": "Lee",
+                "last": "Rhiannon"
+            },
+            "party": "Australian Greens"
+        }
+    },
+    {
+        "id": 10761,
+        "latest_member": {
+            "electorate": "Tasmania",
+            "house": "senate",
+            "id": 100295,
+            "name": {
+                "first": "Lisa",
+                "last": "Singh"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10763,
+        "latest_member": {
+            "electorate": "Tasmania",
+            "house": "senate",
+            "id": 100297,
+            "name": {
+                "first": "Anne",
+                "last": "Urquhart"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10764,
+        "latest_member": {
+            "electorate": "Queensland",
+            "house": "senate",
+            "id": 100298,
+            "name": {
+                "first": "Larissa",
+                "last": "Waters"
+            },
+            "party": "Australian Greens"
+        }
+    },
+    {
+        "id": 10765,
+        "latest_member": {
+            "electorate": "SA",
+            "house": "senate",
+            "id": 100300,
+            "name": {
+                "first": "Penny",
+                "last": "Wright"
+            },
+            "party": "Australian Greens"
+        }
+    },
+    {
+        "id": 10766,
+        "latest_member": {
+            "electorate": "NSW",
+            "house": "senate",
+            "id": 100301,
+            "name": {
+                "first": "Arthur",
+                "last": "Sinodinos"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10768,
+        "latest_member": {
+            "electorate": "WA",
+            "house": "senate",
+            "id": 100303,
+            "name": {
+                "first": "Dean",
+                "last": "Smith"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10780,
+        "latest_member": {
+            "electorate": "Tasmania",
+            "house": "senate",
+            "id": 100305,
+            "name": {
+                "first": "Peter",
+                "last": "Whish-Wilson"
+            },
+            "party": "Australian Greens"
+        }
+    },
+    {
+        "id": 10781,
+        "latest_member": {
+            "electorate": "SA",
+            "house": "senate",
+            "id": 100306,
+            "name": {
+                "first": "Anne",
+                "last": "Ruston"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10782,
+        "latest_member": {
+            "electorate": "WA",
+            "house": "senate",
+            "id": 100307,
+            "name": {
+                "first": "Sue",
+                "last": "Lines"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10819,
+        "latest_member": {
+            "electorate": "NSW",
+            "house": "senate",
+            "id": 100308,
+            "name": {
+                "first": "Sam",
+                "last": "Dastyari"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10820,
+        "latest_member": {
+            "electorate": "NT",
+            "house": "senate",
+            "id": 100309,
+            "name": {
+                "first": "Nova",
+                "last": "Peris"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10822,
+        "latest_member": {
+            "electorate": "ACT",
+            "house": "senate",
+            "id": 100311,
+            "name": {
+                "first": "Zed",
+                "last": "Seselja"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10747,
+        "latest_member": {
+            "electorate": "NSW",
+            "house": "senate",
+            "id": 100312,
+            "name": {
+                "first": "Deborah",
+                "last": "O'Neill"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10824,
+        "latest_member": {
+            "electorate": "Queensland",
+            "house": "senate",
+            "id": 100313,
+            "name": {
+                "first": "Barry",
+                "last": "O'Sullivan"
+            },
+            "party": "National Party"
+        }
+    },
+    {
+        "id": 10826,
+        "latest_member": {
+            "electorate": "WA",
+            "house": "senate",
+            "id": 100826,
+            "name": {
+                "first": "Joe",
+                "last": "Bullock"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10827,
+        "latest_member": {
+            "electorate": "Queensland",
+            "house": "senate",
+            "id": 100827,
+            "name": {
+                "first": "Matthew",
+                "last": "Canavan"
+            },
+            "party": "Liberal National Party"
+        }
+    },
+    {
+        "id": 10828,
+        "latest_member": {
+            "electorate": "SA",
+            "house": "senate",
+            "id": 100828,
+            "name": {
+                "first": "Bob",
+                "last": "Day"
+            },
+            "party": "Family First Party"
+        }
+    },
+    {
+        "id": 10829,
+        "latest_member": {
+            "electorate": "Queensland",
+            "house": "senate",
+            "id": 100829,
+            "name": {
+                "first": "Chris",
+                "last": "Ketter"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10832,
+        "latest_member": {
+            "electorate": "NSW",
+            "house": "senate",
+            "id": 100832,
+            "name": {
+                "first": "David",
+                "last": "Leyonhjelm"
+            },
+            "party": "Liberal Democratic Party"
+        }
+    },
+    {
+        "id": 10833,
+        "latest_member": {
+            "electorate": "Queensland",
+            "house": "senate",
+            "id": 100833,
+            "name": {
+                "first": "James",
+                "last": "McGrath"
+            },
+            "party": "Liberal National Party"
+        }
+    },
+    {
+        "id": 10834,
+        "latest_member": {
+            "electorate": "Victoria",
+            "house": "senate",
+            "id": 100834,
+            "name": {
+                "first": "Ricky",
+                "last": "Muir"
+            },
+            "party": "Australian Motoring Enthusiast Party"
+        }
+    },
+    {
+        "id": 10835,
+        "latest_member": {
+            "electorate": "WA",
+            "house": "senate",
+            "id": 100835,
+            "name": {
+                "first": "Linda",
+                "last": "Reynolds"
+            },
+            "party": "Liberal Party"
+        }
+    },
+    {
+        "id": 10836,
+        "latest_member": {
+            "electorate": "Victoria",
+            "house": "senate",
+            "id": 100836,
+            "name": {
+                "first": "Janet",
+                "last": "Rice"
+            },
+            "party": "Australian Greens"
+        }
+    },
+    {
+        "id": 10837,
+        "latest_member": {
+            "electorate": "WA",
+            "house": "senate",
+            "id": 100837,
+            "name": {
+                "first": "Dio",
+                "last": "Wang"
+            },
+            "party": "Palmer United Party"
+        }
+    },
+    {
+        "id": 10507,
+        "latest_member": {
+            "electorate": "Tasmania",
+            "house": "senate",
+            "id": 100838,
+            "name": {
+                "first": "Stephen",
+                "last": "Parry"
+            },
+            "party": "PRES"
+        }
+    },
+    {
+        "id": 10419,
+        "latest_member": {
+            "electorate": "Victoria",
+            "house": "senate",
+            "id": 100839,
+            "name": {
+                "first": "Gavin",
+                "last": "Marshall"
+            },
+            "party": "DPRES"
+        }
+    },
+    {
+        "id": 10759,
+        "latest_member": {
+            "electorate": "Victoria",
+            "house": "senate",
+            "id": 100841,
+            "name": {
+                "first": "John",
+                "last": "Madigan"
+            },
+            "party": "Independent"
+        }
+    },
+    {
+        "id": 10830,
+        "latest_member": {
+            "electorate": "Tasmania",
+            "house": "senate",
+            "id": 100842,
+            "name": {
+                "first": "Jacqui",
+                "last": "Lambie"
+            },
+            "party": "Independent"
+        }
+    },
+    {
+        "id": 10831,
+        "latest_member": {
+            "electorate": "Queensland",
+            "house": "senate",
+            "id": 100843,
+            "name": {
+                "first": "Glenn",
+                "last": "Lazarus"
+            },
+            "party": "Independent"
+        }
+    },
+    {
+        "id": 10838,
+        "latest_member": {
+            "electorate": "ACT",
+            "house": "senate",
+            "id": 100844,
+            "name": {
+                "first": "Katy",
+                "last": "Gallagher"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10839,
+        "latest_member": {
+            "electorate": "NSW",
+            "house": "senate",
+            "id": 100845,
+            "name": {
+                "first": "Jenny",
+                "last": "McAllister"
+            },
+            "party": "Australian Labor Party"
+        }
+    },
+    {
+        "id": 10840,
+        "latest_member": {
+            "electorate": "Queensland",
+            "house": "senate",
+            "id": 100846,
+            "name": {
+                "first": "Jo",
+                "last": "Lindgren"
+            },
+            "party": "Liberal Party"
+        }
+    }
+]
