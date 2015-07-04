@@ -57,7 +57,10 @@ func (c *client) handleCommand(m *Message) error {
 
 	switch m.Type {
 	case "Nickname":
-		// TODO(josh): Handle nicname command.
+		ps.mu.Lock()
+		ps.nick = d["Name"].(string)
+		ps.mu.Unlock()
+		return writeMessage(c.conn, &Hello)
 
 	case "Player":
 		// Game has a Player from someone else?

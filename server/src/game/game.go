@@ -12,6 +12,7 @@ type PlayerState struct {
 	addr  net.Addr
 	mu    sync.RWMutex
 	score int
+	nick  string
 	picks *Player
 }
 
