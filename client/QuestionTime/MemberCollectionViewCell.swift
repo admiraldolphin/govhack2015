@@ -11,4 +11,5 @@ import UIKit
 class MemberCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var memberNameLabel: UILabel!
     
+    @IBOutlet weak var portraitImageView: UIImageView!
 }

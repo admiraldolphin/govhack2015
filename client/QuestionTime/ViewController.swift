@@ -25,7 +25,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         // starting up the background audio
         AudioJigger.sharedJigger.playBackgroundMusic()
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"BGTile")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"BGTileLoseScreen")!)
     }
     
     func networkConnected() {
@@ -56,16 +56,18 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     // MARK: - CollectionView
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return QuestionDatabase.sharedDatabase.allPeople.count
+        return QuestionDatabase.sharedDatabase.importantPeople.count
     }
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemberCell", forIndexPath: indexPath) as! MemberCollectionViewCell
         
-        let key = QuestionDatabase.sharedDatabase.allPeople.keys.array.sorted(<)[indexPath.row]
-        let person = QuestionDatabase.sharedDatabase.allPeople[key]
+        let key = QuestionDatabase.sharedDatabase.importantPeople.keys.array.sorted(<)[indexPath.row]
+        let person = QuestionDatabase.sharedDatabase.importantPeople[key]
         if let thePerson = person
         {
             cell.memberNameLabel.text = thePerson.name
+            cell.portraitImageView.image = UIImage(named: "\(key)")
         }
         
         return cell
@@ -86,7 +88,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                 {
                     if let indexPath = memberListView.indexPathForCell(cell)
                     {
-                        let key = QuestionDatabase.sharedDatabase.allPeople.keys.array.sorted(<)[indexPath.row]
+                        let key = QuestionDatabase.sharedDatabase.importantPeople.keys.array.sorted(<)[indexPath.row]
                         destination.honourableMember = key
                     }
                 }
