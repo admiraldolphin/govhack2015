@@ -9,7 +9,16 @@
 import UIKit
 
 class GameViewController: UIViewController,NetworkDelegate {
+    
+    var totalQuestions = 10
+    var questionsRemaining = 0
+    
+    var answer : Answer = Answer.Neutral
+    
     var questionID : Int?
+    
+    var heroID : Int = 0
+    var possibleQuestions : [Int] = []
 
     @IBOutlet weak var voteSlider: UISlider!
     @IBOutlet weak var questionLabel: UILabel!
@@ -17,49 +26,51 @@ class GameViewController: UIViewController,NetworkDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        // need to set the question to what matches the questionID
+        showQuestion()
+        
+        NSTimer.scheduledTimerWithTimeInterval(6, target: self, selector: "timeRanOut:", userInfo: nil, repeats: true)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    func showQuestion() {
+        // Get a topic
         
-        NSTimer.scheduledTimerWithTimeInterval(6, target: self, selector: "timeRanOut:", userInfo: nil, repeats: false)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        let person = QuestionDatabase.sharedDatabase.allPeople[heroID]
+        
+        let policyID = possibleQuestions[Int(arc4random_uniform(UInt32(possibleQuestions.count)))]
+        if let policy = person?.policies[policyID] {
+            self.questionLabel.text = policy.name
+            
+            self.questionID = policyID
+            
+            self.answer = Answer.Neutral
+            
+            
+        }
+        
     }
     
     func timeRanOut(sender:AnyObject)
     {
-        // ran out of time, push onto the next question
-        self.performSegueWithIdentifier("NewQuestionSegue", sender: self)
+
+        Network.sharedNetwork.submitAnswer(self.questionID!, answer: Answer.Abstain)
+        
+        self.questionsRemaining -= 1
+        
+        if (self.questionsRemaining > 0) {
+            showQuestion()
+        } else {
+            // Wait for the server
+        }
+        
+        
     }
     
     @IBAction func voteSliderValueChange(sender: AnyObject) {
-        let voteSliderValue : Int = lroundf(self.voteSlider.value)
-        
-        // terrible hack to force the slider to move in discrete steps
-        self.voteSlider.setValue(Float(voteSliderValue), animated: true)
-        
-        // now tell the server about it
-        let answer = Answer(rawValue: voteSliderValue)
-        if let theAnswer = answer
-        {
-            if let theQuestionID = self.questionID
-            {
-                Network.sharedNetwork.submitAnswer(theQuestionID, answer: theAnswer)
-            }
-        }
+        answer = Answer.fromFloat(self.voteSlider.value)
     }
+    
     @IBAction func abstainVote(sender: AnyObject) {
-        // tell the server about it
-        if let theQuestionID = self.questionID
-        {
-            Network.sharedNetwork.submitAnswer(theQuestionID, answer: Answer.Abstain)
-        }
+        answer = Answer.Abstain
     }
     
     // MARK: - Network
@@ -88,12 +99,7 @@ class GameViewController: UIViewController,NetworkDelegate {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if segue.identifier == "NewQuestionSegue"
-        {
-            // basically I need to give the destination a question id
-            // set the network delegate to be the destination
-        }
-        else if segue.identifier == "GameOverSegue"
+        if segue.identifier == "GameOverSegue"
         {
             let youWon : Bool = sender as! Bool
             if let theDestination = segue.destinationViewController as? GameOverLobbyViewController

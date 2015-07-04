@@ -32,6 +32,7 @@
 		68DF6A111B4777F2007C36A4 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69ED1B4777F2007C36A4 /* SwiftyJSON.swift */; };
 		68E8627B1B4799F000EB6FDE /* QuestionDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E8627A1B4799F000EB6FDE /* QuestionDatabase.swift */; };
 		68E8627D1B479A5800EB6FDE /* data in Resources */ = {isa = PBXBuildFile; fileRef = 68E8627C1B479A5800EB6FDE /* data */; };
+		68E8627F1B47B98700EB6FDE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 68E8627E1B47B98700EB6FDE /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		68DF69ED1B4777F2007C36A4 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		68E8627A1B4799F000EB6FDE /* QuestionDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDatabase.swift; sourceTree = "<group>"; };
 		68E8627C1B479A5800EB6FDE /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../data; sourceTree = "<group>"; };
+		68E8627E1B47B98700EB6FDE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				68DF697F1B469CC4007C36A4 /* Supporting Files */,
 				68DF69A41B47637B007C36A4 /* QuestionTime-Bridging-Header.h */,
 				68E8627A1B4799F000EB6FDE /* QuestionDatabase.swift */,
+				68E8627E1B47B98700EB6FDE /* Settings.bundle */,
 			);
 			path = QuestionTime;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			files = (
 				68DF69871B469CC4007C36A4 /* Main.storyboard in Resources */,
 				68DF698C1B469CC4007C36A4 /* LaunchScreen.xib in Resources */,
+				68E8627F1B47B98700EB6FDE /* Settings.bundle in Resources */,
 				68E8627D1B479A5800EB6FDE /* data in Resources */,
 				68DF69891B469CC4007C36A4 /* Images.xcassets in Resources */,
 			);
