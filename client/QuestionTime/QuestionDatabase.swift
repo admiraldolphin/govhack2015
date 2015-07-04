@@ -32,10 +32,18 @@ class Person {
     
     var id : Int = 0
     var name : String = ""
+    var party : String = ""
     
     init(id: Int, name:String) {
         self.id = id
         self.name = name
+    }
+    
+    init(id: Int, name:String, party:String)
+    {
+        self.id = id
+        self.name = name
+        self.party = party
     }
     
     lazy var photo : UIImage? = {
@@ -123,10 +131,12 @@ class QuestionDatabase : NSObject {
                 
                 let nameData = personData["latest_member"]["name"]
                 let name = nameData["first"].stringValue + " " + nameData["last"].stringValue
+                let party = personData["latest_member"]["party"].stringValue
                 
                 let person = Person(
                     id: personData["id"].intValue,
-                    name: name)
+                    name: name,
+                    party: party)
                 
                 people[person.id] = person
             }

@@ -68,6 +68,30 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         {
             cell.memberNameLabel.text = thePerson.name
             cell.portraitImageView.image = UIImage(named: "\(key)")
+            
+            if thePerson.party == "Australian Labor Party"
+            {
+                let theColour = UIColor(red: 0.7411764706, green: 0, blue: 0.1490196078, alpha: 1)
+                cell.portraitImageView.backgroundColor = theColour
+            }
+            else if thePerson.party == "Liberal Party"
+            {
+                let theColour = UIColor(red: 0.03921568627, green: 0.3490196078, blue: 0.6705882353, alpha: 1)
+                cell.portraitImageView.backgroundColor = theColour
+            }
+            else if thePerson.party == "National Party"
+            {
+                cell.portraitImageView.backgroundColor = UIColor.blueColor()
+            }
+            else if thePerson.party == "Australian Greens"
+            {
+                let theColour = UIColor(red: 0.07058823529, green: 0.5294117647, blue: 0.1803921569, alpha: 1)
+                cell.portraitImageView.backgroundColor = theColour
+            }
+            else
+            {
+                cell.portraitImageView.backgroundColor = UIColor.grayColor()
+            }
         }
         
         return cell
