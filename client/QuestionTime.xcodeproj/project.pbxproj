@@ -12,20 +12,18 @@
 		68DF69871B469CC4007C36A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68DF69851B469CC4007C36A4 /* Main.storyboard */; };
 		68DF69891B469CC4007C36A4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68DF69881B469CC4007C36A4 /* Images.xcassets */; };
 		68DF698C1B469CC4007C36A4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68DF698A1B469CC4007C36A4 /* LaunchScreen.xib */; };
-		68DF69981B469CC4007C36A4 /* QuestionTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69971B469CC4007C36A4 /* QuestionTimeTests.swift */; };
 		68DF69A21B46A065007C36A4 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69A11B46A065007C36A4 /* Network.swift */; };
-		68DF69A31B46A35A007C36A4 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69A11B46A065007C36A4 /* Network.swift */; };
+		68DF69AC1B47699E007C36A4 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69A91B47699E007C36A4 /* GCDAsyncSocket.m */; };
+		68DF69AD1B47699E007C36A4 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69AB1B47699E007C36A4 /* GCDAsyncUdpSocket.m */; };
+		68DF69C31B4769B4007C36A4 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69B11B4769B4007C36A4 /* DDAbstractDatabaseLogger.m */; };
+		68DF69C41B4769B4007C36A4 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69B31B4769B4007C36A4 /* DDASLLogger.m */; };
+		68DF69C51B4769B4007C36A4 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69B51B4769B4007C36A4 /* DDFileLogger.m */; };
+		68DF69C61B4769B4007C36A4 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69B81B4769B4007C36A4 /* DDLog.m */; };
+		68DF69C71B4769B4007C36A4 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69BA1B4769B4007C36A4 /* DDTTYLogger.m */; };
+		68DF69C81B4769B4007C36A4 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69BD1B4769B4007C36A4 /* DDContextFilterLogFormatter.m */; };
+		68DF69C91B4769B4007C36A4 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69BF1B4769B4007C36A4 /* DDDispatchQueueLogFormatter.m */; };
+		68DF69CA1B4769B4007C36A4 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69C11B4769B4007C36A4 /* DDMultiFormatter.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		68DF69921B469CC4007C36A4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 68DF69741B469CC3007C36A4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 68DF697B1B469CC3007C36A4;
-			remoteInfo = QuestionTime;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		68DF697C1B469CC4007C36A4 /* QuestionTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestionTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,21 +33,33 @@
 		68DF69861B469CC4007C36A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68DF69881B469CC4007C36A4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		68DF698B1B469CC4007C36A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		68DF69911B469CC4007C36A4 /* QuestionTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuestionTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		68DF69961B469CC4007C36A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		68DF69971B469CC4007C36A4 /* QuestionTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTimeTests.swift; sourceTree = "<group>"; };
 		68DF69A11B46A065007C36A4 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		68DF69A41B47637B007C36A4 /* QuestionTime-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuestionTime-Bridging-Header.h"; sourceTree = "<group>"; };
+		68DF69A81B47699E007C36A4 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = CocoaAsyncSocket/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
+		68DF69A91B47699E007C36A4 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = CocoaAsyncSocket/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
+		68DF69AA1B47699E007C36A4 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = CocoaAsyncSocket/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		68DF69AB1B47699E007C36A4 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = CocoaAsyncSocket/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		68DF69B01B4769B4007C36A4 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		68DF69B11B4769B4007C36A4 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		68DF69B21B4769B4007C36A4 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		68DF69B31B4769B4007C36A4 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		68DF69B41B4769B4007C36A4 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		68DF69B51B4769B4007C36A4 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		68DF69B61B4769B4007C36A4 /* DDLog+LOGV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDLog+LOGV.h"; sourceTree = "<group>"; };
+		68DF69B71B4769B4007C36A4 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		68DF69B81B4769B4007C36A4 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		68DF69B91B4769B4007C36A4 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		68DF69BA1B4769B4007C36A4 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		68DF69BC1B4769B4007C36A4 /* DDContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		68DF69BD1B4769B4007C36A4 /* DDContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		68DF69BE1B4769B4007C36A4 /* DDDispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		68DF69BF1B4769B4007C36A4 /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		68DF69C01B4769B4007C36A4 /* DDMultiFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMultiFormatter.h; sourceTree = "<group>"; };
+		68DF69C11B4769B4007C36A4 /* DDMultiFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMultiFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		68DF69791B469CC3007C36A4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		68DF698E1B469CC4007C36A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -62,8 +72,8 @@
 		68DF69731B469CC3007C36A4 = {
 			isa = PBXGroup;
 			children = (
+				68DF69A71B476992007C36A4 /* GCDAsyncSocket */,
 				68DF697E1B469CC4007C36A4 /* QuestionTime */,
-				68DF69941B469CC4007C36A4 /* QuestionTimeTests */,
 				68DF697D1B469CC4007C36A4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				68DF697C1B469CC4007C36A4 /* QuestionTime.app */,
-				68DF69911B469CC4007C36A4 /* QuestionTimeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +96,7 @@
 				68DF69881B469CC4007C36A4 /* Images.xcassets */,
 				68DF698A1B469CC4007C36A4 /* LaunchScreen.xib */,
 				68DF697F1B469CC4007C36A4 /* Supporting Files */,
+				68DF69A41B47637B007C36A4 /* QuestionTime-Bridging-Header.h */,
 			);
 			path = QuestionTime;
 			sourceTree = "<group>";
@@ -99,21 +109,57 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		68DF69941B469CC4007C36A4 /* QuestionTimeTests */ = {
+		68DF69A71B476992007C36A4 /* GCDAsyncSocket */ = {
 			isa = PBXGroup;
 			children = (
-				68DF69971B469CC4007C36A4 /* QuestionTimeTests.swift */,
-				68DF69951B469CC4007C36A4 /* Supporting Files */,
+				68DF69AE1B4769A5007C36A4 /* Vendor */,
+				68DF69A81B47699E007C36A4 /* GCDAsyncSocket.h */,
+				68DF69A91B47699E007C36A4 /* GCDAsyncSocket.m */,
+				68DF69AA1B47699E007C36A4 /* GCDAsyncUdpSocket.h */,
+				68DF69AB1B47699E007C36A4 /* GCDAsyncUdpSocket.m */,
 			);
-			path = QuestionTimeTests;
+			name = GCDAsyncSocket;
 			sourceTree = "<group>";
 		};
-		68DF69951B469CC4007C36A4 /* Supporting Files */ = {
+		68DF69AE1B4769A5007C36A4 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				68DF69961B469CC4007C36A4 /* Info.plist */,
+				68DF69AF1B4769B4007C36A4 /* CocoaLumberjack */,
 			);
-			name = "Supporting Files";
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		68DF69AF1B4769B4007C36A4 /* CocoaLumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				68DF69B01B4769B4007C36A4 /* DDAbstractDatabaseLogger.h */,
+				68DF69B11B4769B4007C36A4 /* DDAbstractDatabaseLogger.m */,
+				68DF69B21B4769B4007C36A4 /* DDASLLogger.h */,
+				68DF69B31B4769B4007C36A4 /* DDASLLogger.m */,
+				68DF69B41B4769B4007C36A4 /* DDFileLogger.h */,
+				68DF69B51B4769B4007C36A4 /* DDFileLogger.m */,
+				68DF69B61B4769B4007C36A4 /* DDLog+LOGV.h */,
+				68DF69B71B4769B4007C36A4 /* DDLog.h */,
+				68DF69B81B4769B4007C36A4 /* DDLog.m */,
+				68DF69B91B4769B4007C36A4 /* DDTTYLogger.h */,
+				68DF69BA1B4769B4007C36A4 /* DDTTYLogger.m */,
+				68DF69BB1B4769B4007C36A4 /* Extensions */,
+			);
+			name = CocoaLumberjack;
+			path = CocoaAsyncSocket/Vendor/CocoaLumberjack;
+			sourceTree = "<group>";
+		};
+		68DF69BB1B4769B4007C36A4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				68DF69BC1B4769B4007C36A4 /* DDContextFilterLogFormatter.h */,
+				68DF69BD1B4769B4007C36A4 /* DDContextFilterLogFormatter.m */,
+				68DF69BE1B4769B4007C36A4 /* DDDispatchQueueLogFormatter.h */,
+				68DF69BF1B4769B4007C36A4 /* DDDispatchQueueLogFormatter.m */,
+				68DF69C01B4769B4007C36A4 /* DDMultiFormatter.h */,
+				68DF69C11B4769B4007C36A4 /* DDMultiFormatter.m */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,24 +182,6 @@
 			productReference = 68DF697C1B469CC4007C36A4 /* QuestionTime.app */;
 			productType = "com.apple.product-type.application";
 		};
-		68DF69901B469CC4007C36A4 /* QuestionTimeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 68DF699E1B469CC4007C36A4 /* Build configuration list for PBXNativeTarget "QuestionTimeTests" */;
-			buildPhases = (
-				68DF698D1B469CC4007C36A4 /* Sources */,
-				68DF698E1B469CC4007C36A4 /* Frameworks */,
-				68DF698F1B469CC4007C36A4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				68DF69931B469CC4007C36A4 /* PBXTargetDependency */,
-			);
-			name = QuestionTimeTests;
-			productName = QuestionTimeTests;
-			productReference = 68DF69911B469CC4007C36A4 /* QuestionTimeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -166,10 +194,6 @@
 				TargetAttributes = {
 					68DF697B1B469CC3007C36A4 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					68DF69901B469CC4007C36A4 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 68DF697B1B469CC3007C36A4;
 					};
 				};
 			};
@@ -187,7 +211,6 @@
 			projectRoot = "";
 			targets = (
 				68DF697B1B469CC3007C36A4 /* QuestionTime */,
-				68DF69901B469CC4007C36A4 /* QuestionTimeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -203,13 +226,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68DF698F1B469CC4007C36A4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -217,30 +233,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68DF69AC1B47699E007C36A4 /* GCDAsyncSocket.m in Sources */,
+				68DF69C71B4769B4007C36A4 /* DDTTYLogger.m in Sources */,
+				68DF69C51B4769B4007C36A4 /* DDFileLogger.m in Sources */,
+				68DF69C81B4769B4007C36A4 /* DDContextFilterLogFormatter.m in Sources */,
+				68DF69AD1B47699E007C36A4 /* GCDAsyncUdpSocket.m in Sources */,
+				68DF69C31B4769B4007C36A4 /* DDAbstractDatabaseLogger.m in Sources */,
 				68DF69841B469CC4007C36A4 /* ViewController.swift in Sources */,
+				68DF69CA1B4769B4007C36A4 /* DDMultiFormatter.m in Sources */,
 				68DF69821B469CC4007C36A4 /* AppDelegate.swift in Sources */,
+				68DF69C61B4769B4007C36A4 /* DDLog.m in Sources */,
+				68DF69C41B4769B4007C36A4 /* DDASLLogger.m in Sources */,
 				68DF69A21B46A065007C36A4 /* Network.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		68DF698D1B469CC4007C36A4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				68DF69A31B46A35A007C36A4 /* Network.swift in Sources */,
-				68DF69981B469CC4007C36A4 /* QuestionTimeTests.swift in Sources */,
+				68DF69C91B4769B4007C36A4 /* DDDispatchQueueLogFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		68DF69931B469CC4007C36A4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 68DF697B1B469CC3007C36A4 /* QuestionTime */;
-			targetProxy = 68DF69921B469CC4007C36A4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		68DF69851B469CC4007C36A4 /* Main.storyboard */ = {
@@ -349,9 +358,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = QuestionTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QuestionTime/QuestionTime-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -359,43 +371,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = QuestionTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		68DF699F1B469CC4007C36A4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = QuestionTimeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuestionTime.app/QuestionTime";
-			};
-			name = Debug;
-		};
-		68DF69A01B469CC4007C36A4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = QuestionTimeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuestionTime.app/QuestionTime";
+				SWIFT_OBJC_BRIDGING_HEADER = "QuestionTime/QuestionTime-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -416,15 +396,6 @@
 			buildConfigurations = (
 				68DF699C1B469CC4007C36A4 /* Debug */,
 				68DF699D1B469CC4007C36A4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		68DF699E1B469CC4007C36A4 /* Build configuration list for PBXNativeTarget "QuestionTimeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				68DF699F1B469CC4007C36A4 /* Debug */,
-				68DF69A01B469CC4007C36A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum NetworkConnectionState : UInt {
     case NotConnected
@@ -16,83 +17,41 @@ enum NetworkConnectionState : UInt {
 
 typealias StateChangeHandler = NetworkConnectionState -> Void
 
-class Network: NSObject, NSStreamDelegate {
+class Network: NSObject, GCDAsyncSocketDelegate {
     
-    private var stateChangeHandler : StateChangeHandler
+    var socket : GCDAsyncSocket
     
-    private var outputStream : NSOutputStream?
-    private var inputStream : NSInputStream?
-    
-    var state = NetworkConnectionState.NotConnected {
-        didSet {
-            stateChangeHandler(state)
-        }
-    }
-    
-    init(host:String, port:Int, stateChangeHandler:StateChangeHandler) {
+    init?(host: String, port: UInt16) {
         
-        self.stateChangeHandler = stateChangeHandler
-        
-        NSStream.getStreamsToHostWithName(host,
-            port: port,
-            inputStream: &inputStream,
-            outputStream: &outputStream)
-        
-        
+        socket = GCDAsyncSocket()
         
         super.init()
         
-        self.inputStream!.delegate = self
-        self.outputStream!.delegate = self
-        
-        self.inputStream!.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-        self.outputStream!.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-        
-        self.inputStream!.open()
-        self.outputStream!.open()
+        socket.delegate = self
+        socket.delegateQueue = dispatch_get_main_queue()
         
         
+        var error : NSError?
+        socket.connectToHost(host, onPort: port, error: &error)
         
-    }
-    
-    func sendMessage(message: String) {
-        assert(state != .NotConnected)
-        
-        if let data = message.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true) {
-            outputStream?.write(UnsafePointer(data.bytes), maxLength: data.length)
-            
-            
+        if (error != nil) {
+            return nil
         }
+    }
+    
+    func sendMessage(message:String) {
+        assert(socket.isConnected)
+        
+        let data = message.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+        
+        //socket.writeData(<#data: NSData!#>, withTimeout: <#NSTimeInterval#>, tag: <#Int#>)
+    }
+    
+    private func socket(sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16) {
+        println("Connected!")
         
         
     }
-    
-    func stream(stream: NSStream, handleEvent eventCode: NSStreamEvent) {
-        println("stream event: \(eventCode)")
-        
-        switch state {
-        case .NotConnected:
-            if eventCode == NSStreamEvent.OpenCompleted {
-                if inputStream!.streamStatus  == NSStreamStatus.Open &&
-                    outputStream!.streamStatus == NSStreamStatus.Open {
-                        state = .Connected
-                        
-                        
-                        
-                }
-            }
-        default:
-            ()
-        }
-        
-    }
-    
-    
-    
-    
-    
-    
-    
    
     
 }
