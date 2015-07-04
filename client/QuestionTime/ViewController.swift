@@ -21,7 +21,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         // Do any additional setup after loading the view, typically from a nib.
         
         Network.sharedNetwork.delegate = self
-        Network.sharedNetwork.connect("localhost", port: 1234)
+        Network.sharedNetwork.connect("localhost")
         
         
     }
@@ -29,7 +29,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     func networkConnected() {
         println("Network connected!")
         
-        Network.sharedNetwork.selectPlayerData("Tone", questionCategory: "123")
+        Network.sharedNetwork.selectPlayerData(1, questionCategory: 1)
     }
     
     func networkDisconnected(error: NSError?) {

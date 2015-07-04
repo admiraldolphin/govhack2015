@@ -20,6 +20,40 @@ enum GameState : UInt {
     
 }
 
+enum Answer : Int {
+    case DisagreeStrong = 1
+    case Disagree       = 2
+    case Neutral        = 3
+    case Agree          = 4
+    case AgreeStrong    = 5
+    case Abstain        = -1
+}
+
+// Messages from server
+
+struct HelloMessage {
+    // contains nothing
+}
+
+struct GameStartMessage {
+    var OpponentHero : Int
+    var PortfolioName : String
+    var Questions : [Int]
+}
+
+struct ProgressMessage {
+    var YourScore : Int
+    var OpponentScore : Int
+}
+
+struct KeepAliveMessage {
+    // contains nothing
+}
+
+struct GameOverMessage {
+    var YouWon : Bool
+}
+
 protocol NetworkDelegate {
     func networkConnected()
     func networkDisconnected(error: NSError?)
@@ -32,6 +66,8 @@ class Network: NSObject, GCDAsyncSocketDelegate {
         return Network()
     }()
     
+    let port : UInt16 = 8888
+    
     var socket = GCDAsyncSocket()
     
     var delegate : NetworkDelegate?
@@ -42,19 +78,21 @@ class Network: NSObject, GCDAsyncSocketDelegate {
         super.init()
     }
     
-    func connect(host:String, port:UInt16) {
+    func connect(host:String) {
         socket = GCDAsyncSocket()
         
         socket.delegate = self
         socket.delegateQueue = dispatch_get_main_queue()
         
         var error : NSError?
-        socket.connectToHost(host, onPort: port, error: &error)
+        socket.connectToHost(host, onPort: self.port, error: &error)
     }
     
     
     func sendMessage(message:String) {
         assert(socket.isConnected)
+        
+        println(message)
         
         let data = (message+"\n").dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         
@@ -70,7 +108,11 @@ class Network: NSObject, GCDAsyncSocketDelegate {
         
         gameState = .Lobby
         
+        updateName()
+        
         delegate?.networkConnected()
+        
+        
         
         listenForNewData()
     }
@@ -85,8 +127,6 @@ class Network: NSObject, GCDAsyncSocketDelegate {
         
         let type : JSON = loadedData["Type"]
         
-        println("Received a message of type \(type)")
-        
         listenForNewData()
     }
     
@@ -94,12 +134,14 @@ class Network: NSObject, GCDAsyncSocketDelegate {
         delegate?.networkDisconnected(err)
     }
     
-    func selectPlayerData(politician: String, questionCategory: String) {
+    func selectPlayerData(politician: Int, questionCategory: Int) {
         
         var data = [
             "Type":"Player",
-            "HeroPick":politician,
-            "PortfolioPick":questionCategory
+            "Data":[
+                "HeroPick":politician,
+                "PortfolioPick":questionCategory
+            ]
         ]
         
         var json = JSON(data)
@@ -109,8 +151,34 @@ class Network: NSObject, GCDAsyncSocketDelegate {
         // Send 'here's my MP and category'
     }
     
-    func updateAnswerStats(answeredCorrectly: Bool) {
+    func updateAnswerStats(questionID: Int, answer: Answer) {
+        
+        var data = [
+            "Type":"Answer",
+            "Data":[
+                "Question":questionID,
+                "Answer": answer.rawValue
+            ]
+        ]
+        
+        var json = JSON(data)
+        sendMessage(json.rawString(encoding: NSUTF8StringEncoding, options: NSJSONWritingOptions.allZeros)!)
+        
         // Send "I answered a question correctly/incorrectly"
+    }
+    
+    private func updateName() {
+        
+        var data = [
+            "Type":"Nickname",
+            "Data":[
+                "Name":UIDevice.currentDevice().name
+            ]
+        ]
+        
+        var json = JSON(data)
+        sendMessage(json.rawString(encoding: NSUTF8StringEncoding, options: NSJSONWritingOptions.allZeros)!)
+        
     }
     
 }
