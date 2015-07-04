@@ -134,6 +134,10 @@ func (c *client) handleCommand(m *Message) error {
 		if err := writeMessage(c.conn, &prog); err != nil {
 			return err
 		}
+		// Mirror the message to the other client.
+		if err := writeMessage(c.game.player[1-c.playerNum].client.conn, &prog); err != nil {
+			return err
+		}
 
 	}
 	return nil
