@@ -7,6 +7,10 @@ import (
 	"data"
 )
 
+var (
+	NumQuestions = 5
+)
+
 type Game struct {
 	player [2]struct {
 		mu     sync.RWMutex
@@ -51,4 +55,40 @@ func (g *Game) opponentPicks(playerNum int, p Player) (<-chan Player, error) {
 		g.mu.Unlock()
 	}()
 	return ch, nil
+}
+
+// writeAllMessage broadcasts a message to all (two) clients in a game.
+func (g *Game) writeAllMessage(m *Message) error {
+	for i := range g.player {
+		if err := writeMessage(g.player[i].client.conn, m); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// updateProgress updates the progress to all (two) clients in a game.
+func (g *Game) updateProgress() error {
+	g.player[0].mu.RLock()
+	g.player[1].mu.RLock()
+	prog0 := Progress{
+		YourScore:     g.player[0].score,
+		OpponentScore: g.player[1].score,
+	}
+	prog1 := Progress{
+		YourScore:     g.player[1].score,
+		OpponentScore: g.player[0].score,
+	}
+	g.player[0].mu.RUnlock()
+	g.player[1].mu.RUnlock()
+	if err := writeMessage(g.player[0].client.conn, &Message{
+		Type: "Progress",
+		Data: prog0,
+	}); err != nil {
+		return err
+	}
+	return writeMessage(g.player[1].client.conn, &Message{
+		Type: "Progress",
+		Data: prog1,
+	})
 }

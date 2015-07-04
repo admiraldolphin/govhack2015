@@ -19,10 +19,6 @@ const (
 	idleWriteTimeout  = 5 * time.Second
 )
 
-var (
-	NumQuestions = 5
-)
-
 func readMessage(conn net.Conn) (*Message, error) {
 	conn.SetReadDeadline(time.Now().Add(idleReadTimeout))
 	dec := json.NewDecoder(conn)
@@ -58,7 +54,7 @@ func (c *client) handleCommand(m *Message) error {
 	if !ok {
 		return nil
 	}
-	ps, ops := &c.game.player[c.playerNum], &c.game.player[1-c.playerNum]
+	ps := &c.game.player[c.playerNum]
 
 	switch m.Type {
 	case "Nickname":
@@ -118,27 +114,7 @@ func (c *client) handleCommand(m *Message) error {
 			ps.score++
 		}
 		ps.mu.Unlock()
-
-		// Send an updated progress message.
-		ps.mu.RLock()
-		ops.mu.RLock()
-		prog := Message{
-			Type: "Progress",
-			Data: Progress{
-				YourScore:     ps.score,
-				OpponentScore: ops.score,
-			},
-		}
-		ps.mu.RUnlock()
-		ops.mu.RUnlock()
-		if err := writeMessage(c.conn, &prog); err != nil {
-			return err
-		}
-		// Mirror the message to the other client.
-		if err := writeMessage(c.game.player[1-c.playerNum].client.conn, &prog); err != nil {
-			return err
-		}
-
+		return c.game.updateProgress()
 	}
 	return nil
 }
