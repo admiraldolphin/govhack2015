@@ -2,23 +2,20 @@ package game
 
 import (
 	"errors"
-	"net"
 	"sync"
 
 	"data"
 )
 
-type PlayerState struct {
-	addr  net.Addr
-	mu    sync.RWMutex
-	score int
-	nick  string
-	picks *Player
-}
-
 type Game struct {
-	player    [2]PlayerState
+	player [2]struct {
+		mu    sync.RWMutex
+		score int
+		nick  string
+		picks *Player
+	}
 	gameStart *sync.Cond
+	gameClock int
 	mu        sync.Mutex
 
 	db *data.Database
@@ -31,8 +28,7 @@ func newGame(db *data.Database) *Game {
 }
 
 // opponentPicks registers a player's picks, and then waits for the
-// opponent to pick hero/portfolio, promising to provide it on the
-// returned channel.
+// opponent to pick, promising to provide it on the returned channel.
 func (g *Game) opponentPicks(playerNum int, p Player) (<-chan Player, error) {
 	ps := &g.player[playerNum]
 	ps.mu.Lock()
