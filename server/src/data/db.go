@@ -7,8 +7,7 @@ import (
 
 type Database struct {
 	Heroes     map[int]Hero      // Includes answers.
-	Portfolios map[int]Portfolio // Includes question IDs.
-	Questions  map[int]Question
+	Portfolios map[int]Portfolio // Includes policy IDs.
 }
 
 func (db *Database) PickQuestions(portfolio, numQuestions int) []int {
@@ -28,7 +27,6 @@ func newDatabase() *Database {
 	return &Database{
 		Heroes:     make(map[int]Hero),
 		Portfolios: make(map[int]Portfolio),
-		Questions:  make(map[int]Question),
 	}
 }
 
@@ -36,13 +34,9 @@ func Fake() *Database {
 	db := newDatabase()
 
 	// Mock up some data.
-	qids := make([]int, 0, 300)
+	qids := make([]int, 300)
 	for i := 0; i < 300; i++ {
-		db.Questions[i] = Question{
-			ID:   i,
-			Text: fmt.Sprintf("question%d", i),
-		}
-		qids = append(qids, i)
+		qids[i] = i
 	}
 
 	for i := 0; i < 10; i++ {
