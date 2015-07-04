@@ -98,7 +98,10 @@ func (c *client) handleCommand(m *Message) error {
 		// Look up the answer my hero gave to the question.
 		qid := int(d["Question"].(float64))
 		got := data.Answer(d["Answer"].(float64))
-		want := c.game.db.Heroes[ps.picks.HeroPick].Answers[qid]
+		want, ok := c.game.db.Heroes[ps.picks.HeroPick].Answers[qid]
+		if !ok {
+			log.Printf("Unable to find answer [qid=%d,hid=%d]\n", qid, ps.picks.HeroPick)
+		}
 
 		ps.mu.Lock()
 		ps.clock++
@@ -128,7 +131,7 @@ func (g *Game) handleConn(conn net.Conn, playerNum int) {
 		}
 	}()
 	go func() {
-		for range time.Tick(keepAliveInterval) {	
+		for range time.Tick(keepAliveInterval) {
 			if err := g.writeAllMessage(&KeepAlive); err != nil {
 				log.Println(err)
 				return
