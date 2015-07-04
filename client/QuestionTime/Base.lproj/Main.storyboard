@@ -272,7 +272,7 @@
                                     <segue destination="S7X-8o-uCH" kind="show" identifier="NewQuestionSegue" id="ULi-Jk-bwf"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="4" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YM-sI-caW">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="0.5" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YM-sI-caW">
                                 <rect key="frame" x="14" y="550" width="465" height="31"/>
                                 <connections>
                                     <action selector="voteSliderValueChange:" destination="S7X-8o-uCH" eventType="valueChanged" id="gQJ-Ld-HKh"/>

@@ -28,7 +28,7 @@ struct Portfolio {
     var id : Int = 0
 }
 
-struct Person {
+class Person {
     
     var id : Int = 0
     var name : String = ""
@@ -85,7 +85,6 @@ struct Person {
     
     
     
-    
 }
 
 class QuestionDatabase : NSObject {
@@ -138,7 +137,7 @@ class QuestionDatabase : NSObject {
     }()
     
     
-    func correctAnswerForPerson(personID: Int, policyID:Int) -> Answer? {
+    func correctAnswerForPerson(personID: Int, policyID:Int) -> Answer {
         if let policy = allPeople[personID]?.policies[policyID] {
                 
                 if policy.abstained {
@@ -163,7 +162,7 @@ class QuestionDatabase : NSObject {
            
         }
         
-        return nil
+        return Answer.Abstain
     }
     
     
