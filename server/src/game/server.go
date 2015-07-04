@@ -51,7 +51,7 @@ type client struct {
 	game      *Game
 }
 
-func (c *client) handleMessage(conn net.Conn, m *Message) error {
+func (c *client) handleCommand(m *Message) error {
 	d := m.Data.(map[string]interface{})
 	ps, ops := &c.game.player[c.playerNum], &c.game.player[1-c.playerNum]
 
@@ -86,13 +86,10 @@ func (c *client) handleMessage(conn net.Conn, m *Message) error {
 						Questions:     c.game.db.PickQuestions(opp.PortfolioPick, numQuestions),
 					},
 				}
-				if err := writeMessage(conn, &s); err != nil {
-					return err
-				}
-
+				return writeMessage(c.conn, &s)
 			case <-ticker.C:
 				// Send keepalives.
-				if err := writeMessage(conn, &KeepAlive); err != nil {
+				if err := writeMessage(c.conn, &KeepAlive); err != nil {
 					return err
 				}
 			case <-time.After(gameTimeout):
@@ -124,7 +121,7 @@ func (c *client) handleMessage(conn net.Conn, m *Message) error {
 		}
 		ps.mu.RUnlock()
 		ops.mu.RUnlock()
-		if err := writeMessage(conn, &prog); err != nil {
+		if err := writeMessage(c.conn, &prog); err != nil {
 			return err
 		}
 	}
@@ -146,9 +143,9 @@ func (g *Game) handleConn(conn net.Conn, playerNum int) {
 			log.Println(err)
 			return
 		}
-		log.Printf("%v: %v\n", conn.RemoteAddr(), m)
+		log.Printf("%v (player %d): %v\n", conn.RemoteAddr(), playerNum, m)
 
-		if err := cl.handleMessage(conn, m); err != nil {
+		if err := cl.handleCommand(m); err != nil {
 			log.Println(err)
 			return
 		}
