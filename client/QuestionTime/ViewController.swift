@@ -23,6 +23,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         Network.sharedNetwork.delegate = self
         Network.sharedNetwork.connect("localhost")
         
+        let portfolios = QuestionDatabase.sharedDatabase.allPortfolios
+        let tone = QuestionDatabase.sharedDatabase.allPeople[10001]
         
     }
     
