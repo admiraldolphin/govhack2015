@@ -13,8 +13,6 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     var network : Network?
     
     @IBOutlet weak var memberListView: UICollectionView!
-    
-    let tempMPList : [String] = ["Tone","Joe","Bill","Tanya","Julia","Anna","Wilki","Cathy"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
