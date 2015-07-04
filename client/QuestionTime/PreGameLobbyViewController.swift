@@ -23,6 +23,7 @@ class PreGameLobbyViewController: UIViewController,NetworkDelegate {
         {
             if let thePortfolio = self.portfolio
             {
+                // FIX THIS
                 Network.sharedNetwork.selectPlayerData(1, questionCategory: 1)
             }
         }
@@ -40,13 +41,14 @@ class PreGameLobbyViewController: UIViewController,NetworkDelegate {
     func networkDisconnected(error: NSError?) {
         // eh, worry about it later
     }
-    func networkStateChanged(oldState: GameState, newState: GameState, context: [String : AnyObject]) {
-        // ok we need to know when the state has changed to the ready state which is inGame
-        
-        if newState == GameState.InGame
-        {
-            self.performSegueWithIdentifier("ServerReadySegue", sender: self)
-        }
+    func networkDidStartGame(message: GameStartMessage) {
+        self.performSegueWithIdentifier("ServerReadySegue", sender: self)
+    }
+    func networkDidEndGame(message: GameOverMessage) {
+        // eh, worry about it later
+    }
+    func networkDidUpdateGameProgress(message: ProgressMessage) {
+        // eh, worry about it later
     }
     
 
