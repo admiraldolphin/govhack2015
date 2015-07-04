@@ -14,7 +14,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     @IBOutlet weak var memberListView: UICollectionView!
     
-    let tempMPList = ["Tone","Joe","Bill","Tanya"]
+    let tempMPList : [String] = ["Tone","Joe","Bill","Tanya","Julia","Anna","Wilki","Cathy"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +34,18 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         return tempMPList.count
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemberCell", forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemberCell", forIndexPath: indexPath) as! MemberCollectionViewCell
+        
+        cell.memberNameLabel.text = tempMPList[indexPath.row]
         
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "MemberSelectedSegue")
+        {
+            // we are transitioning to the choose portfolio view
+        }
     }
 
 
