@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		331121141B47719300FB1F47 /* MemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331121131B47719300FB1F47 /* MemberCollectionViewCell.swift */; };
 		336119531B479235001FD894 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336119521B479235001FD894 /* GameViewController.swift */; };
+		336119551B47A89C001FD894 /* GameOverLobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336119541B47A89C001FD894 /* GameOverLobbyViewController.swift */; };
 		336957D81B4783580072AD1E /* PreGameLobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336957D71B4783580072AD1E /* PreGameLobbyViewController.swift */; };
 		33F73A611B4777A900EFE8E6 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F73A601B4777A900EFE8E6 /* PortfolioViewController.swift */; };
 		33F73A631B477D6E00EFE8E6 /* PortfolioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F73A621B477D6E00EFE8E6 /* PortfolioCollectionViewCell.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		331121131B47719300FB1F47 /* MemberCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCollectionViewCell.swift; sourceTree = "<group>"; };
 		336119521B479235001FD894 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		336119541B47A89C001FD894 /* GameOverLobbyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverLobbyViewController.swift; sourceTree = "<group>"; };
 		336957D71B4783580072AD1E /* PreGameLobbyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreGameLobbyViewController.swift; sourceTree = "<group>"; };
 		33F73A601B4777A900EFE8E6 /* PortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
 		33F73A621B477D6E00EFE8E6 /* PortfolioCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				68DF69831B469CC4007C36A4 /* ViewController.swift */,
 				336119521B479235001FD894 /* GameViewController.swift */,
 				68DF69851B469CC4007C36A4 /* Main.storyboard */,
+				336119541B47A89C001FD894 /* GameOverLobbyViewController.swift */,
 				33F73A621B477D6E00EFE8E6 /* PortfolioCollectionViewCell.swift */,
 				33F73A601B4777A900EFE8E6 /* PortfolioViewController.swift */,
 				336957D71B4783580072AD1E /* PreGameLobbyViewController.swift */,
@@ -294,6 +297,7 @@
 				68DF6A111B4777F2007C36A4 /* SwiftyJSON.swift in Sources */,
 				68DF69A21B46A065007C36A4 /* Network.swift in Sources */,
 				68DF69C91B4769B4007C36A4 /* DDDispatchQueueLogFormatter.m in Sources */,
+				336119551B47A89C001FD894 /* GameOverLobbyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,21 +10,20 @@ import UIKit
 
 class PreGameLobbyViewController: UIViewController,NetworkDelegate {
     
-    var honourableMember : String?
-    var portfolio: String?
+    var honourableMember : Int?
+    var portfolio: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         Network.sharedNetwork.delegate = self
-
         
-        // Tell the server the options the palyer picked
+        // Tell the server the options the player picked
         if let theRightHonourableMember = self.honourableMember
         {
             if let thePortfolio = self.portfolio
             {
-                // FIX THIS
-                Network.sharedNetwork.selectPlayerData(1, questionCategory: 1)
+                // Sending over the player options
+                Network.sharedNetwork.selectPlayerData(theRightHonourableMember, questionCategory: thePortfolio)
             }
         }
     }
