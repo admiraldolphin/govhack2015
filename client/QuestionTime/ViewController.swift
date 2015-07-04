@@ -8,9 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
     var network : Network?
+    
+    @IBOutlet weak var memberListView: UICollectionView!
+    
+    let tempMPList = ["Tone","Joe","Bill","Tanya"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,15 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tempMPList.count
+    }
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemberCell", forIndexPath: indexPath) as! UICollectionViewCell
+        
+        return cell
     }
 
 
