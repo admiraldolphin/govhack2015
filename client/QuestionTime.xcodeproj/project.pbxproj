@@ -27,6 +27,7 @@
 		68DF69C81B4769B4007C36A4 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69BD1B4769B4007C36A4 /* DDContextFilterLogFormatter.m */; };
 		68DF69C91B4769B4007C36A4 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69BF1B4769B4007C36A4 /* DDDispatchQueueLogFormatter.m */; };
 		68DF69CA1B4769B4007C36A4 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69C11B4769B4007C36A4 /* DDMultiFormatter.m */; };
+		68DF6A111B4777F2007C36A4 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69ED1B4777F2007C36A4 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		68DF69BF1B4769B4007C36A4 /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
 		68DF69C01B4769B4007C36A4 /* DDMultiFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMultiFormatter.h; sourceTree = "<group>"; };
 		68DF69C11B4769B4007C36A4 /* DDMultiFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMultiFormatter.m; sourceTree = "<group>"; };
+		68DF69ED1B4777F2007C36A4 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				68DF69A71B476992007C36A4 /* GCDAsyncSocket */,
+				68DF69D61B4777F2007C36A4 /* SwiftyJSON */,
 				68DF697E1B469CC4007C36A4 /* QuestionTime */,
 				68DF697D1B469CC4007C36A4 /* Products */,
 			);
@@ -174,6 +177,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		68DF69D61B4777F2007C36A4 /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				68DF69E91B4777F2007C36A4 /* Source */,
+			);
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		68DF69E91B4777F2007C36A4 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				68DF69ED1B4777F2007C36A4 /* SwiftyJSON.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,6 +279,7 @@
 				68DF69821B469CC4007C36A4 /* AppDelegate.swift in Sources */,
 				68DF69C61B4769B4007C36A4 /* DDLog.m in Sources */,
 				68DF69C41B4769B4007C36A4 /* DDASLLogger.m in Sources */,
+				68DF6A111B4777F2007C36A4 /* SwiftyJSON.swift in Sources */,
 				68DF69A21B46A065007C36A4 /* Network.swift in Sources */,
 				68DF69C91B4769B4007C36A4 /* DDDispatchQueueLogFormatter.m in Sources */,
 			);

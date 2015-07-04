@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, NetworkDelegate {
     
     var network : Network?
     
@@ -20,9 +20,24 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        network = Network(host: "localhost", port: 1234)
+        Network.sharedNetwork.delegate = self
+        Network.sharedNetwork.connect("localhost", port: 1234)
         
         
+    }
+    
+    func networkConnected() {
+        println("Network connected!")
+        
+        Network.sharedNetwork.selectPlayerData("Tone", questionCategory: "123")
+    }
+    
+    func networkDisconnected(error: NSError?) {
+        println("Network disconnected!")
+    }
+    
+    func networkStateChanged(oldState: GameState, newState: GameState, context: [String : AnyObject]) {
+        println("State changed from \(oldState) to \(newState)")
     }
 
     override func didReceiveMemoryWarning() {
