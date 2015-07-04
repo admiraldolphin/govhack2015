@@ -9,17 +9,21 @@
 import Foundation
 import UIKit
 
-enum NetworkConnectionState : UInt {
+enum GameState : UInt {
     case NotConnected
-    case Connected
+    case Lobby
+    case LobbyWaiting
+    case InGame
+    case InGameWaiting
+    case GameOver
     
 }
-
-typealias StateChangeHandler = NetworkConnectionState -> Void
 
 class Network: NSObject, GCDAsyncSocketDelegate {
     
     var socket : GCDAsyncSocket
+    
+    var gameState = GameState.NotConnected
     
     init?(host: String, port: UInt16) {
         
@@ -29,7 +33,6 @@ class Network: NSObject, GCDAsyncSocketDelegate {
         
         socket.delegate = self
         socket.delegateQueue = dispatch_get_main_queue()
-        
         
         var error : NSError?
         socket.connectToHost(host, onPort: port, error: &error)
@@ -42,16 +45,42 @@ class Network: NSObject, GCDAsyncSocketDelegate {
     func sendMessage(message:String) {
         assert(socket.isConnected)
         
-        let data = message.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+        let data = (message+"\n\n").dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         
-        //socket.writeData(<#data: NSData!#>, withTimeout: <#NSTimeInterval#>, tag: <#Int#>)
+        socket.writeData(data, withTimeout: 2.0, tag: 0)
     }
     
-    private func socket(sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16) {
+    func listenForNewData() {
+        socket.readDataToData(GCDAsyncSocket.LFData(), withTimeout: -1, tag:0)
+    }
+    
+    func socket(sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16) {
         println("Connected!")
         
+        gameState = .Lobby
         
+        sendMessage("Hi")
+        
+        listenForNewData()
     }
+    
+    func socket(sock: GCDAsyncSocket!, didReadData data: NSData!, withTag tag: Int) {
+        
+        let string = NSString(data: data, encoding: NSUTF8StringEncoding)
+        println("Read: \(string)")
+        
+        listenForNewData()
+    }
+    
+    func selectPlayerData(politician: String, questionCategory: String) {
+        // Send 'here's my MP and category'
+    }
+    
+    func updateAnswerStats(answeredCorrectly: Bool) {
+        // Send "I answered a question correctly/incorrectly"
+    }
+
+    
    
     
 }
