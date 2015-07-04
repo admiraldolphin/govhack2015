@@ -111,15 +111,15 @@ func Load(basedir string) (*Database, error) {
 			switch {
 			case !pc.Voted:
 				ans[pc.Policy.ID] = Abstain
-			case 0 <= pc.Agreement && pc.Agreement < 20:
+			case 0 <= pc.Agreement && pc.Agreement <= 20:
 				ans[pc.Policy.ID] = DisagreeStrong
-			case 20 <= pc.Agreement && pc.Agreement < 40:
+			case 20 < pc.Agreement && pc.Agreement <= 40:
 				ans[pc.Policy.ID] = Disagree
-			case 40 <= pc.Agreement && pc.Agreement < 60:
+			case 40 < pc.Agreement && pc.Agreement <= 60:
 				ans[pc.Policy.ID] = Neutral
-			case 60 <= pc.Agreement && pc.Agreement < 80:
+			case 60 < pc.Agreement && pc.Agreement <= 80:
 				ans[pc.Policy.ID] = Agree
-			case 80 <= pc.Agreement && pc.Agreement <= 100:
+			case 80 < pc.Agreement && pc.Agreement <= 100:
 				ans[pc.Policy.ID] = AgreeStrong
 			default:
 				return nil, fmt.Errorf("agreement out of range [%f notin 0..100]", pc.Agreement)
