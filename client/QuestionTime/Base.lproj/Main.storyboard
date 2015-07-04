@@ -272,27 +272,64 @@
                                     <segue destination="S7X-8o-uCH" kind="show" identifier="NewQuestionSegue" id="ULi-Jk-bwf"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="0.5" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YM-sI-caW">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YM-sI-caW">
                                 <rect key="frame" x="14" y="550" width="465" height="31"/>
                                 <connections>
                                     <action selector="voteSliderValueChange:" destination="S7X-8o-uCH" eventType="valueChanged" id="gQJ-Ld-HKh"/>
                                 </connections>
                             </slider>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gSn-uS-rrO">
+                                <rect key="frame" x="224" y="56" width="150" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="WtL-BT-IK0"/>
+                                </constraints>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 Questions Remaining" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJ7-Z4-GjF">
+                                <rect key="frame" x="225" y="66" width="149.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score: 99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txW-hK-hBN">
+                                <rect key="frame" x="244.5" y="115" width="112.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Their Score: 99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FU7-gO-krn">
+                                <rect key="frame" x="242.5" y="143.5" width="116.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="eJ7-Z4-GjF" firstAttribute="centerX" secondItem="txW-hK-hBN" secondAttribute="centerX" constant="-0.75" id="AXy-Zw-cMK"/>
+                            <constraint firstAttribute="centerX" secondItem="gSn-uS-rrO" secondAttribute="centerX" constant="1" id="JOe-Tc-jcw"/>
+                            <constraint firstItem="0xl-4A-qRA" firstAttribute="top" secondItem="juv-97-ReP" secondAttribute="bottom" constant="8" id="L3l-ku-Lvu"/>
+                            <constraint firstItem="gSn-uS-rrO" firstAttribute="top" secondItem="0xl-4A-qRA" secondAttribute="bottom" constant="7.5" id="Lx8-jU-RSe"/>
                             <constraint firstItem="Fkd-H5-KoS" firstAttribute="leading" secondItem="7YM-sI-caW" secondAttribute="trailing" constant="8" id="NAO-3p-PCb"/>
                             <constraint firstItem="Cmc-EU-HGr" firstAttribute="top" secondItem="Fkd-H5-KoS" secondAttribute="bottom" constant="8" id="VUe-kp-icM"/>
+                            <constraint firstItem="eJ7-Z4-GjF" firstAttribute="top" secondItem="gSn-uS-rrO" secondAttribute="bottom" constant="8" id="Xqc-0P-NSi"/>
                             <constraint firstAttribute="centerX" secondItem="0xl-4A-qRA" secondAttribute="centerX" constant="0.25" id="YuA-lj-7So"/>
                             <constraint firstItem="0xl-4A-qRA" firstAttribute="top" secondItem="juv-97-ReP" secondAttribute="bottom" constant="8" id="ekC-LK-Jgv"/>
                             <constraint firstItem="Fkd-H5-KoS" firstAttribute="trailing" secondItem="w7n-Oa-LFu" secondAttribute="trailingMargin" id="jj2-o4-SCb"/>
+                            <constraint firstItem="FU7-gO-krn" firstAttribute="top" secondItem="txW-hK-hBN" secondAttribute="bottom" constant="8" id="jnA-VB-OPj"/>
                             <constraint firstItem="Cmc-EU-HGr" firstAttribute="top" secondItem="7YM-sI-caW" secondAttribute="bottom" constant="20" id="lAJ-i6-K3u"/>
+                            <constraint firstItem="txW-hK-hBN" firstAttribute="centerX" secondItem="FU7-gO-krn" secondAttribute="centerX" id="rj5-8n-38y"/>
+                            <constraint firstItem="txW-hK-hBN" firstAttribute="top" secondItem="eJ7-Z4-GjF" secondAttribute="bottom" constant="32" id="uJd-7D-GSG"/>
                             <constraint firstItem="7YM-sI-caW" firstAttribute="leading" secondItem="w7n-Oa-LFu" secondAttribute="leadingMargin" id="xis-2I-Az8"/>
+                            <constraint firstItem="eJ7-Z4-GjF" firstAttribute="centerX" secondItem="gSn-uS-rrO" secondAttribute="centerX" constant="0.75" id="xlg-vp-ris"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="questionLabel" destination="0xl-4A-qRA" id="yzi-gH-Og7"/>
+                        <outlet property="questionsRemainingLabel" destination="eJ7-Z4-GjF" id="FjZ-xe-Hgi"/>
+                        <outlet property="theirScoreLabel" destination="FU7-gO-krn" id="HXg-xY-xMN"/>
+                        <outlet property="timeRemainingProgressView" destination="gSn-uS-rrO" id="zN7-I9-w5g"/>
                         <outlet property="voteSlider" destination="7YM-sI-caW" id="4yS-39-fne"/>
+                        <outlet property="yourScoreLabel" destination="txW-hK-hBN" id="Vqm-5Z-fCH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZh-ih-RBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
