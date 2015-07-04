@@ -10,22 +10,12 @@ import Foundation
 import UIKit
 
 
-enum GameState : UInt {
-    case NotConnected
-    case Lobby
-    case LobbyWaiting
-    case InGame
-    case InGameWaiting
-    case GameOver
-    
-}
-
 enum Answer : Int {
-    case DisagreeStrong = 1
-    case Disagree       = 2
-    case Neutral        = 3
-    case Agree          = 4
-    case AgreeStrong    = 5
+    case DisagreeStrong = 1 // 0  - 20
+    case Disagree       = 2 // 20 - 40
+    case Neutral        = 3 // 40 - 60
+    case Agree          = 4 // 60 - 80
+    case AgreeStrong    = 5 // 80 - 100
     case Abstain        = -1
 }
 
@@ -75,8 +65,6 @@ class Network: NSObject, GCDAsyncSocketDelegate {
     
     var delegate : NetworkDelegate?
     
-    var gameState = GameState.NotConnected
-    
     override init() {
         super.init()
     }
@@ -108,8 +96,6 @@ class Network: NSObject, GCDAsyncSocketDelegate {
     
     func socket(sock: GCDAsyncSocket!, didConnectToHost host: String!, port: UInt16) {
         println("Connected!")
-        
-        gameState = .Lobby
         
         updateName()
         
