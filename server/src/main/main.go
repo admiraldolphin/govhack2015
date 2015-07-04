@@ -25,6 +25,5 @@ func main() {
 		db = data.Fake()
 	}
 	log.Fatal(game.RunServer(db, *port))
-
 	log.Println("QuestionTime server stopped")
 }
