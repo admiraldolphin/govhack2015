@@ -164,7 +164,7 @@ class Network: NSObject, GCDAsyncSocketDelegate {
         
     }
     
-    func updateAnswerStats(questionID: Int, answer: Answer) {
+    func submitAnswer(questionID: Int, answer: Answer) {
         
         // Send "I answered a question correctly/incorrectly"
         
