@@ -17,6 +17,8 @@ const (
 	gameTimeout       = 1 * time.Minute
 	idleReadTimeout   = 20 * time.Second
 	idleWriteTimeout  = 5 * time.Second
+
+	numQuestions = 5
 )
 
 func readMessage(conn net.Conn) (*Message, error) {
@@ -35,13 +37,64 @@ func readMessage(conn net.Conn) (*Message, error) {
 
 func writeMessage(conn net.Conn, m *Message) error {
 	conn.SetWriteDeadline(time.Now().Add(idleWriteTimeout))
-	return json.NewEncoder(conn).Encode(m)
+	if err := json.NewEncoder(conn).Encode(m); err != nil {
+		return err
+	}
+	// Jon wants double newline after each message.
+	_, err := conn.Write([]byte("\n\n"))
+	return err
+}
+
+func (g *Game) handleMessage(conn net.Conn, m *Message) error {
+	d := m.Data.(map[string]interface{})
+
+	switch m.Type {
+	case "Player":
+		// Game has a Player from someone else?
+		// Yes: Decide questions to send.
+		// No: Send KeepAlive once per keepAliveInterval up to gameTimeout until we have another ClientHello.
+		// Then decide questions to send.
+		ticker := time.NewTicker(keepAliveInterval)
+		defer ticker.Stop()
+		p := Player{
+			HeroPick:      data.ID(d["HeroPick"].(int)),
+			PortfolioPick: data.ID(d["PortfolioPick"].(int)),
+		}
+		match, err := g.match(p)
+		if err != nil {
+			return err
+		}
+		for {
+			select {
+			case opponent := <-match:
+				// Proceed!
+				s := ServerHello{
+					Opponent:  opponent,
+					Questions: g.db.PickQuestions(opponent.PortfolioPick, numQuestions),
+				}
+				if err := writeMessage(conn, NewMessage(s)); err != nil {
+					return err
+				}
+
+			case <-ticker.C:
+				// Send keepalives.
+				if err := writeMessage(conn, &KeepAlive); err != nil {
+					return err
+				}
+			case <-time.After(gameTimeout):
+				return errors.New("game not matched within timeout")
+			}
+		}
+
+	case "Answer":
+		// TODO(josh): Handle ClientAnswer.
+	}
+	return nil
 }
 
 // handle handles incoming connections.
-func (g *Game) handle(conn net.Conn, db *data.Database) {
+func (g *Game) handle(conn net.Conn) {
 	defer conn.Close()
-outerHandleLoop:
 	for {
 		m, err := readMessage(conn)
 		if err != nil {
@@ -49,37 +102,10 @@ outerHandleLoop:
 			return
 		}
 		log.Printf("%v: %v\n", conn.RemoteAddr(), m)
-		
-		d := m.Data.(map[string]interface{})
-		
-		switch m.Type {
-		case "Player":
-			// Game has a ClientHello from someone else?
-			// Yes: Decide questions to send.
-			// No: Send KeepAlive once per keepAliveInterval up to gameTimeout until we have another ClientHello.
-			// Then decide questions to send.
-			ticker := time.NewTicker(keepAliveInterval)
-			gto := time.Now().Add(gameTimeout)
-			p := &Player{
-				HeroPick: data.ID(d["HeroPick"].(int)),
-				PortfolioPick: data.ID(d["PortfolioPick"].(int)),
-			}
-			match := g.match(p)
-			for {
-				select {
-				case op := <-match:
-					// Proceed!
-				case <-ticker:
-					// Send keepalive
-					if time.Now().After(gto) {
-						break outerHandleLoop
-					}
-				}
-			}
-			
-		case "Answer":
-			// TODO(josh): Handle ClientAnswer.
-			// 
+
+		if err := g.handleMessage(conn, m); err != nil {
+			log.Println(err)
+			return
 		}
 	}
 
@@ -94,9 +120,9 @@ func RunServer(db *data.Database, port int) error {
 		return err
 	}
 	defer ln.Close()
-	
+
 	// TODO(josh): Someday, handle more than one game.
-	g := &Game{}
+	g := newGame(db)
 	for {
 		conn, err := ln.Accept()
 		if err != nil {

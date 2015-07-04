@@ -1,13 +1,15 @@
 package game
 
 import (
+	"fmt"
+
 	"data"
 )
 
 // Message encapsulates all the messages.
 // Messages of Type "KeepAlive" are expected to have nil (empty) Data.
 // Otherwise, Type is the type of the message (one of the structs below).
-// Note that when encoding/json unmarshals Message, Data will have the 
+// Note that when encoding/json unmarshals Message, Data will have the
 // generic type map[string]interface{}.
 type Message struct {
 	Type string
@@ -16,11 +18,18 @@ type Message struct {
 
 var KeepAlive = Message{Type: "KeepAlive"}
 
+func NewMessage(d interface{}) *Message {
+	return &Message{
+		Type: fmt.Sprintf("%T", d),
+		Data: d,
+	}
+}
+
 // Messages from client.
 
 type Player struct {
-	HeroPick     data.ID // For self.
-	PorfolioPick data.ID // For opponent.
+	HeroPick      data.ID // For self.
+	PortfolioPick data.ID // For opponent.
 }
 
 type Answer struct {
@@ -31,7 +40,7 @@ type Answer struct {
 // Messages from server.
 
 type ServerHello struct {
-	Opponent  ClientHello // Stuff the other guy picked.
+	Opponent  Player // Stuff the other guy picked.
 	Questions []data.Question
 }
 
@@ -39,9 +48,11 @@ type ServerAnswerMarking struct {
 	Question        data.ID
 	Correct         bool
 	OpponentCorrect bool
+	GameOver        bool
+	YourScore       int
+	OpponentScore   int
 }
 
 type ServerGameOver struct {
-	YourScore, OpponentScore int
 	// TODO(josh): The correct answers for each question.
 }
