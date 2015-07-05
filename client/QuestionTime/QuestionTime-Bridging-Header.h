@@ -3,3 +3,5 @@
 //
 
 #import "../CocoaAsyncSocket/GCD/GCDAsyncSocket.h"
+
+#import "CERoundProgressView.h"

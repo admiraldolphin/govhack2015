@@ -12,6 +12,8 @@
 		330E76451B4819B70024B794 /* effect_murmuring.wav in Resources */ = {isa = PBXBuildFile; fileRef = 330E76441B4819B70024B794 /* effect_murmuring.wav */; };
 		330E76471B481A000024B794 /* effect_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 330E76461B481A000024B794 /* effect_click.wav */; };
 		331121141B47719300FB1F47 /* MemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331121131B47719300FB1F47 /* MemberCollectionViewCell.swift */; };
+		331326FF1B48D67A00DCB29C /* CERoundProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 331326FC1B48D67A00DCB29C /* CERoundProgressLayer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		331327001B48D67A00DCB29C /* CERoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 331326FE1B48D67A00DCB29C /* CERoundProgressView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		336119531B479235001FD894 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336119521B479235001FD894 /* GameViewController.swift */; };
 		336119551B47A89C001FD894 /* GameOverLobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336119541B47A89C001FD894 /* GameOverLobbyViewController.swift */; };
 		336957D81B4783580072AD1E /* PreGameLobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336957D71B4783580072AD1E /* PreGameLobbyViewController.swift */; };
@@ -55,6 +57,10 @@
 		330E76441B4819B70024B794 /* effect_murmuring.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = effect_murmuring.wav; sourceTree = "<group>"; };
 		330E76461B481A000024B794 /* effect_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = effect_click.wav; sourceTree = "<group>"; };
 		331121131B47719300FB1F47 /* MemberCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCollectionViewCell.swift; sourceTree = "<group>"; };
+		331326FB1B48D67A00DCB29C /* CERoundProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressLayer.h; sourceTree = "<group>"; };
+		331326FC1B48D67A00DCB29C /* CERoundProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CERoundProgressLayer.m; sourceTree = "<group>"; };
+		331326FD1B48D67A00DCB29C /* CERoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressView.h; sourceTree = "<group>"; };
+		331326FE1B48D67A00DCB29C /* CERoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CERoundProgressView.m; sourceTree = "<group>"; };
 		336119521B479235001FD894 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		336119541B47A89C001FD894 /* GameOverLobbyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverLobbyViewController.swift; sourceTree = "<group>"; };
 		336957D71B4783580072AD1E /* PreGameLobbyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreGameLobbyViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +124,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		331327011B48D67F00DCB29C /* Clock */ = {
+			isa = PBXGroup;
+			children = (
+				331326FB1B48D67A00DCB29C /* CERoundProgressLayer.h */,
+				331326FC1B48D67A00DCB29C /* CERoundProgressLayer.m */,
+				331326FD1B48D67A00DCB29C /* CERoundProgressView.h */,
+				331326FE1B48D67A00DCB29C /* CERoundProgressView.m */,
+			);
+			name = Clock;
+			sourceTree = "<group>";
+		};
 		33A1E03F1B47CFD400B308C7 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +186,7 @@
 		68DF697E1B469CC4007C36A4 /* QuestionTime */ = {
 			isa = PBXGroup;
 			children = (
+				331327011B48D67F00DCB29C /* Clock */,
 				681716E11B47F1630061E99A /* Images.xcassets */,
 				68DF69A11B46A065007C36A4 /* Network.swift */,
 				33A1E0391B47CD3400B308C7 /* AudioJigger.swift */,
@@ -361,10 +379,12 @@
 				33F73A631B477D6E00EFE8E6 /* PortfolioCollectionViewCell.swift in Sources */,
 				33A1E03A1B47CD3400B308C7 /* AudioJigger.swift in Sources */,
 				68DF69C51B4769B4007C36A4 /* DDFileLogger.m in Sources */,
+				331327001B48D67A00DCB29C /* CERoundProgressView.m in Sources */,
 				68DF69C81B4769B4007C36A4 /* DDContextFilterLogFormatter.m in Sources */,
 				68E8627B1B4799F000EB6FDE /* QuestionDatabase.swift in Sources */,
 				68DF69AD1B47699E007C36A4 /* GCDAsyncUdpSocket.m in Sources */,
 				336957D81B4783580072AD1E /* PreGameLobbyViewController.swift in Sources */,
+				331326FF1B48D67A00DCB29C /* CERoundProgressLayer.m in Sources */,
 				336119531B479235001FD894 /* GameViewController.swift in Sources */,
 				68DF69C31B4769B4007C36A4 /* DDAbstractDatabaseLogger.m in Sources */,
 				68DF69841B469CC4007C36A4 /* ViewController.swift in Sources */,

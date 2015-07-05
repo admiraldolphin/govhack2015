@@ -33,6 +33,9 @@ class GameViewController: UIViewController,NetworkDelegate {
     @IBOutlet weak var yourScoreLabel: UILabel?
     @IBOutlet weak var theirScoreLabel: UILabel?
     
+    @IBOutlet weak var clockView: UIView!
+    @IBOutlet weak var spinningView: CERoundProgressView!
+    
     var gameOverMessage : GameOverMessage?
     
     var timer : NSTimer?
@@ -74,6 +77,16 @@ class GameViewController: UIViewController,NetworkDelegate {
         timer = NSTimer.scheduledTimerWithTimeInterval(6, target: self, selector: "timeRanOut:", userInfo: nil, repeats: true)
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"BGTile")!)
+        
+        rotateClock()
+    }
+    
+    func rotateClock()
+    {
+        let duration = Float(6)
+        self.spinningView.animationDuration = 6
+        self.spinningView.startAngle = Float(M_PI_2)
+        self.spinningView.progress = 1
     }
     
     func showQuestion() {
