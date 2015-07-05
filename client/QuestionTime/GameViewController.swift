@@ -158,7 +158,7 @@ class GameViewController: UIViewController,NetworkDelegate {
         case .Agree:
             feedbackAnswer = "They agree!"
         case .Neutral:
-            feedbackAnswer = "They're voted for and against!"
+            feedbackAnswer = "They've voted for and against!"
         case .Disagree:
             feedbackAnswer = "They disagree!"
         case .DisagreeStrong:
