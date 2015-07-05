@@ -72,6 +72,12 @@ class GameViewController: UIViewController,NetworkDelegate {
             CATransaction.commit()
             
             self.questionsRemainingLabel.text = "\(self.questionsRemaining) questions remaining"
+            
+            // adding the question to the asked questions list
+            if let theQuestionID = self.questionID
+            {
+                QuestionDatabase.sharedDatabase.askedQuestions.append(theQuestionID)
+            }
         }
         
         // firing up the 6 second ticking audio

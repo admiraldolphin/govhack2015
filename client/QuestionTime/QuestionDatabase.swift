@@ -100,6 +100,8 @@ class QuestionDatabase : NSObject {
         return QuestionDatabase()
     }()
     
+    var askedQuestions : [Int] = []
+    
     lazy var allPortfolios : [Portfolio] = {
         
         var portfolios : [Portfolio] = []
@@ -164,7 +166,6 @@ class QuestionDatabase : NSObject {
         return importants
     }()
     
-    
     func correctAnswerForPerson(personID: Int, policyID:Int) -> Answer {
         if let policy = allPeople[personID]?.policies[policyID] {
                 
@@ -191,6 +192,51 @@ class QuestionDatabase : NSObject {
         }
         
         return Answer.Abstain
+    }
+    
+    func resetAskedQuestions()
+    {
+        self.askedQuestions = []
+    }
+    
+    func interestFactAboutQuestion(questionID:Int) -> String?
+    {
+        var theFact : String?
+        // need to go through the policyfacts db
+        let policyPath = "data/policyfacts.json"
+        let factsPath = "data/facts.json"
+        // grab the element at index questionID
+        if let policyURL = NSBundle.mainBundle().resourceURL?.URLByAppendingPathComponent(policyPath)
+        {
+            let policyData = JSON(data: NSData(contentsOfURL: policyURL)!)
+            for policyFacts in policyData.arrayValue
+            {
+                let id = policyFacts["id"].intValue
+                if id == questionID
+                {
+                    // this is the question we want
+                    let factIDs = policyFacts["facts"].arrayValue
+                    
+                    let random = Int(arc4random_uniform(UInt32(factIDs.count)))
+                    let factID = factIDs[random].intValue
+                    
+                    if let factURL = NSBundle.mainBundle().resourceURL?.URLByAppendingPathComponent(factsPath)
+                    {
+                        let factData = JSON(data: NSData(contentsOfURL: factURL)!)
+                        for facts in factData.arrayValue
+                        {
+                            let theID = facts["id"].intValue
+                            if factID == theID
+                            {
+                                // this is the fact we are after
+                                theFact = facts["text"].stringValue
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return theFact
     }
     
     

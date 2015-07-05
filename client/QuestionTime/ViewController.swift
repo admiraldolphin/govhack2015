@@ -28,6 +28,11 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"BGTileLoseScreen")!)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        QuestionDatabase.sharedDatabase.resetAskedQuestions()
+    }
+    
     func networkConnected() {
         println("Network connected!")
         
