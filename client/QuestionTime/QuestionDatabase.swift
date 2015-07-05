@@ -34,15 +34,24 @@ class Person {
     var name : String = ""
     var party : String = ""
     
-    init(id: Int, name:String) {
-        self.id = id
-        self.name = name
+    enum Gender : UInt {
+        case Female
+        case Male
     }
     
-    init(id: Int, name:String, party:String)
+    var gender : Gender = .Female
+    
+    init(id: Int, name:String, gender:Gender) {
+        self.id = id
+        self.name = name
+        self.gender = gender
+    }
+    
+    init(id: Int, name:String, gender:Gender, party:String)
     {
         self.id = id
         self.name = name
+        self.gender = gender
         self.party = party
     }
     
@@ -91,8 +100,6 @@ class Person {
         
     }()
     
-    
-    
 }
 
 class QuestionDatabase : NSObject {
@@ -135,9 +142,22 @@ class QuestionDatabase : NSObject {
                 let name = nameData["first"].stringValue + " " + nameData["last"].stringValue
                 let party = personData["latest_member"]["party"].stringValue
                 
+                var gender : Person.Gender
+                switch personData["latest_member"]["gender"].stringValue {
+                case "Female":
+                    gender = .Female
+                case "Male":
+                    fallthrough
+                default:
+                    gender = .Male
+                
+                    
+                }
+                
                 let person = Person(
                     id: personData["id"].intValue,
                     name: name,
+                    gender: gender,
                     party: party)
                 
                 people[person.id] = person

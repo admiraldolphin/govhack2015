@@ -10,5 +10,6 @@ import UIKit
 
 class PortfolioCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var issueImage: UIImageView!
     @IBOutlet weak var portfolioNameLabel: UILabel!
 }

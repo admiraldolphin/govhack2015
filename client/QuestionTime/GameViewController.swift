@@ -13,6 +13,8 @@ class GameViewController: UIViewController,NetworkDelegate {
     var totalQuestions = 10
     var questionsRemaining = 0
     
+    @IBOutlet weak var headImageView: UIImageView!
+    @IBOutlet weak var bodyImageView: UIImageView!
     var answer : Answer = Answer.Neutral
     
     var questionID : Int?
@@ -20,6 +22,7 @@ class GameViewController: UIViewController,NetworkDelegate {
     var heroID : Int = 0
     var possibleQuestions : [Int] = []
 
+    @IBOutlet weak var personNameLabel: UILabel!
     @IBOutlet weak var questionsRemainingLabel: UILabel!
     
     @IBOutlet weak var timeRemainingProgressView: UIProgressView!
@@ -37,9 +40,6 @@ class GameViewController: UIViewController,NetworkDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        possibleQuestions = [63, 51]
-        heroID = 10001
-        
         self.voteSlider?.setMinimumTrackImage(UIImage(named: "Empty"), forState: UIControlState.Normal)
         self.voteSlider?.setMaximumTrackImage(UIImage(named: "Empty"), forState: UIControlState.Normal)
         self.voteSlider?.setThumbImage(UIImage(named: "SelectorIndicatorTop"), forState: UIControlState.Normal)
@@ -49,6 +49,27 @@ class GameViewController: UIViewController,NetworkDelegate {
         questionsRemaining = totalQuestions
 
         showQuestion()
+        
+        if let person = QuestionDatabase.sharedDatabase.allPeople[heroID] {
+            
+            let text = "How does \(person.name) feel about..."
+            self.personNameLabel?.text = text
+            
+            switch person.gender {
+            case .Male:
+                self.bodyImageView.image = UIImage(named: "BodyIdleMale")
+            case .Female:
+                self.bodyImageView.image = UIImage(named: "BodyIdleFemale")
+            default:
+                ()
+            }
+            
+            self.headImageView.image = UIImage(named: "\(person.id)")
+        }
+        
+        
+        
+        
         
         timer = NSTimer.scheduledTimerWithTimeInterval(6, target: self, selector: "timeRanOut:", userInfo: nil, repeats: true)
         
@@ -154,6 +175,7 @@ class GameViewController: UIViewController,NetworkDelegate {
         
         if segue.identifier == "GameOverSegue"
         {
+            timer?.invalidate()
             if let theDestination = segue.destinationViewController as? GameOverLobbyViewController
             {
                 theDestination.youWon = gameOverMessage?.youWon ?? false

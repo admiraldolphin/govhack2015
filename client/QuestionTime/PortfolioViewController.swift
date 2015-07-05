@@ -37,6 +37,9 @@ class PortfolioViewController: UIViewController,UICollectionViewDataSource,UICol
         let portfolio = QuestionDatabase.sharedDatabase.allPortfolios[indexPath.row]
         cell.portfolioNameLabel.text = portfolio.name
         
+        let portfolioImage = UIImage(named: "Issue_\(portfolio.id)")
+        cell.issueImage.image = portfolioImage
+        
         return cell
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
