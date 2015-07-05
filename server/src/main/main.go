@@ -11,7 +11,7 @@ import (
 var (
 	dataPath     = flag.String("data", "../data", "Path to the data directory.")
 	port         = flag.Int("port", 8888, "TCP port for serving.")
-	numQuestions = flag.Int("questions", 5, "Number of questions in a game.")
+	numQuestions = flag.Int("questions", 6, "Number of questions in a game.")
 )
 
 func main() {
