@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	NumQuestions = 5
+	NumQuestions = 6
 )
 
 type Game struct {
