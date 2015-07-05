@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PreGameLobbyViewController: UIViewController,NetworkDelegate {
+class PreGameLobbyViewController: UIViewController,NetworkDelegate,AudioJiggerDelegate {
     
     var honourableMember : Int?
     var portfolio: Int?
@@ -39,7 +39,15 @@ class PreGameLobbyViewController: UIViewController,NetworkDelegate {
                 game.heroID = gameStartMessage!.opponentHero
                 game.possibleQuestions = gameStartMessage!.questions
                 
+                AudioJigger.sharedJigger.playActionMusic()
             }
+        }
+    }
+    
+    func jiggerFinishedPlayingEffect(effect: Effects) {
+        if effect == Effects.Countdown
+        {
+            self.performSegueWithIdentifier("ServerReadySegue", sender: self)
         }
     }
 
@@ -54,7 +62,10 @@ class PreGameLobbyViewController: UIViewController,NetworkDelegate {
     
     func networkDidStartGame(message: GameStartMessage) {
         gameStartMessage = message
-        self.performSegueWithIdentifier("ServerReadySegue", sender: self)
+        
+        // start the countdown audio playing, then jump into the game
+        AudioJigger.sharedJigger.delegate = self
+        AudioJigger.sharedJigger.playEffect(Effects.Countdown)
     }
     
     func networkDidEndGame(message: GameOverMessage) {

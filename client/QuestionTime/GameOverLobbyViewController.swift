@@ -22,14 +22,18 @@ class GameOverLobbyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        AudioJigger.sharedJigger.playBackgroundMusic()
+        
     
         if youWon
         {
             self.gameOverLobbyLabel.text = "The honourable member is ejected from the house!"
+            AudioJigger.sharedJigger.playEffect(.Victory)
         }
         else
         {
             self.gameOverLobbyLabel.text = "The honourable member has the call!"
+            AudioJigger.sharedJigger.playEffect(.Defeat)
         }
     
 
