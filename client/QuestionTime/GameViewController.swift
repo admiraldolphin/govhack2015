@@ -40,6 +40,13 @@ class GameViewController: UIViewController,NetworkDelegate {
     
     var timer : NSTimer?
     
+    @IBOutlet weak var indicatorStronglyAgree: UIImageView!
+    @IBOutlet weak var indicatorNeutral: UIImageView!
+    @IBOutlet weak var indicatorDisagree: UIImageView!
+    @IBOutlet weak var indicatorAgree: UIImageView!
+    @IBOutlet weak var indicatorStronglyDisagree: UIImageView!
+    
+    @IBOutlet weak var abstainButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -128,6 +135,29 @@ class GameViewController: UIViewController,NetworkDelegate {
     func timeRanOut(sender:AnyObject)
     {
 
+        let correctAnswer = QuestionDatabase.sharedDatabase.correctAnswerForPerson(heroID, policyID: self.questionID!)
+        
+        switch correctAnswer {
+        case .Abstain:
+            ()
+        case .AgreeStrong:
+            ()
+        case .Agree:
+            ()
+        case .Neutral:
+            ()
+        case .Disagree:
+            ()
+        case .DisagreeStrong:
+            ()
+        }
+        
+        if correctAnswer == answer {
+            AudioJigger.sharedJigger.playEffect(Effects.HereHere)
+        } else {
+            AudioJigger.sharedJigger.playEffect(Effects.Booing)
+        }
+        
         Network.sharedNetwork.submitAnswer(self.questionID!, answer: answer)
         
         self.questionsRemaining -= 1

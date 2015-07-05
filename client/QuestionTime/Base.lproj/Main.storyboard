@@ -808,8 +808,14 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="abstainButton" destination="Fkd-H5-KoS" id="4mD-So-2Dz"/>
                         <outlet property="bodyImageView" destination="POQ-jt-2g4" id="NnT-WT-1cP"/>
                         <outlet property="headImageView" destination="k8E-Ye-sZH" id="dyn-0W-2m4"/>
+                        <outlet property="indicatorAgree" destination="t8g-v8-8Fb" id="Fq0-w7-gfC"/>
+                        <outlet property="indicatorDisagree" destination="Y7G-Bj-EDI" id="bpg-sR-YSs"/>
+                        <outlet property="indicatorNeutral" destination="4u4-Rm-S9f" id="QbD-AH-WoD"/>
+                        <outlet property="indicatorStronglyAgree" destination="cj8-84-u2x" id="5Nq-Z9-2WQ"/>
+                        <outlet property="indicatorStronglyDisagree" destination="0Hs-5f-MOb" id="lpX-vh-194"/>
                         <outlet property="personNameLabel" destination="0xl-4A-qRA" id="Uke-sj-KFM"/>
                         <outlet property="questionLabel" destination="mg7-k7-FW8" id="p0B-yD-w7w"/>
                         <outlet property="voteSlider" destination="gyI-hS-6qk" id="3G7-ie-uXx"/>
