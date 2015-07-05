@@ -33,7 +33,7 @@ class GameViewController: UIViewController,NetworkDelegate {
     @IBOutlet weak var yourScoreLabel: UILabel?
     @IBOutlet weak var theirScoreLabel: UILabel?
     
-    @IBOutlet weak var clockView: UIView!
+
     @IBOutlet weak var spinningView: CERoundProgressView!
     
     var gameOverMessage : GameOverMessage?
@@ -90,7 +90,6 @@ class GameViewController: UIViewController,NetworkDelegate {
     
     func rotateClock()
     {
-        let duration = Float(6)
         self.spinningView.animationDuration = 6
         self.spinningView.startAngle = Float(M_PI_2)
         self.spinningView.progress = 1
