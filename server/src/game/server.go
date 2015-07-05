@@ -15,8 +15,8 @@ import (
 const (
 	keepAliveInterval = 5 * time.Second
 	gameTimeout       = 1 * time.Minute
-	idleReadTimeout   = 20 * time.Second
-	idleWriteTimeout  = 5 * time.Second
+	idleReadTimeout   = 60 * time.Second
+	idleWriteTimeout  = 60 * time.Second
 )
 
 func readMessage(conn net.Conn) (*Message, error) {
