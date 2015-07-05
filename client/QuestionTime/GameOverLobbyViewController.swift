@@ -25,13 +25,13 @@ class GameOverLobbyViewController: UIViewController {
             {
                 self.gameOverLobbyLabel.text = "Congrats!"
                 // temporary
-                AudioJigger.sharedJigger.playEffect(.HereHere)
+                AudioJigger.sharedJigger.playEffect(.Victory)
             }
             else
             {
                 self.gameOverLobbyLabel.text = "Suck it!"
                 // temporary
-                AudioJigger.sharedJigger.playEffect(.Booing)
+                AudioJigger.sharedJigger.playEffect(.Defeat)
             }
         }
 
