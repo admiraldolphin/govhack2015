@@ -94,6 +94,7 @@ class GameViewController: UIViewController,NetworkDelegate {
     {
         self.spinningView.animationDuration = 6
         self.spinningView.startAngle = Float(M_PI_2)
+        self.spinningView.tintColor = UIColor.grayColor()
         self.spinningView.progress = 1
     }
     
