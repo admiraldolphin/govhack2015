@@ -92,10 +92,11 @@ class GameViewController: UIViewController,NetworkDelegate {
     
     func rotateClock()
     {
+        self.spinningView.setProgress(0.0, animated:false)
         self.spinningView.animationDuration = 6
         self.spinningView.startAngle = Float(M_PI_2)
         self.spinningView.tintColor = UIColor.grayColor()
-        self.spinningView.progress = 1
+        self.spinningView.setProgress(1.0, animated:true)
     }
     
     func showQuestion() {
