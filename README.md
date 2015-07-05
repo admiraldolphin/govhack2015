@@ -6,6 +6,8 @@ Both players pick a representative and a portfolio and are asked a series of pol
 
 At the end of the game you are given a summary of how you went against your opponent.
 
+For more information see our website: http://www.secretlab.com.au/govhack2015
+
 ##Running it
 If you want to run the game yourself there are a couple of things to know, the game is broken up into a client and a server.
 
