@@ -37,8 +37,13 @@ class GameOverLobbyViewController: UIViewController {
         }
         
         let aqs = QuestionDatabase.sharedDatabase.askedQuestions
-        let aq1 = aqs[Int(arc4random_uniform(UInt32(aqs.count)))]
-        let aq2 = aqs[Int(arc4random_uniform(UInt32(aqs.count)))]
+        let r1 = Int(arc4random_uniform(UInt32(aqs.count)))
+        var r2 = Int(arc4random_uniform(UInt32(aqs.count)))
+        while r2 == r1 {
+            r2 = Int(arc4random_uniform(UInt32(aqs.count)))
+        }
+        let aq1 = aqs[r1]
+        let aq2 = aqs[r2]
         let factoid1 = QuestionDatabase.sharedDatabase.interestFactAboutQuestion(aq1)
         let factoid2 = QuestionDatabase.sharedDatabase.interestFactAboutQuestion(aq2)
         
