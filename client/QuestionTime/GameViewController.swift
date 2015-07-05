@@ -13,6 +13,11 @@ class GameViewController: UIViewController,NetworkDelegate {
     var totalQuestions = 10
     var questionsRemaining = 0
     
+    @IBOutlet weak var theirScoreHeight: NSLayoutConstraint!
+    @IBOutlet weak var myScoreHeight: NSLayoutConstraint!
+    let minScoreHeight = 186
+    let maxScoreHeight = 350
+    
     @IBOutlet weak var headImageView: UIImageView!
     @IBOutlet weak var bodyImageView: UIImageView!
     var answer : Answer = Answer.Neutral
@@ -21,6 +26,21 @@ class GameViewController: UIViewController,NetworkDelegate {
     
     var heroID : Int = 0
     var possibleQuestions : [Int] = []
+    
+    func updateScoreHeight(myScore:Int, theirScore:Int) {
+        let maxScore :Float = 6
+        
+        var myNormalised = Float(myScore) / maxScore
+        var theirNormalised = Float(theirScore) / maxScore
+        
+        func lerp (val:Float, min:Int, max:Int) -> CGFloat {
+            return CGFloat(Float(min) + (Float(max) - Float(min))*val)
+        }
+        
+        myScoreHeight.constant = lerp(myNormalised, minScoreHeight, maxScoreHeight)
+        theirScoreHeight.constant = lerp(theirNormalised, minScoreHeight, maxScoreHeight)
+        
+    }
 
     @IBOutlet weak var personNameLabel: UILabel!
     @IBOutlet weak var questionsRemainingLabel: UILabel!
@@ -236,6 +256,8 @@ class GameViewController: UIViewController,NetworkDelegate {
         
         self.yourScoreLabel?.text = "Your Score: \(message.yourScore)"
         self.theirScoreLabel?.text = "Their Score: \(message.opponentScore)"
+        
+        updateScoreHeight(message.yourScore, theirScore: message.opponentScore)
         
     }
 

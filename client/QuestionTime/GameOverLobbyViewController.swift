@@ -28,12 +28,12 @@ class GameOverLobbyViewController: UIViewController {
         if youWon
         {
             self.gameOverLobbyLabel.text = "The honourable member is ejected from the house!"
-            AudioJigger.sharedJigger.playEffect(.Victory)
+            AudioJigger.sharedJigger.playEffect(.Defeat)
         }
         else
         {
             self.gameOverLobbyLabel.text = "The honourable member has the call!"
-            AudioJigger.sharedJigger.playEffect(.Defeat)
+            AudioJigger.sharedJigger.playEffect(.Victory)
         }
         
         let aqs = QuestionDatabase.sharedDatabase.askedQuestions
