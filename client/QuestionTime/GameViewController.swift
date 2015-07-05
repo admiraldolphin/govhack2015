@@ -125,10 +125,15 @@ class GameViewController: UIViewController,NetworkDelegate {
             {
                 QuestionDatabase.sharedDatabase.askedQuestions.append(theQuestionID)
             }
+            
+            // firing up the 6 second ticking audio
+            AudioJigger.sharedJigger.playEffect(.Ticking)
+        } else {
+            // whoa we have no policy? try again
+            showQuestion()
         }
         
-        // firing up the 6 second ticking audio
-        AudioJigger.sharedJigger.playEffect(.Ticking)
+        
     }
     
     func timeRanOut(sender:AnyObject)
