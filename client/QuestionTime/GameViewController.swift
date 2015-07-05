@@ -134,7 +134,7 @@ class GameViewController: UIViewController,NetworkDelegate {
             rotateClock()
             
             // firing up the 6 second ticking audio
-            AudioJigger.sharedJigger.playEffect(.Ticking)
+            //AudioJigger.sharedJigger.playEffect(.Ticking)
         } else {
             // whoa we have no policy? try again
             showQuestion()
@@ -193,6 +193,7 @@ class GameViewController: UIViewController,NetworkDelegate {
             // Wait for the server to tell us to go to the game over screen
             
             timer?.invalidate()
+            timer = nil
         }
         
         
@@ -247,6 +248,7 @@ class GameViewController: UIViewController,NetworkDelegate {
         if segue.identifier == "GameOverSegue"
         {
             timer?.invalidate()
+            timer = nil
             if let theDestination = segue.destinationViewController as? GameOverLobbyViewController
             {
                 theDestination.youWon = gameOverMessage?.youWon ?? false
