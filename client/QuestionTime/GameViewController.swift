@@ -33,6 +33,7 @@ class GameViewController: UIViewController,NetworkDelegate {
     @IBOutlet weak var yourScoreLabel: UILabel?
     @IBOutlet weak var theirScoreLabel: UILabel?
     
+    @IBOutlet weak var feedbackLabel: UILabel!
 
     @IBOutlet weak var spinningView: CERoundProgressView!
     
@@ -50,6 +51,7 @@ class GameViewController: UIViewController,NetworkDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.feedbackLabel.alpha = 0.0
         self.voteSlider?.setMinimumTrackImage(UIImage(named: "Empty"), forState: UIControlState.Normal)
         self.voteSlider?.setMaximumTrackImage(UIImage(named: "Empty"), forState: UIControlState.Normal)
         self.voteSlider?.setThumbImage(UIImage(named: "SelectorIndicatorTop"), forState: UIControlState.Normal)
@@ -85,7 +87,7 @@ class GameViewController: UIViewController,NetworkDelegate {
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"BGTile")!)
         
-        rotateClock()
+        
     }
     
     func rotateClock()
@@ -107,6 +109,8 @@ class GameViewController: UIViewController,NetworkDelegate {
             
             self.questionID = policyID
             
+            self.abstainButton.selected = false
+            
             self.answer = Answer.Neutral
             
             self.voteSlider?.value = 0.5
@@ -126,6 +130,8 @@ class GameViewController: UIViewController,NetworkDelegate {
                 QuestionDatabase.sharedDatabase.askedQuestions.append(theQuestionID)
             }
             
+            rotateClock()
+            
             // firing up the 6 second ticking audio
             AudioJigger.sharedJigger.playEffect(.Ticking)
         } else {
@@ -141,25 +147,39 @@ class GameViewController: UIViewController,NetworkDelegate {
 
         let correctAnswer = QuestionDatabase.sharedDatabase.correctAnswerForPerson(heroID, policyID: self.questionID!)
         
+        var feedbackAnswer : String
+        
         switch correctAnswer {
         case .Abstain:
-            ()
+            feedbackAnswer = "They abstained!"
         case .AgreeStrong:
-            ()
+            feedbackAnswer = "They strongly agree!"
         case .Agree:
-            ()
+            feedbackAnswer = "They agree!"
         case .Neutral:
-            ()
+            feedbackAnswer = "They're voted for and against!"
         case .Disagree:
-            ()
+            feedbackAnswer = "They disagree!"
         case .DisagreeStrong:
-            ()
+            feedbackAnswer = "They strongly disagree!"
         }
         
         if correctAnswer == answer {
             AudioJigger.sharedJigger.playEffect(Effects.HereHere)
+            feedbackLabel.text = "Correct!"
         } else {
             AudioJigger.sharedJigger.playEffect(Effects.Booing)
+            
+            feedbackLabel.text = "Incorrect!\n\(feedbackAnswer)"
+        }
+        
+        feedbackLabel.alpha = 0
+        UIView.animateWithDuration(0.25, animations: { () -> Void in
+            self.feedbackLabel.alpha = 1.0
+        }) { (complete) -> Void in
+           UIView.animateWithDuration(0.25, delay: 1.0, options: UIViewAnimationOptions.allZeros, animations: { () -> Void in
+            self.feedbackLabel.alpha = 0.0
+           }, completion: nil)
         }
         
         Network.sharedNetwork.submitAnswer(self.questionID!, answer: answer)
@@ -179,9 +199,12 @@ class GameViewController: UIViewController,NetworkDelegate {
     
     @IBAction func voteSliderValueChange(sender: AnyObject) {
         answer = Answer.fromFloat(self.voteSlider?.value ?? 0.0)
+        
+        self.abstainButton.selected = false
     }
     
     @IBAction func abstainVote(sender: AnyObject) {
+        self.abstainButton.selected = true
         answer = Answer.Abstain
     }
     
