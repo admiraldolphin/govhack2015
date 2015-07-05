@@ -36,7 +36,8 @@ class PreGameLobbyViewController: UIViewController,NetworkDelegate,AudioJiggerDe
         if (segue.identifier == "ServerReadySegue") {
             if let game = segue.destinationViewController as? GameViewController {
                 
-                game.heroID = gameStartMessage!.opponentHero
+                //game.heroID = gameStartMessage!.opponentHero
+                game.heroID = self.honourableMember!
                 game.possibleQuestions = gameStartMessage!.questions
                 
                 AudioJigger.sharedJigger.playActionMusic()

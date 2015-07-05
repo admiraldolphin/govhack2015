@@ -103,6 +103,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         AudioJigger.sharedJigger.playEffect(.Selection)
+        println("index path:\(indexPath.row)")
     }
     
     // MARK: - Navigation
@@ -117,7 +118,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
                 {
                     if let indexPath = memberListView.indexPathForCell(cell)
                     {
+                        println("index path2: \(indexPath.row)")
                         let key = QuestionDatabase.sharedDatabase.importantPeople.keys.array.sorted(<)[indexPath.row]
+                        println("Important: \(key)")
                         destination.honourableMember = key
                     }
                 }
