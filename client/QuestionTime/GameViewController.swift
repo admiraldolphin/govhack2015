@@ -24,11 +24,11 @@ class GameViewController: UIViewController,NetworkDelegate {
     
     @IBOutlet weak var timeRemainingProgressView: UIProgressView!
 
-    @IBOutlet weak var voteSlider: UISlider!
-    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var voteSlider: UISlider?
+    @IBOutlet weak var questionLabel: UILabel?
     
-    @IBOutlet weak var yourScoreLabel: UILabel!
-    @IBOutlet weak var theirScoreLabel: UILabel!
+    @IBOutlet weak var yourScoreLabel: UILabel?
+    @IBOutlet weak var theirScoreLabel: UILabel?
     
     var gameOverMessage : GameOverMessage?
     
@@ -36,6 +36,13 @@ class GameViewController: UIViewController,NetworkDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        possibleQuestions = [63, 51]
+        heroID = 10001
+        
+        self.voteSlider?.setMinimumTrackImage(UIImage(named: "Empty"), forState: UIControlState.Normal)
+        self.voteSlider?.setMaximumTrackImage(UIImage(named: "Empty"), forState: UIControlState.Normal)
+        self.voteSlider?.setThumbImage(UIImage(named: "SelectorIndicatorTop"), forState: UIControlState.Normal)
         
         Network.sharedNetwork.delegate = self
         
@@ -56,22 +63,22 @@ class GameViewController: UIViewController,NetworkDelegate {
         let policyID = possibleQuestions[Int(arc4random_uniform(UInt32(possibleQuestions.count)))]
         
         if let policy = person?.policies[policyID] {
-            self.questionLabel.text = policy.name
+            self.questionLabel?.text = policy.name
             
             self.questionID = policyID
             
             self.answer = Answer.Neutral
             
-            self.voteSlider.value = 0.5
+            self.voteSlider?.value = 0.5
             
-            self.timeRemainingProgressView.progress = 1.0
+            self.timeRemainingProgressView?.progress = 1.0
 
             CATransaction.begin()
             CATransaction.setAnimationDuration(6.0)
-            self.timeRemainingProgressView.setProgress(0.0, animated: true)
+            self.timeRemainingProgressView?.setProgress(0.0, animated: true)
             CATransaction.commit()
             
-            self.questionsRemainingLabel.text = "\(self.questionsRemaining) questions remaining"
+            self.questionsRemainingLabel?.text = "\(self.questionsRemaining) questions remaining"
         }
         
     }
@@ -95,7 +102,7 @@ class GameViewController: UIViewController,NetworkDelegate {
     }
     
     @IBAction func voteSliderValueChange(sender: AnyObject) {
-        answer = Answer.fromFloat(self.voteSlider.value)
+        answer = Answer.fromFloat(self.voteSlider?.value ?? 0.0)
     }
     
     @IBAction func abstainVote(sender: AnyObject) {
@@ -125,8 +132,8 @@ class GameViewController: UIViewController,NetworkDelegate {
         // ok here is what we care about
         // later on we should show some sort of indication as to how right/wrong they were
         
-        self.yourScoreLabel.text = "Your Score: \(message.yourScore)"
-        self.theirScoreLabel.text = "Their Score: \(message.opponentScore)"
+        self.yourScoreLabel?.text = "Your Score: \(message.yourScore)"
+        self.theirScoreLabel?.text = "Their Score: \(message.opponentScore)"
         
     }
 

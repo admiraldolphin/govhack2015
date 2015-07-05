@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "SelectorIndicatorBottom@2x.png"
+      "filename" : "ClockFace.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "SelectorIndicatorBottom.png"
+      "filename" : "ClockFace@2x.png"
     },
     {
       "idiom" : "universal",

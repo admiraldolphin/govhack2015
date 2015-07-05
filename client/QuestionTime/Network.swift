@@ -59,6 +59,7 @@ struct KeepAliveMessage {
 
 struct GameOverMessage {
     var youWon : Bool
+    var portfolios : [Int]
 }
 
 protocol NetworkDelegate {
@@ -237,7 +238,9 @@ class Network: NSObject, GCDAsyncSocketDelegate {
     
     private func receivedGameOver(data:JSON) {
         
-        let message = GameOverMessage(youWon: data["YouWon"].boolValue)
+        let message = GameOverMessage(youWon: data["YouWon"].boolValue,
+            portfolios: (data["Portfolios"].arrayObject as! [Int])
+        )
         
         delegate?.networkDidEndGame(message)
         

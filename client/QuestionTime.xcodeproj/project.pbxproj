@@ -21,6 +21,7 @@
 		33F73A611B4777A900EFE8E6 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F73A601B4777A900EFE8E6 /* PortfolioViewController.swift */; };
 		33F73A631B477D6E00EFE8E6 /* PortfolioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F73A621B477D6E00EFE8E6 /* PortfolioCollectionViewCell.swift */; };
 		681716E21B47F1630061E99A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 681716E11B47F1630061E99A /* Images.xcassets */; };
+		681716E61B48B7CE0061E99A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 681716E51B48B7CE0061E99A /* MBProgressHUD.m */; };
 		68DF69821B469CC4007C36A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69811B469CC4007C36A4 /* AppDelegate.swift */; };
 		68DF69841B469CC4007C36A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DF69831B469CC4007C36A4 /* ViewController.swift */; };
 		68DF69871B469CC4007C36A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68DF69851B469CC4007C36A4 /* Main.storyboard */; };
@@ -57,6 +58,8 @@
 		33F73A601B4777A900EFE8E6 /* PortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
 		33F73A621B477D6E00EFE8E6 /* PortfolioCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioCollectionViewCell.swift; sourceTree = "<group>"; };
 		681716E11B47F1630061E99A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		681716E41B48B7CE0061E99A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = MBProgressHUD/MBProgressHUD.h; sourceTree = SOURCE_ROOT; };
+		681716E51B48B7CE0061E99A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = MBProgressHUD/MBProgressHUD.m; sourceTree = SOURCE_ROOT; };
 		68DF697C1B469CC4007C36A4 /* QuestionTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestionTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DF69801B469CC4007C36A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68DF69811B469CC4007C36A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,11 +119,22 @@
 			name = Audio;
 			sourceTree = "<group>";
 		};
+		681716E31B48B7BE0061E99A /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				681716E41B48B7CE0061E99A /* MBProgressHUD.h */,
+				681716E51B48B7CE0061E99A /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
 		68DF69731B469CC3007C36A4 = {
 			isa = PBXGroup;
 			children = (
 				68E8627C1B479A5800EB6FDE /* data */,
 				68DF69A71B476992007C36A4 /* GCDAsyncSocket */,
+				681716E31B48B7BE0061E99A /* MBProgressHUD */,
 				68DF69D61B4777F2007C36A4 /* SwiftyJSON */,
 				68DF697E1B469CC4007C36A4 /* QuestionTime */,
 				68DF697D1B469CC4007C36A4 /* Products */,
@@ -318,6 +332,7 @@
 			files = (
 				68DF69AC1B47699E007C36A4 /* GCDAsyncSocket.m in Sources */,
 				33F73A611B4777A900EFE8E6 /* PortfolioViewController.swift in Sources */,
+				681716E61B48B7CE0061E99A /* MBProgressHUD.m in Sources */,
 				68DF69C71B4769B4007C36A4 /* DDTTYLogger.m in Sources */,
 				33F73A631B477D6E00EFE8E6 /* PortfolioCollectionViewCell.swift in Sources */,
 				33A1E03A1B47CD3400B308C7 /* AudioJigger.swift in Sources */,

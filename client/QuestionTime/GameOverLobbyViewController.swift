@@ -10,24 +10,28 @@ import UIKit
 
 class GameOverLobbyViewController: UIViewController {
 
-    var youWon : Bool?
+    var youWon : Bool = false
+    
+    var portfolios : [Int] = []
     
     @IBOutlet weak var gameOverLobbyLabel: UILabel!
+    
+    @IBOutlet weak var factoid1Label: UILabel!
+    @IBOutlet weak var factoid2Label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let iWon = self.youWon
+    
+        if youWon
         {
-            if iWon
-            {
-                self.gameOverLobbyLabel.text = "Congrats!"
-            }
-            else
-            {
-                self.gameOverLobbyLabel.text = "Suck it!"
-            }
+            self.gameOverLobbyLabel.text = "The honourable member is ejected from the house!"
         }
+        else
+        {
+            self.gameOverLobbyLabel.text = "The honourable member has the call!"
+        }
+    
 
         // Do any additional setup after loading the view.
     }
